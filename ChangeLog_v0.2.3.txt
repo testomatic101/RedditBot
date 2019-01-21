@@ -1,0 +1,7 @@
+Change log:
+
+Version 0.2.3
+
+1.Made a u/ command!
+2.Made some emojis
+3.Added the bot version on the footer of the embed
