@@ -4,11 +4,7 @@ import random
 import praw
 
 #reddit stuff
-reddit = praw.Reddit(client_id='a0nJCwdrD7PDCw',
-                     client_secret='Heu3NLsso54pKHfrbDwBPhnzEWE',
-                     username='-_-BWAC-_-',
-                     password='Babaya98',
-                     user_agent='dank_memz',)
+
 
 
 @client.event
