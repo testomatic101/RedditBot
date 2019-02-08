@@ -13,12 +13,7 @@ version = '1.1'
 
 red = 0xFF0000
 
-#reddit stuff
-reddit = praw.Reddit(client_id='HV16ttsYvjsrRw',
-                     client_secret='StcBK-8Ml-VXM83xFFb0teO5ElM',
-                     username='TheRedditBotDiscord',
-                     password='Redtrucke',
-                     user_agent='Message command',)
+
 
 #black list
 black_list = ["gory", "watchpeopledie", "gore", "WPDtalk"]
@@ -239,8 +234,7 @@ async def on_ready():
     print(client.user.id)
     print('client version=' + version)
 
-#client.run('NDM3NDM5NTYyMzg2NTA1NzMw.Dx7uZA.3h7Acp8wNHxPjcR0WUkCXQnYYYs') #main
-client.run('NTM2MDQ5MTY2NTIzMDM5NzU5.DyXBCg.1YIsJ_DozwIiIwRQKIFpOi_sw9M') #beta
+
 
 
 '''
