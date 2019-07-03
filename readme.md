@@ -1,11 +1,11 @@
 ## Reddit (The Unofficial Bot)
-Reddit (The Unofficial Bot) can fetch infomation on servers, userprofiles and more.
+Reddit (The Unofficial Bot) can fetch infomation on subreddits, userprofiles and more.
 
 You can even connect your own reddit account to your discord account, and access it with !me
 
 If your every confused you can use !help
 ## Demonstration
-Reddit (The Unofficial Bot) is very intuitive, just use subreddits and users like you would on the site. Simply use r/ for subreddits and u/ for users as demonstrated here:
+Reddit (The Unofficial Bot) is very intuitive, just usserverse subreddits and users like you would on the site. Simply use r/ for subreddits and u/ for users as demonstrated here:
 
 **!u/**
 
