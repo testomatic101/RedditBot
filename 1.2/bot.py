@@ -7,7 +7,11 @@ import os
 
 client = discord.Client()
 
-
+reddit = praw.Reddit(client_id='',
+                    client_secret="",
+                    password='',
+                    user_agent='',
+                    username='')
 
 version = '1.2'
 
@@ -271,4 +275,6 @@ async def on_ready():
     activity = discord.Game(name="!help")
     print("Setting status to '" + str(activity) + "'")
     await client.change_presence(status=discord.Status.idle, activity=activity)
+
+client.run("")
 
