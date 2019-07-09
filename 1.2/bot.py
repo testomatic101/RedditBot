@@ -272,5 +272,3 @@ async def on_ready():
     print("Setting status to '" + str(activity) + "'")
     await client.change_presence(status=discord.Status.idle, activity=activity)
 
-client.run("NDM3NDM5NTYyMzg2NTA1NzMw.XRlUFA.A1tenCrBPZUK9Io0LTLShHIjBRU")
-
