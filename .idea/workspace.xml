@@ -2,11 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="7829b319-422a-403e-a069-1fa549835f17" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/Reddit.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/1.2.1/bot.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/versions/1.2.1/bot.py" beforeDir="false" afterPath="$PROJECT_DIR$/versions/1.2.1/bot.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -17,13 +14,10 @@
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/1.2.1/bot.py">
+        <entry file="file://$PROJECT_DIR$/versions/1.2.1/bot.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="4290">
-              <caret line="286" column="12" selection-start-line="286" selection-start-column="12" selection-end-line="286" selection-end-column="12" />
-              <folding>
-                <element signature="e#99#113#0" expanded="true" />
-              </folding>
+            <state relative-caret-position="525">
+              <caret line="46" lean-forward="true" selection-start-line="46" selection-end-line="46" />
             </state>
           </provider>
         </entry>
@@ -48,6 +42,7 @@
         <option value="$PROJECT_DIR$/1.2/1.2.2/bot.py" />
         <option value="$PROJECT_DIR$/1.2/bot.py" />
         <option value="$PROJECT_DIR$/1.2.1/bot.py" />
+        <option value="$PROJECT_DIR$/versions/1.2.1/bot.py" />
       </list>
     </option>
   </component>
@@ -62,7 +57,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -73,17 +67,43 @@
             <path>
               <item name="Reddit" type="b2602c69:ProjectViewProjectNode" />
               <item name="Reddit" type="462c0819:PsiDirectoryNode" />
+              <item name="versions" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Reddit" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Reddit" type="462c0819:PsiDirectoryNode" />
+              <item name="versions" type="462c0819:PsiDirectoryNode" />
+              <item name="0.2.3" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Reddit" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Reddit" type="462c0819:PsiDirectoryNode" />
+              <item name="versions" type="462c0819:PsiDirectoryNode" />
+              <item name="1.0.1" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Reddit" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Reddit" type="462c0819:PsiDirectoryNode" />
+              <item name="versions" type="462c0819:PsiDirectoryNode" />
+              <item name="1.1" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Reddit" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Reddit" type="462c0819:PsiDirectoryNode" />
+              <item name="versions" type="462c0819:PsiDirectoryNode" />
               <item name="1.2" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="Reddit" type="b2602c69:ProjectViewProjectNode" />
               <item name="Reddit" type="462c0819:PsiDirectoryNode" />
+              <item name="versions" type="462c0819:PsiDirectoryNode" />
               <item name="1.2.1" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
         </subPane>
       </pane>
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -218,29 +238,43 @@
     </layout-to-restore>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$USER_HOME$/.local/lib/python3.7/site-packages/discord/client.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-413">
-          <caret line="815" column="14" lean-forward="true" selection-start-line="815" selection-start-column="14" selection-end-line="815" selection-end-column="14" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/1.2/1.2.2.py" />
     <entry file="file://$PROJECT_DIR$/1.2/gameUpdates.py" />
-    <entry file="file://$PROJECT_DIR$/1.2/bot.py">
+    <entry file="file://$PROJECT_DIR$/1.2/bot.py" />
+    <entry file="file://$PROJECT_DIR$/1.2.1/bot.py" />
+    <entry file="file://$USER_HOME$/.local/lib/python3.7/site-packages/discord/state.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="165">
-          <caret line="15" column="15" selection-start-line="15" selection-start-column="15" selection-end-line="15" selection-end-column="15" />
+        <state relative-caret-position="297">
+          <caret line="102" column="25" lean-forward="true" selection-start-line="102" selection-start-column="25" selection-end-line="102" selection-end-column="25" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/1.2.1/bot.py">
+    <entry file="file://$USER_HOME$/.local/lib/python3.7/site-packages/discord/client.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="4290">
-          <caret line="286" column="12" selection-start-line="286" selection-start-column="12" selection-end-line="286" selection-end-column="12" />
-          <folding>
-            <element signature="e#99#113#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="335">
+          <caret line="232" column="35" lean-forward="true" selection-start-line="232" selection-start-column="35" selection-end-line="232" selection-end-column="35" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/versions/0.2.3/ChangeLog_v0.2.3.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="75">
+          <caret line="5" column="18" lean-forward="true" selection-start-line="5" selection-end-line="6" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/versions/1.0.1/bot.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-2782" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/versions/1.1/bot.py">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/versions/1.2.1/bot.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="525">
+          <caret line="46" lean-forward="true" selection-start-line="46" selection-end-line="46" />
         </state>
       </provider>
     </entry>

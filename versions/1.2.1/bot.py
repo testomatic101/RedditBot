@@ -43,8 +43,7 @@ async def on_message(message):
         help_user.set_footer(text="TheRedditBot " + version)
         await message.author.send(embed=help)
         await message.author.send(embed=help_user)
-        emojis = [':grinning:', ':wink: ', ':upside_down:', ':slight_smile:']
-        secure_random = random.SystemRandom()
+        await message.author.send("Reddit+ is comming! You can get a special role on the server support server (discord.gg/ZmyYxQg) for being a earlu supporter when it rolls out!")
 
     if message.content == '!meme':
         random_post = reddit.subreddit('dankmemes').random()
