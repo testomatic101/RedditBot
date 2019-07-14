@@ -14,7 +14,7 @@ reddit = praw.Reddit(client_id='HV16ttsYvjsrRw',
                     username='TheRedditBotDiscord')
 
 
-version = '1.2'
+version = '1.2.01'
 
 red = 0xFF0000
 
@@ -273,7 +273,7 @@ async def on_message(message):
 @client.event
 async def on_ready():
     print("Connected!")
-    activity = discord.Game(name="!help")
+    activity = discord.Game(name="!help" + " | In " + str(len(client.guilds)) + " servers")
     print("Setting status to '" + str(activity) + "'")
     await client.change_presence(status=discord.Status.idle, activity=activity)
 
