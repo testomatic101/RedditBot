@@ -7,12 +7,11 @@ import os
 
 client = discord.Client()
 
-reddit = praw.Reddit(client_id='HV16ttsYvjsrRw',
-                    client_secret="StcBK-8Ml-VXM83xFFb0teO5ElM",
-                    password='Redtrucke',
-                    user_agent='TRB',
-                    username='TheRedditBotDiscord')
-
+reddit = praw.Reddit(client_id='',
+                    client_secret="",
+                    password='',
+                    user_agent='',
+                    username='')
 
 version = '1.2.01'
 
@@ -277,5 +276,5 @@ async def on_ready():
     print("Setting status to '" + str(activity) + "'")
     await client.change_presence(status=discord.Status.idle, activity=activity)
 
-client.run("NDM3NDM5NTYyMzg2NTA1NzMw.XRlUFA.A1tenCrBPZUK9Io0LTLShHIjBRU")
+client.run("")
 
