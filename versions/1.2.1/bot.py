@@ -8,11 +8,11 @@ import datetime
 
 client = discord.Client()
 
-reddit = praw.Reddit(client_id='',
-                     client_secret="",
-                     password='',
-                     user_agent='',
-                     username='')
+reddit = praw.Reddit(client_id='HV16ttsYvjsrRw',
+                     client_secret="StcBK-8Ml-VXM83xFFb0teO5ElM",
+                     password='Redtrucke',
+                     user_agent='reddit',
+                     username='TheRedditBotDiscord')
 
 version = '1.2.1'
 
@@ -43,7 +43,7 @@ async def on_message(message):
         help_user.set_footer(text="TheRedditBot " + version)
         await message.author.send(embed=help)
         await message.author.send(embed=help_user)
-        await message.author.send("Reddit+ is comming! You can get a special role on the server support server (discord.gg/ZmyYxQg) for being a earlu supporter when it rolls out!\n\nIf you dont want to you can support with the simple act of voting! Do it here")
+        await message.author.send("Reddit+ is comming! You can get a special role on the support server (https://discord.gg/ZmyYxQg) and a badge on your account page (!u/) for being a early supporter when it rolls out!\n**Become a supporter here by donating https://discordbots.org/bot/437439562386505730**\n\nIf you dont want to you can support with the simple act of voting! Do it here http://bit.ly/redditDiscordVote")
 
     if message.content == '!meme':
         random_post = reddit.subreddit('dankmemes').random()
@@ -146,6 +146,7 @@ async def on_message(message):
                 modMessage.set_footer(text="TheRedditBot " + version)
                 await loadingMessage.edit(embed=modMessage)
 
+
     if message.content.startswith('!u/'):
         loading = discord.Embed(title='', color=red)
         loading.add_field(name='Loading...', value='<a:loading:596157264788979750>')
@@ -163,7 +164,7 @@ async def on_message(message):
         user = discord.Embed(title='u/' + user_r.name + ' info:', color=red)
         user.add_field(name='Karma:', value=user_r.comment_karma, inline=False)
         user.add_field(name='Link karma:', value=user_r.link_karma, inline=False)
-        # user.add_field(name='<:gold:536793951571542016>\nHas gold?:', value=user_gold, inline=False)
+        # user.add_field(name='<:gold:5367939581571542016>\nHas gold?:', value=user_gold, inline=False)
 
         user.set_author(name="TheRedditBot", icon_url="https://i.redd.it/rq36kl1xjxr01.png")
         user.set_thumbnail(url=user_r.icon_img)
@@ -202,6 +203,7 @@ async def on_message(message):
                 user.set_footer(text="TheRedditBot " + version)
                 await loadingMessage.edit(embed=user)
 
+<<<<<<< HEAD
                 # Update user info if changed
                 if user_info["discord name"] != message.author:
                     user_info["discord name"] = message.author
@@ -209,6 +211,8 @@ async def on_message(message):
                     with open("users/" + str(message.author.id) + '.json', 'w+') as outfile:
                         json.dump(user_info, outfile, indent=4)
         except FileNotFoundError:
+=======
+>>>>>>> 4b2f88c95cdd3e8ef0a58ed204c7094cd4bd2ca7
             await loadingMessage.edit(message.author.mention + ' No connected account')
 
     if message.content.startswith('!connect'):
@@ -226,7 +230,7 @@ async def on_message(message):
         data = {
             "registered": datetime.datetime.now(),
             "reddit name": user_name,
-            "discord name": message.author,
+            "discord name": message.author.tag,
             "discord id": message.author.id,
             "code": code,
             "connected": False,
@@ -283,4 +287,8 @@ async def on_ready():
     print("Setting status to '" + str(activity) + "'")
     await client.change_presence(status=discord.Status.idle, activity=activity)
 
+<<<<<<< HEAD
 client.run("NDM3NDM5NTYyMzg2NTA1NzMw.XSvHVw.37rJujTMF7zceLo12A27M0-s_ew")
+=======
+client.run("NDM3NDM5NTYyMzg2NTA1NzMw.XSrhgQ.JjKAocQgFOE1ypMBlyin3yXYj_E")
+>>>>>>> 4b2f88c95cdd3e8ef0a58ed204c7094cd4bd2ca7
