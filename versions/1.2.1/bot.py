@@ -206,7 +206,7 @@ async def on_message(message):
                 if user_info["discord name"] != message.author:
                     user_info["discord name"] = message.author
 
-                    with open("users/" + user_info["discord name"] + ' | ' + user_info["reddit name"] + '.json', 'w+') as outfile:
+                    with open("users/" + str(message.author.id) + '.json', 'w+') as outfile:
                         json.dump(user_info, outfile, indent=4)
         except FileNotFoundError:
             await loadingMessage.edit(message.author.mention + ' No connected account')
@@ -233,7 +233,7 @@ async def on_message(message):
             "has +": False
         }
 
-        with open("users/" + data["discord name"] + ' | ' + data["reddit name"] + '.json', 'w+') as outfile:
+        with open("users/" + str(message.author.id) + '.json', 'w+') as outfile:
             json.dump(data, outfile, indent=4)
         reddit.redditor(user_name).message('Discord user ' + data["discord name"] + ' has tryed to connect to your discord account. Your code for Reddit', 'This is your code: ' + str(
             code) + '\n\nIf you are being spammed by codes, dm me here: https://discord.gg/ZmyYxQg')
@@ -283,4 +283,4 @@ async def on_ready():
     print("Setting status to '" + str(activity) + "'")
     await client.change_presence(status=discord.Status.idle, activity=activity)
 
-client.run("")
+client.run("NDM3NDM5NTYyMzg2NTA1NzMw.XSvHVw.37rJujTMF7zceLo12A27M0-s_ew")

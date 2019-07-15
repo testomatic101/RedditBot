@@ -2,6 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="7829b319-422a-403e-a069-1fa549835f17" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/versions/1.2.1/bot.py" beforeDir="false" afterPath="$PROJECT_DIR$/versions/1.2.1/bot.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -15,8 +16,11 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/versions/1.2.1/bot.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="517">
-              <caret line="45" column="259" selection-start-line="45" selection-start-column="259" selection-end-line="45" selection-end-column="259" />
+            <state relative-caret-position="847">
+              <caret line="285" column="71" selection-start-line="285" selection-start-column="71" selection-end-line="285" selection-end-column="71" />
+              <folding>
+                <element signature="e#99#113#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -67,30 +71,6 @@
               <item name="Reddit" type="b2602c69:ProjectViewProjectNode" />
               <item name="Reddit" type="462c0819:PsiDirectoryNode" />
               <item name="versions" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Reddit" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Reddit" type="462c0819:PsiDirectoryNode" />
-              <item name="versions" type="462c0819:PsiDirectoryNode" />
-              <item name="0.2.3" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Reddit" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Reddit" type="462c0819:PsiDirectoryNode" />
-              <item name="versions" type="462c0819:PsiDirectoryNode" />
-              <item name="1.0.1" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Reddit" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Reddit" type="462c0819:PsiDirectoryNode" />
-              <item name="versions" type="462c0819:PsiDirectoryNode" />
-              <item name="1.1" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Reddit" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Reddit" type="462c0819:PsiDirectoryNode" />
-              <item name="versions" type="462c0819:PsiDirectoryNode" />
-              <item name="1.2" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="Reddit" type="b2602c69:ProjectViewProjectNode" />
@@ -272,8 +252,11 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/versions/1.2.1/bot.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="517">
-          <caret line="45" column="259" selection-start-line="45" selection-start-column="259" selection-end-line="45" selection-end-column="259" />
+        <state relative-caret-position="847">
+          <caret line="285" column="71" selection-start-line="285" selection-start-column="71" selection-end-line="285" selection-end-column="71" />
+          <folding>
+            <element signature="e#99#113#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
