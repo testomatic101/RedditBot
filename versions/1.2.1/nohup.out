@@ -1,0 +1,4 @@
+  File "bot.py", line 206
+    <<<<<<< HEAD
+    ^
+IndentationError: unexpected unindent
