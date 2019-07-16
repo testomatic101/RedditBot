@@ -36,12 +36,21 @@ async def on_message(message):
         print("Setting status to '" + str(activity) + "'")
         await client.change_presence(status=discord.Status.do_not_disturb, activity=activity)
 
+    if message.content.startswith('!feedback'):
+        feedback = message.content.replace('!feedback ', '')
+
+        reddit.redditor('-_-BWAC-_-').message('FeedBack sent by ' + message.author.name, feedback + '\n\nUser Info: \nID: ' + str(message.author.id))
+        await message.channel.send(message.author.mention + ' thanks for the feedback! If you want to tell it to the devs face, do that here: discord.gg/ZmyYxQg.')
+
+
+
     # user commands:
     if message.content.startswith('!help'):
         help = discord.Embed(title="Help:",
                              description="**Welcome to the help page, here you can see all the commands Reddit has to offer**",
                              color=red)
         help.add_field(name="!help", value="Shows this page", inline=False)
+        help.add_field(name="!feedback [feed back here]", value="Give your feed back to the dev", inline=False)
         help.add_field(name="!r/[sub name here]", value="Gives you some info on a subreddit", inline=False)
         help.add_field(name="!u/[username here]", value="Gives you some info on a user", inline=False)
         help.add_field(name="!meme", value="Gives a random meme from /r/dankmemes on reddit!", inline=False)
@@ -58,7 +67,7 @@ async def on_message(message):
         await message.author.send(embed=help)
         await message.author.send(embed=help_user)
         await message.author.send(
-            "Reddit+ is comming! You can get a special role on the support server (https://discord.gg/ZmyYxQg) and a badge on your account page (!u/) for being a early supporter when it rolls out!\n**Become a supporter here by donating https://discordbots.org/bot/437439562386505730**\n\nIf you dont want to you can support with the simple act of voting! Do it here http://bit.ly/redditDiscordVote")
+            "Give your feed back with the !feedback command! \n\nLike the bot? Support it with a vote! http://bit.ly/redditDiscordVote")
 
     if message.content == '!meme':
         random_post = reddit.subreddit('dankmemes').random()
@@ -301,4 +310,4 @@ async def on_ready():
     await client.change_presence(status=discord.Status.do_not_disturb, activity=activity)
 
 
-client.run("NTM2MDQ5MTY2NTIzMDM5NzU5.XSwLtQ.ozSo0c61o-ix8pziWKLCpEmLTEA")
+client.run("NTM2MDQ5MTY2NTIzMDM5NzU5.XS0DRQ.XcsAjf8nleunE7TDO6TLIzOXfyQ")
