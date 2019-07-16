@@ -2,8 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="7829b319-422a-403e-a069-1fa549835f17" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/versions/1.2.2/bot.py" beforeDir="false" afterPath="$PROJECT_DIR$/versions/1.2.3/bot.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/versions/1.2.3/bot.py" beforeDir="false" afterPath="$PROJECT_DIR$/versions/1.2.3/bot.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -16,8 +15,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/versions/1.2.3/bot.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="210">
-              <caret line="26" column="30" lean-forward="true" selection-start-line="26" selection-start-column="30" selection-end-line="26" selection-end-column="30" />
+            <state relative-caret-position="787">
+              <caret line="312" column="71" selection-start-line="312" selection-start-column="71" selection-end-line="312" selection-end-column="71" />
             </state>
           </provider>
         </entry>
@@ -49,6 +48,7 @@
         <option value="$PROJECT_DIR$/1.2.1/bot.py" />
         <option value="$PROJECT_DIR$/versions/1.2.1/bot.py" />
         <option value="$PROJECT_DIR$/versions/1.2.2/bot.py" />
+        <option value="$PROJECT_DIR$/versions/1.2.3/bot.py" />
       </list>
     </option>
   </component>
@@ -106,15 +106,16 @@
     <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
   </component>
   <component name="RecentsManager">
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/versions/1.2.2" />
-      <recent name="$PROJECT_DIR$/versions" />
-      <recent name="$PROJECT_DIR$/1.2" />
-      <recent name="$PROJECT_DIR$/1.2/1.2.2" />
-    </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/versions/1.2.2" />
       <recent name="$PROJECT_DIR$/1.2.1" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/versions/1.2.3" />
+      <recent name="$PROJECT_DIR$/versions" />
+      <recent name="$PROJECT_DIR$/versions/1.2.2" />
+      <recent name="$PROJECT_DIR$/1.2" />
+      <recent name="$PROJECT_DIR$/1.2/1.2.2" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -331,8 +332,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/versions/1.2.3/bot.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="210">
-          <caret line="26" column="30" lean-forward="true" selection-start-line="26" selection-start-column="30" selection-end-line="26" selection-end-column="30" />
+        <state relative-caret-position="787">
+          <caret line="312" column="71" selection-start-line="312" selection-start-column="71" selection-end-line="312" selection-end-column="71" />
         </state>
       </provider>
     </entry>

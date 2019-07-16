@@ -310,4 +310,4 @@ async def on_ready():
     await client.change_presence(status=discord.Status.do_not_disturb, activity=activity)
 
 
-client.run("NTM2MDQ5MTY2NTIzMDM5NzU5.XS0DRQ.XcsAjf8nleunE7TDO6TLIzOXfyQ")
+client.run("NDM3NDM5NTYyMzg2NTA1NzMw.XS1p5g.Qnr00wIRIrc9EmK1ShlPCds1mWY")
