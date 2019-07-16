@@ -15,7 +15,7 @@ reddit = praw.Reddit(client_id='HV16ttsYvjsrRw',
                      user_agent='reddit',
                      username='TheRedditBotDiscord')
 
-version = '1.2.2'
+version = '1.2.3'
 
 red = 0xFF0000
 
@@ -309,9 +309,4 @@ async def on_ready():
     print("Setting status to '" + str(activity) + "'")
     await client.change_presence(status=discord.Status.do_not_disturb, activity=activity)
 
-
-<<<<<<< HEAD:versions/1.2.2/bot.py
-client.run("NDM3NDM5NTYyMzg2NTA1NzMw.XSwfyQ.IIzZSdumHAyBc5kvYVsFud5LJh0")
-=======
 client.run("NDM3NDM5NTYyMzg2NTA1NzMw.XS1p5g.Qnr00wIRIrc9EmK1ShlPCds1mWY")
->>>>>>> 719a9f60c0c91c527cbba60b872ef202a5dba0c1:versions/1.2.3/bot.py
