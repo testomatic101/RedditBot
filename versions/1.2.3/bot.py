@@ -25,11 +25,6 @@ black_list = ["gory", "watchpeopledie", "gore", "WPDtalk"]
 
 @client.event
 async def on_message(message):
-    # The spy!
-    if message.author.id != client.user.id:
-        channel = client.get_channel(600950840559140884)
-        await channel.send('**User: ' + message.author.name + ' , Server: ' + message.guild.name + '**\n\n' + message.content)
-
     # admin commands:
     if message.content.startswith('!setstatus') and message.author.id == 408355239108935681:
         status = message.content.replace('!setstatus ', '')
