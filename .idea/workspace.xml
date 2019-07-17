@@ -2,6 +2,17 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="7829b319-422a-403e-a069-1fa549835f17" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/versions/1.2.4/bot.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/versions/1.2.4/users/104953382812303360.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/versions/1.2.4/users/158049329150427136.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/versions/1.2.4/users/240264004457594880.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/versions/1.2.4/users/347684165400920064.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/versions/1.2.4/users/371039316480098307.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/versions/1.2.4/users/408355239108935681.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/versions/1.2.4/users/417261254227394560.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/versions/1.2.4/users/431112172177850383.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/versions/1.2.4/users/550072605709697072.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/versions/1.2.3/bot.py" beforeDir="false" afterPath="$PROJECT_DIR$/versions/1.2.3/bot.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -15,10 +26,15 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/versions/1.2.3/bot.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="945">
-              <caret line="69" column="136" lean-forward="true" selection-start-line="69" selection-start-column="136" selection-end-line="69" selection-end-column="136" />
+            <state relative-caret-position="446">
+              <caret line="317" column="69" selection-start-line="317" selection-start-column="69" selection-end-line="317" selection-end-column="69" />
             </state>
           </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/versions/1.2.4/users/104953382812303360.json">
+          <provider selected="true" editor-type-id="text-editor" />
         </entry>
       </file>
     </leaf>
@@ -80,32 +96,13 @@
               <item name="Reddit" type="b2602c69:ProjectViewProjectNode" />
               <item name="Reddit" type="462c0819:PsiDirectoryNode" />
               <item name="versions" type="462c0819:PsiDirectoryNode" />
-              <item name="1.2" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Reddit" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Reddit" type="462c0819:PsiDirectoryNode" />
-              <item name="versions" type="462c0819:PsiDirectoryNode" />
-              <item name="1.2.1" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Reddit" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Reddit" type="462c0819:PsiDirectoryNode" />
-              <item name="versions" type="462c0819:PsiDirectoryNode" />
-              <item name="1.2.1" type="462c0819:PsiDirectoryNode" />
-              <item name="users" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Reddit" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Reddit" type="462c0819:PsiDirectoryNode" />
-              <item name="versions" type="462c0819:PsiDirectoryNode" />
-              <item name="1.2.2" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Reddit" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Reddit" type="462c0819:PsiDirectoryNode" />
-              <item name="versions" type="462c0819:PsiDirectoryNode" />
               <item name="1.2.3" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Reddit" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Reddit" type="462c0819:PsiDirectoryNode" />
+              <item name="versions" type="462c0819:PsiDirectoryNode" />
+              <item name="1.2.4" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -115,20 +112,21 @@
   </component>
   <component name="PropertiesComponent">
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/versions/1.2.2" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/versions/1.2.4" />
     <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/versions/1.2.4" />
       <recent name="$PROJECT_DIR$/versions/1.2.2" />
       <recent name="$PROJECT_DIR$/1.2.1" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/versions/1.2.3/users" />
       <recent name="$PROJECT_DIR$/versions/1.2.3" />
       <recent name="$PROJECT_DIR$/versions" />
       <recent name="$PROJECT_DIR$/versions/1.2.2" />
       <recent name="$PROJECT_DIR$/1.2" />
-      <recent name="$PROJECT_DIR$/1.2/1.2.2" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -252,13 +250,14 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1920" height="1080" extended-state="6" />
+    <editor active="true" />
     <layout>
       <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.24986821" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info anchor="bottom" id="Run" order="2" weight="0.32944915" />
+      <window_info anchor="bottom" id="Run" order="2" visible="true" weight="0.32944915" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -325,13 +324,6 @@
     <entry file="file://$PROJECT_DIR$/versions/1.1/bot.py">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/versions/1.2.1/users/408355239108935681.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret selection-end-line="8" selection-end-column="1" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/versions/1.2.1/bot.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-600">
@@ -342,10 +334,45 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/versions/1.2.3/users/408355239108935681.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret selection-end-line="4" selection-end-column="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/versions/1.2.3/users/158049329150427136.json">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/versions/1.2.3/users/104953382812303360.json">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/versions/1.2.3/users/240264004457594880.json">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/versions/1.2.3/users/347684165400920064.json">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/versions/1.2.3/users/417261254227394560.json">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/versions/1.2.3/users/431112172177850383.json">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/versions/1.2.3/users/550072605709697072.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="30">
+          <caret line="2" column="29" selection-start-line="2" selection-start-column="18" selection-end-line="2" selection-end-column="29" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/versions/1.2.4/users/104953382812303360.json">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
     <entry file="file://$PROJECT_DIR$/versions/1.2.3/bot.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="945">
-          <caret line="69" column="136" lean-forward="true" selection-start-line="69" selection-start-column="136" selection-end-line="69" selection-end-column="136" />
+        <state relative-caret-position="446">
+          <caret line="317" column="69" selection-start-line="317" selection-start-column="69" selection-end-line="317" selection-end-column="69" />
         </state>
       </provider>
     </entry>

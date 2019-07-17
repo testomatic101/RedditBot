@@ -25,11 +25,6 @@ black_list = ["gory", "watchpeopledie", "gore", "WPDtalk"]
 
 @client.event
 async def on_message(message):
-    # The spy!
-    if message.author.id != client.user.id:
-        channel = client.get_channel(600950840559140884)
-        await channel.send('**User: ' + message.author.name + ' , Server: ' + message.guild.name + '**\n\n' + message.content)
-
     # admin commands:
     if message.content.startswith('!setstatus') and message.author.id == 408355239108935681:
         status = message.content.replace('!setstatus ', '')
@@ -314,7 +309,4 @@ async def on_ready():
     print("Setting status to '" + str(activity) + "'")
     await client.change_presence(status=discord.Status.do_not_disturb, activity=activity)
 
-# beta: NTM2MDQ5MTY2NTIzMDM5NzU5.XS7MxA.vYwHmHmwlIOI7LTHSJJk_kPbeqw
-# normal: NDM3NDM5NTYyMzg2NTA1NzMw.XS7OkA.mCBMQDGVYXh-gpFps392AZrzjj0
-
-client.run("NDM3NDM5NTYyMzg2NTA1NzMw.XS7OkA.mCBMQDGVYXh-gpFps392AZrzjj0")
+client.run("NDM3NDM5NTYyMzg2NTA1NzMw.XS1p5g.Qnr00wIRIrc9EmK1ShlPCds1mWY")
