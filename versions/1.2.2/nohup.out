@@ -1041,4 +1041,71 @@ Traceback (most recent call last):
   File "bot.py", line 251, in on_message
     with open("users/" + str(message.author.id) + '.json', 'w+') as outfile:
 FileNotFoundError: [Errno 2] No such file or directory: 'users/231521966228635658.json'
+Ignoring exception in on_messagepython3: can't open file 'bot.py': [Errno 2] No such file or directory
+
+Traceback (most recent call last):
+  File "bot.py", line 196, in on_message
+    with open("users/" + user_id + '.json') as user_data:
+FileNotFoundError: [Errno 2] No such file or directory: 'users/231521966228635658.json'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/bobwithacamera/.local/lib/python3.5/site-packages/discord/client.py", line 270, in _run_event
+    await coro(*args, **kwargs)
+  File "bot.py", line 227, in on_message
+    await loadingMessage.edit(message.author.mention + ' No connected account')
+TypeError: edit() takes 1 positional argument but 2 were given
 Ignoring exception in on_message
+Traceback (most recent call last):
+  File "/home/bobwithacamera/.local/lib/python3.5/site-packages/discord/client.py", line 270, in _run_event
+    await coro(*args, **kwargs)
+  File "bot.py", line 251, in on_message
+    with open("users/" + str(message.author.id) + '.json', 'w+') as outfile:
+FileNotFoundError: [Errno 2] No such file or directory: 'users/231521966228635658.json'
+Ignoring exception in on_message
+Traceback (most recent call last):
+  File "bot.py", line 196, in on_message
+    with open("users/" + user_id + '.json') as user_data:
+FileNotFoundError: [Errno 2] No such file or directory: 'users/231521966228635658.json'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/bobwithacamera/.local/lib/python3.5/site-packages/discord/client.py", line 270, in _run_event
+    await coro(*args, **kwargs)
+  File "bot.py", line 227, in on_message
+    await loadingMessage.edit(message.author.mention + ' No connected account')
+TypeError: edit() takes 1 positional argument but 2 were given
+Connected!
+Setting status to '!help | In 82 servers'
+Setting status to '!help | In 82 servers'
+Setting status to 'Updated!'
+Setting status to '!help | In 82 servers'
+Setting status to '!help | In 82 servers'
+Setting status to '!help | In 83 servers'
+Setting status to '!help | In 83 servers'
+Setting status to '!help | In 83 servers'
+Setting status to '!help | In 83 servers'
+Setting status to '!help | In 83 servers'
+Setting status to '!help | In 84 servers'
+Setting status to '!help | In 84 servers'
+Setting status to '!help | In 84 servers'
+Setting status to 'Thanks for 84 servers!'
+Setting status to '!help | In 84 servers'
+Setting status to 'Thanks for 84 servers!'
+Setting status to '!help | In 88 servers'
+Setting status to '!help | In 88 servers'
+Setting status to '!help | In 88 servers'
+Setting status to 'bots having some sort of issues, will look into'
+Setting status to 'the bot is having some sort of issues, will look into'
+Setting status to 'the bot is having some sort of issue, will look into'
+Setting status to '!help | In 88 servers'
+Setting status to '!help | In 88 servers'
+Setting status to '!help | In 88 servers'
+Setting status to '!help | In 88 servers'
+Setting status to '!help | In 90 servers'
+Setting status to '!help | In 91 servers'
+Setting status to '!help | In 91 servers'
+Setting status to '!help | In 91 servers'
+Setting status to '!help | In 94 servers'
