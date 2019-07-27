@@ -38,4 +38,4 @@ async def on_ready():
     except AttributeError:
         restart()
 
-client.run('NTM2MDQ5MTY2NTIzMDM5NzU5.XS7MxA.vYwHmHmwlIOI7LTHSJJk_kPbeqw')
+client.run('NDM3NDM5NTYyMzg2NTA1NzMw.XS7OkA.mCBMQDGVYXh-gpFps392AZrzjj0')
