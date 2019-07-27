@@ -1,0 +1,115 @@
+Ignoring exception in on_ready
+Traceback (most recent call last):
+  File "/usr/lib/python3/dist-packages/urllib3/connection.py", line 159, in _new_conn
+    (self._dns_host, self.port), self.timeout, **extra_kw)
+  File "/usr/lib/python3/dist-packages/urllib3/util/connection.py", line 57, in create_connection
+    for res in socket.getaddrinfo(host, port, family, socket.SOCK_STREAM):
+  File "/usr/lib/python3.7/socket.py", line 748, in getaddrinfo
+    for res in _socket.getaddrinfo(host, port, family, type, proto, flags):
+socket.gaierror: [Errno -2] Name or service not known
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/lib/python3/dist-packages/urllib3/connectionpool.py", line 600, in urlopen
+    chunked=chunked)
+  File "/usr/lib/python3/dist-packages/urllib3/connectionpool.py", line 343, in _make_request
+    self._validate_conn(conn)
+  File "/usr/lib/python3/dist-packages/urllib3/connectionpool.py", line 841, in _validate_conn
+    conn.connect()
+  File "/usr/lib/python3/dist-packages/urllib3/connection.py", line 301, in connect
+    conn = self._new_conn()
+  File "/usr/lib/python3/dist-packages/urllib3/connection.py", line 168, in _new_conn
+    self, "Failed to establish a new connection: %s" % e)
+urllib3.exceptions.NewConnectionError: <urllib3.connection.VerifiedHTTPSConnection object at 0x7fa029e777b8>: Failed to establish a new connection: [Errno -2] Name or service not known
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/lib/python3/dist-packages/requests/adapters.py", line 449, in send
+    timeout=timeout
+  File "/usr/lib/python3/dist-packages/urllib3/connectionpool.py", line 638, in urlopen
+    _stacktrace=sys.exc_info()[2])
+  File "/usr/lib/python3/dist-packages/urllib3/util/retry.py", line 398, in increment
+    raise MaxRetryError(_pool, url, error or ResponseError(cause))
+urllib3.exceptions.MaxRetryError: HTTPSConnectionPool(host='oauth.reddit.com', port=443): Max retries exceeded with url: /r/all/new?before=t3_cfxght&limit=100&raw_json=1 (Caused by NewConnectionError('<urllib3.connection.VerifiedHTTPSConnection object at 0x7fa029e777b8>: Failed to establish a new connection: [Errno -2] Name or service not known'))
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.7/dist-packages/prawcore/requestor.py", line 47, in request
+    return self._http.request(*args, timeout=TIMEOUT, **kwargs)
+  File "/usr/lib/python3/dist-packages/requests/sessions.py", line 533, in request
+    resp = self.send(prep, **send_kwargs)
+  File "/usr/lib/python3/dist-packages/requests/sessions.py", line 646, in send
+    r = adapter.send(request, **kwargs)
+  File "/usr/lib/python3/dist-packages/requests/adapters.py", line 516, in send
+    raise ConnectionError(e, request=request)
+requests.exceptions.ConnectionError: HTTPSConnectionPool(host='oauth.reddit.com', port=443): Max retries exceeded with url: /r/all/new?before=t3_cfxght&limit=100&raw_json=1 (Caused by NewConnectionError('<urllib3.connection.VerifiedHTTPSConnection object at 0x7fa029e777b8>: Failed to establish a new connection: [Errno -2] Name or service not known'))
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/bwac/.local/lib/python3.7/site-packages/discord/client.py", line 270, in _run_event
+    await coro(*args, **kwargs)
+  File "stream.py", line 22, in on_ready
+    for submission in reddit.subreddit('all').stream.submissions():
+  File "/usr/local/lib/python3.7/dist-packages/praw/models/util.py", line 182, in stream_generator
+    **function_kwargs
+  File "/usr/local/lib/python3.7/dist-packages/praw/models/listing/generator.py", line 52, in __next__
+    self._next_batch()
+  File "/usr/local/lib/python3.7/dist-packages/praw/models/listing/generator.py", line 62, in _next_batch
+    self._listing = self._reddit.get(self.url, params=self.params)
+  File "/usr/local/lib/python3.7/dist-packages/praw/reddit.py", line 442, in get
+    data = self.request("GET", path, params=params)
+  File "/usr/local/lib/python3.7/dist-packages/praw/reddit.py", line 577, in request
+    method, path, data=data, files=files, params=params
+  File "/usr/local/lib/python3.7/dist-packages/prawcore/sessions.py", line 185, in request
+    params=params, url=url)
+  File "/usr/local/lib/python3.7/dist-packages/prawcore/sessions.py", line 128, in _request_with_retries
+    retries, saved_exception, url)
+  File "/usr/local/lib/python3.7/dist-packages/prawcore/sessions.py", line 94, in _do_retry
+    params=params, url=url, retries=retries - 1)
+  File "/usr/local/lib/python3.7/dist-packages/prawcore/sessions.py", line 128, in _request_with_retries
+    retries, saved_exception, url)
+  File "/usr/local/lib/python3.7/dist-packages/prawcore/sessions.py", line 94, in _do_retry
+    params=params, url=url, retries=retries - 1)
+  File "/usr/local/lib/python3.7/dist-packages/prawcore/sessions.py", line 116, in _request_with_retries
+    data, files, json, method, params, retries, url)
+  File "/usr/local/lib/python3.7/dist-packages/prawcore/sessions.py", line 101, in _make_request
+    params=params)
+  File "/usr/local/lib/python3.7/dist-packages/prawcore/rate_limit.py", line 36, in call
+    response = request_function(*args, **kwargs)
+  File "/usr/local/lib/python3.7/dist-packages/prawcore/requestor.py", line 49, in request
+    raise RequestException(exc, args, kwargs)
+prawcore.exceptions.RequestException: error with request HTTPSConnectionPool(host='oauth.reddit.com', port=443): Max retries exceeded with url: /r/all/new?before=t3_cfxght&limit=100&raw_json=1 (Caused by NewConnectionError('<urllib3.connection.VerifiedHTTPSConnection object at 0x7fa029e777b8>: Failed to establish a new connection: [Errno -2] Name or service not known'))
+Fatal read error on socket transport
+protocol: <asyncio.sslproto.SSLProtocol object at 0x7fa029f659b0>
+transport: <_SelectorSocketTransport fd=11 read=polling write=<idle, bufsize=0>>
+Traceback (most recent call last):
+  File "/usr/lib/python3.7/asyncio/selector_events.py", line 801, in _read_ready__data_received
+    data = self._sock.recv(self.max_size)
+TimeoutError: [Errno 110] Connection timed out
+found one
+found one
+found one
+found one
+found one
+found one
+found one
+found one
+found one
+found one
+found one
+found one
+found one
+found one
+found one
+found one
+found one
+found one
+found one
+found one
+found one
+found one
+found one

