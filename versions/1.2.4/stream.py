@@ -33,13 +33,15 @@ async def on_ready():
         for submission in reddit.subreddit('all').stream.submissions():
             if os.path.exists('streams/' + str(submission.subreddit) + '.json'):
                 with open('streams/' + str(submission.subreddit) + '.json') as sub_data:
-                    print('found one!' + str(submission.subreddit))
                     sub_info = json.load(sub_data)
-                    print(sub_info['channels'])
-                    for channel_id in sub_info['channels']:
-                        channel = client.get_channel(channel_id)
-                        if channel == None:
 
+                    i = None
+                    while i < len(sub_info['channels']):
+                        channel = client.get_channel(sub_info['channels'][i])
+                        if channel is None:
+                            sub_info['channels'].pop(i)
+                            with open("streams/" + str(submission.subreddit) + '.json', 'w+') as outfile:
+                                json.dump(sub_info, outfile, indent=4)
                         await channel.send('https://www.reddit.com/r/' + str(submission.subreddit) + '/comments/' + str(submission))
                         print('sent one')
     except AttributeError:
