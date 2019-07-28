@@ -35,7 +35,7 @@ async def on_ready():
                 with open('streams/' + str(submission.subreddit) + '.json') as sub_data:
                     sub_info = json.load(sub_data)
 
-                    i = None
+                    i = 0
                     while i < len(sub_info['channels']):
                         channel = client.get_channel(sub_info['channels'][i])
                         if channel is None:
