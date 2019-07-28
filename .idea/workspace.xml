@@ -5,6 +5,11 @@
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/versions/1.2.4/bot.py" beforeDir="false" afterPath="$PROJECT_DIR$/versions/1.2.4/bot.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/versions/1.2.4/stream.py" beforeDir="false" afterPath="$PROJECT_DIR$/versions/1.2.4/stream.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/versions/1.2.4/streams/MemeEconomy.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/versions/1.2.4/streams/arabfunny.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/versions/1.2.4/streams/askreddit.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/versions/1.2.4/streams/memeeconomy.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/versions/1.2.4/streams/teenagers.json" beforeDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -34,7 +39,8 @@
   <component name="PropertiesComponent">
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/versions/1.2.4/users" />
-    <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
+    <property name="restartRequiresConfirmation" value="false" />
+    <property name="settings.editor.selected.configurable" value="project.propVCSSupport.Confirmation" />
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
@@ -63,7 +69,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Python.stream">
+  <component name="RunManager" selected="Python.bot (3)">
     <configuration name="bot (1)" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <module name="Reddit" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -200,7 +206,7 @@
     </recent_temporary>
   </component>
   <component name="SvnConfiguration">
-    <configuration />
+    <configuration>$USER_HOME$/.subversion</configuration>
   </component>
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">

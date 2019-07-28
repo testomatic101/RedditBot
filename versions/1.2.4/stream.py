@@ -18,12 +18,14 @@ red = 0xFF0000
 
 
 def restart():
+    print("RESTARTING!")
     import signal
     os.system("nohup python3 stream.py")
     os.kill(int(os.getpid()), signal.SIGKILL)
 
 
-schedule.every(5).minutes.do(restart)
+schedule.every(1).minutes.do(restart)
+
 
 @client.event
 async def on_ready():
@@ -31,10 +33,15 @@ async def on_ready():
         for submission in reddit.subreddit('all').stream.submissions():
             if os.path.exists('streams/' + str(submission.subreddit) + '.json'):
                 with open('streams/' + str(submission.subreddit) + '.json') as sub_data:
+                    print('found one!' + str(submission.subreddit))
                     sub_info = json.load(sub_data)
+                    print(sub_info['channels'])
                     for channel_id in sub_info['channels']:
                         channel = client.get_channel(channel_id)
+                        if channel == None:
+
                         await channel.send('https://www.reddit.com/r/' + str(submission.subreddit) + '/comments/' + str(submission))
+                        print('sent one')
     except AttributeError:
         restart()
 

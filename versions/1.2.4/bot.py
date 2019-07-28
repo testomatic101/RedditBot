@@ -205,7 +205,7 @@ async def on_message(message):
                             with open("streams/" + subreddit_name + '.json', 'w+') as outfile:
                                 json.dump(data, outfile, indent=4)
                                 await message.channel.send(
-                                    message.author.mention + ' The stream will start in a few minutes. If you delete the channel the stream will be deleted to. You can edit the channels name and perms as you please (make sure the bot can embed and message in the channel!)\n\n**This is a beta feature and will probably go offine at some point till we have ironed out all the bugs!**')
+                                    message.author.mention + ' The stream will start in a few minutes. If you delete the channel the stream will be deleted to. You can edit the channels name and perms as you please (make sure the bot can embed and message in the channel!)\n\n**This is a beta feature and will probably go offine at some point till we has ironed out all the bugs!**')
                     except FileNotFoundError:
                         channel = await message.guild.create_text_channel(subreddit_name + ' post stream')
 
@@ -216,7 +216,7 @@ async def on_message(message):
                         with open("streams/" + subreddit_name + '.json', 'w+') as outfile:
                             json.dump(data, outfile, indent=4)
                             await message.channel.send(
-                            message.author.mention + ' The stream will start in a few minutes. If you delete the channel the stream will be deleted to. You can edit the channels name and perms as you please (make sure the bot can embed and message in the channel!)\n\n**This is a beta feature and will probably go offine at some point till we have ironed out all the bugs!**')
+                            message.author.mention + ' The stream will start in a few minutes. If you delete the channel the stream will be deleted to. You can edit the channels name and perms as you please (make sure the bot can embed and message in the channel!)\n\n**This is a beta feature and will probably go offine at some point till we has ironed out all the bugs!**')
             except AttributeError:
                 await message.channel.send('Your in a dm or there was a error')
                 
@@ -321,10 +321,7 @@ async def on_message(message):
         user_id = str(message.author.id)
         success = None
         try:
-            with open("useessage.author.mention + 'You have been sent a code on reddit. Do `!code [code]` to connect your account, if you have already have a connected account, it was removed')
-
-    if message.content.startswith('!code'):
-        userrs/" + user_id + '.json') as user_data:
+            with open("users/" + user_id + '.json') as user_data:
                 user_info = json.load(user_data)
                 if user_info["connected"] == True:
                     await message.channel.send(message.author.mention + " You already have a connected account!")
