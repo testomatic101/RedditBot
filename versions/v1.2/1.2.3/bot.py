@@ -23,6 +23,8 @@ red = 0xFF0000
 black_list = ["gory", "watchpeopledie", "gore", "WPDtalk"]
 
 
+
+
 @client.event
 async def on_message(message):
     # admin commands:
@@ -43,8 +45,6 @@ async def on_message(message):
         await message.channel.send(message.author.mention + ' thanks for the feedback! If you want to tell it to the devs face, do that here: discord.gg/ZmyYxQg.')
 
 
-
-    # user commands:
     if message.content.startswith('!help'):
         help = discord.Embed(title="Help:",
                              description="**Welcome to the help page, here you can see all the commands Reddit has to offer**",
