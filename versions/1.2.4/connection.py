@@ -18,10 +18,8 @@ class connection(commands.Cog):
     @commands.command()
     async def connect(self, ctx, username=None):
         reddit = praw.Reddit(client_id='MYX2-K7jabb3LA',
-                     client_secret="gy6XLBwv_AcRcUZm_fN6Ef-n0Hs",
-                     password='Redtrucke2',
-                     user_agent='reddit',
-                     username='TheRedditBotDiscord')
+                             client_secret='gy6XLBwv_AcRcUZm_fN6Ef-n0Hs',
+                             user_agent='redditbot')
         
         user_r = reddit.redditor(username)
 
@@ -99,10 +97,8 @@ class connection(commands.Cog):
                 await loadingMessage.edit(embed=loading)
 
                 reddit = praw.Reddit(client_id='MYX2-K7jabb3LA',
-                     client_secret="gy6XLBwv_AcRcUZm_fN6Ef-n0Hs",
-                     password='Redtrucke2',
-                     user_agent='reddit',
-                     username='TheRedditBotDiscord')
+                                     client_secret='gy6XLBwv_AcRcUZm_fN6Ef-n0Hs',
+                                     user_agent='redditbot')
 
                 loading = discord.Embed(title='', color=red)
                 loading.add_field(name='Loading...', value='<a:loading:650579775433474088> Getting your profile info...')
@@ -116,6 +112,14 @@ class connection(commands.Cog):
                 user = discord.Embed(title='u/' + user_r.name + ' info:', color=red)
                 user.add_field(name='Karma:', value=user_r.comment_karma, inline=False)
                 user.add_field(name='Link karma:', value=user_r.link_karma, inline=False)
+                user.add_field(name='All karma:', value=user_r.link_karma + user_r.comment_karma, inline=False)
+                user.add_field(name='Cake Day:',
+                               value=datetime.datetime.fromtimestamp(int(user_r.created)).strftime('%m/%d/%Y'),
+                               inline=False)
+                trophies = []
+                for trophy in user_r.trophies():
+                    trophies.append(trophy.name)
+                user.add_field(name='Trophies:', value=str(trophies), inline=False)
 
                 user.set_author(name="RedditBot", icon_url="https://i.redd.it/rq36kl1xjxr01.png")
                 user.set_thumbnail(url=user_r.icon_img)

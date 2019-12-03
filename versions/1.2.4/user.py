@@ -38,7 +38,7 @@ class user(commands.Cog):
             trophies = []
             for trophy in user_r.trophies():
                 trophies.append(trophy.name)
-            user.add_field(name='Trophies:', value=trophies, inline=False)
+            user.add_field(name='Trophies:', value=str(trophies), inline=False)
 
             if user_r.is_employee:
                 user.add_field(name='This user is a employee of reddit', inline=False)
