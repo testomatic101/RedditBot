@@ -39,7 +39,7 @@ class user(commands.Cog):
             user.add_field(name='Trophies:', value=str(trophies), inline=False)
 
             if user_r.is_employee:
-                user.add_field(name='This user is a employee of reddit', inline=False)
+                user.add_field(name='This user', value='is an employee of reddit', inline=False)
 
             user.set_author(name="RedditBot", icon_url="https://i.redd.it/rq36kl1xjxr01.png")
             user.set_thumbnail(url=user_r.icon_img)
