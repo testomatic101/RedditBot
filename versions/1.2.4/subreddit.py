@@ -18,10 +18,10 @@ class subreddit(commands.Cog):
             loadingMessage = await ctx.send(embed=loading)
 
             reddit = praw.Reddit(client_id='HV16ttsYvjsrRw',
-                                 client_secret="StcBK-8Ml-VXM83xFFb0teO5ElM",
-                                 password='Redtrucke2',
-                                 user_agent='reddit',
-                                 username='TheRedditBotDiscord')
+                     client_secret="gy6XLBwv_AcRcUZm_fN6Ef-n0Hs",
+                     password='Redtrucke2',
+                     user_agent='reddit',
+                     username='TheRedditBotDiscord')
 
             subreddit = reddit.subreddit(subreddit_name)  # makes subreddit
             mods = ''
