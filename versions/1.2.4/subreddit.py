@@ -17,7 +17,7 @@ class subreddit(commands.Cog):
             loading.add_field(name='Loading...', value='<a:loading:650579775433474088> Contacting reddit servers...')
             loadingMessage = await ctx.send(embed=loading)
 
-            reddit = praw.Reddit(client_id='HV16ttsYvjsrRw',
+            reddit = praw.Reddit(client_id='MYX2-K7jabb3LA',
                      client_secret="gy6XLBwv_AcRcUZm_fN6Ef-n0Hs",
                      password='Redtrucke2',
                      user_agent='reddit',
