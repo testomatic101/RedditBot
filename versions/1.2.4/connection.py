@@ -17,7 +17,7 @@ class connection(commands.Cog):
 
     @commands.command()
     async def connect(self, ctx, username=None):
-        reddit = praw.Reddit(client_id='HV16ttsYvjsrRw',
+        reddit = praw.Reddit(client_id='MYX2-K7jabb3LA',
                      client_secret="gy6XLBwv_AcRcUZm_fN6Ef-n0Hs",
                      password='Redtrucke2',
                      user_agent='reddit',
