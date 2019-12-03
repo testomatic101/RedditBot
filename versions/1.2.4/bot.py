@@ -2,10 +2,8 @@ from discord.ext import commands
 import discord
 import praw
 reddit = praw.Reddit(client_id='MYX2-K7jabb3LA',
-                     client_secret="gy6XLBwv_AcRcUZm_fN6Ef-n0Hs",
-                     password='Redtrucke2',
-                     user_agent='reddit',
-                     username='TheRedditBotDiscord')
+                     client_secret='gy6XLBwv_AcRcUZm_fN6Ef-n0Hs',
+                     user_agent='redditbot created by bwac#2517')
 bot = commands.Bot(command_prefix='!')
 
 version = '1.2.4 (patch 1) Created by bwac#2517'

@@ -2,45 +2,12 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="7829b319-422a-403e-a069-1fa549835f17" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/discord.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/versions/1.2.4/bot.py" beforeDir="false" afterPath="$PROJECT_DIR$/versions/1.2.4/bot.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/versions/1.2.4/connection.py" beforeDir="false" afterPath="$PROJECT_DIR$/versions/1.2.4/connection.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/versions/1.2.4/subreddit.py" beforeDir="false" afterPath="$PROJECT_DIR$/versions/1.2.4/subreddit.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/versions/1.2.4/user.py" beforeDir="false" afterPath="$PROJECT_DIR$/versions/1.2.4/user.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/versions/v1.2/1.2.4/bot.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/versions/v1.2/1.2.4/stream.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/versions/v1.2/1.2.4/users/104953382812303360.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/versions/v1.2/1.2.4/users/158049329150427136.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/versions/v1.2/1.2.4/users/240264004457594880.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/versions/v1.2/1.2.4/users/253912048944021508.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/versions/v1.2/1.2.4/users/329453311277400064.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/versions/v1.2/1.2.4/users/340954130103140353.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/versions/v1.2/1.2.4/users/347076261954322432.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/versions/v1.2/1.2.4/users/347684165400920064.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/versions/v1.2/1.2.4/users/371039316480098307.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/versions/v1.2/1.2.4/users/377904903110262785.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/versions/v1.2/1.2.4/users/380462665358901268.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/versions/v1.2/1.2.4/users/393137628083388430.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/versions/v1.2/1.2.4/users/394072523928764417.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/versions/v1.2/1.2.4/users/405704613866635266.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/versions/v1.2/1.2.4/users/408355239108935681.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/versions/v1.2/1.2.4/users/415873707689377802.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/versions/v1.2/1.2.4/users/417261254227394560.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/versions/v1.2/1.2.4/users/431112172177850383.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/versions/v1.2/1.2.4/users/461213645322321922.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/versions/v1.2/1.2.4/users/486556803837198340.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/versions/v1.2/1.2.4/users/492463928685887498.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/versions/v1.2/1.2.4/users/500694639368732674.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/versions/v1.2/1.2.4/users/506962780255944717.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/versions/v1.2/1.2.4/users/510136217971589124.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/versions/v1.2/1.2.4/users/550072605709697072.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/versions/v1.2/1.2.4/users/550081736588001310.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/versions/v1.2/1.2.4/users/557092854770696192.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/versions/v1.2/1.2.4/users/558846968999313418.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/versions/v1.2/1.2.4/users/574330480879468633.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/versions/v1.2/1.2.4/users/580437188110450729.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/versions/v1.2/1.2.4/users/583050600984346655.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/versions/v1.2/1.2.4/users/594899803595472912.json" beforeDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -49,12 +16,12 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="FileEditorManager">
-    <leaf>
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/versions/1.2.4/bot.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="170">
-              <caret line="10" column="26" lean-forward="true" selection-start-line="10" selection-start-column="17" selection-end-line="10" selection-end-column="26" />
+            <state relative-caret-position="-603">
+              <caret line="5" column="63" selection-start-line="5" selection-start-column="63" selection-end-line="5" selection-end-column="63" />
               <folding>
                 <element signature="e#0#32#0" expanded="true" />
               </folding>
@@ -62,11 +29,35 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/versions/1.2.4/user.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="381">
-              <caret line="40" column="65" selection-start-line="40" selection-start-column="65" selection-end-line="40" selection-end-column="65" />
+            <state relative-caret-position="346">
+              <caret line="37" selection-start-line="37" selection-end-line="40" selection-end-column="79" />
+              <folding>
+                <element signature="e#0#14#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/versions/1.2.4/connection.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="264">
+              <caret line="121" column="83" selection-start-line="121" selection-start-column="83" selection-end-line="121" selection-end-column="83" />
+              <folding>
+                <element signature="e#0#14#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/versions/1.2.4/subreddit.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="264">
+              <caret line="59" selection-start-line="59" selection-end-line="59" />
               <folding>
                 <element signature="e#0#14#0" expanded="true" />
               </folding>
@@ -77,32 +68,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$USER_HOME$/AppData/Local/Programs/Python/Python37/Lib/site-packages/praw/models/reddit/redditor.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="380">
-              <caret line="176" column="12" lean-forward="true" selection-start-line="176" selection-start-column="12" selection-end-line="178" selection-end-column="41" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/versions/1.2.4/subreddit.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="68">
-              <caret line="4" column="47" selection-start-line="4" selection-start-column="47" selection-end-line="4" selection-end-column="47" />
-              <folding>
-                <element signature="e#0#14#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/versions/1.2.4/connection.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="136">
-              <caret line="8" column="47" selection-start-line="8" selection-start-column="47" selection-end-line="8" selection-end-column="47" />
-              <folding>
-                <element signature="e#0#14#0" expanded="true" />
-              </folding>
+            <state relative-caret-position="147">
+              <caret line="46" column="48" selection-start-line="46" selection-start-column="48" selection-end-line="46" selection-end-column="48" />
             </state>
           </provider>
         </entry>
@@ -123,6 +90,8 @@
       <find>name is bwac (i was dumb when signing up for reddit)</find>
       <find>ame</find>
       <find>is_employee</find>
+      <find>me</find>
+      <find>nsfw</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -133,8 +102,8 @@
       <list>
         <option value="$PROJECT_DIR$/versions/1.2.4/bot.py" />
         <option value="$PROJECT_DIR$/versions/1.2.4/subreddit.py" />
-        <option value="$PROJECT_DIR$/versions/1.2.4/connection.py" />
         <option value="$PROJECT_DIR$/versions/1.2.4/user.py" />
+        <option value="$PROJECT_DIR$/versions/1.2.4/connection.py" />
       </list>
     </option>
   </component>
@@ -153,7 +122,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -182,6 +150,7 @@
           <select />
         </subPane>
       </pane>
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -217,7 +186,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Python.bot (3)">
+  <component name="RunManager" selected="Python.user">
     <configuration name="bot (1)" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <module name="Reddit" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -344,9 +313,31 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
+    <configuration name="user" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <module name="Reddit" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/versions/1.2.4" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/versions/1.2.4/user.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
     <recent_temporary>
       <list>
         <item itemvalue="Python.bot (3)" />
+        <item itemvalue="Python.user" />
         <item itemvalue="Python.bot (1)" />
         <item itemvalue="Python.bot" />
         <item itemvalue="Python.gameUpdates" />
@@ -370,20 +361,20 @@
     <frame x="-8" y="-8" width="1296" height="1000" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info id="Favorites" side_tool="true" />
       <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.24960254" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
-      <window_info anchor="bottom" id="Version Control" />
-      <window_info anchor="bottom" id="Python Console" />
-      <window_info anchor="bottom" id="Terminal" />
-      <window_info anchor="bottom" id="Event Log" side_tool="true" />
+      <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.3298731" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" sideWeight="0.49920508" visible="true" weight="0.3298731" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" />
+      <window_info anchor="bottom" id="Version Control" order="7" />
+      <window_info anchor="bottom" id="Terminal" order="8" />
+      <window_info anchor="bottom" id="Event Log" order="9" sideWeight="0.5007949" side_tool="true" weight="0.3298731" />
+      <window_info anchor="bottom" id="Python Console" order="10" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
@@ -437,26 +428,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/versions/1.2.4/bot.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="170">
-          <caret line="10" column="26" lean-forward="true" selection-start-line="10" selection-start-column="17" selection-end-line="10" selection-end-column="26" />
-          <folding>
-            <element signature="e#0#32#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/versions/1.2.4/connection.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="136">
-          <caret line="8" column="47" selection-start-line="8" selection-start-column="47" selection-end-line="8" selection-end-column="47" />
-          <folding>
-            <element signature="e#0#14#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$USER_HOME$/AppData/Local/Programs/Python/Python37/Lib/site-packages/praw/reddit.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="279">
@@ -464,27 +435,47 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/versions/1.2.4/subreddit.py">
+    <entry file="file://$PROJECT_DIR$/versions/1.2.4/bot.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="68">
-          <caret line="4" column="47" selection-start-line="4" selection-start-column="47" selection-end-line="4" selection-end-column="47" />
+        <state relative-caret-position="-603">
+          <caret line="5" column="63" selection-start-line="5" selection-start-column="63" selection-end-line="5" selection-end-column="63" />
           <folding>
-            <element signature="e#0#14#0" expanded="true" />
+            <element signature="e#0#32#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$USER_HOME$/AppData/Local/Programs/Python/Python37/Lib/site-packages/praw/models/reddit/redditor.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="380">
-          <caret line="176" column="12" lean-forward="true" selection-start-line="176" selection-start-column="12" selection-end-line="178" selection-end-column="41" />
+        <state relative-caret-position="147">
+          <caret line="46" column="48" selection-start-line="46" selection-start-column="48" selection-end-line="46" selection-end-column="48" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/versions/1.2.4/subreddit.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="264">
+          <caret line="59" selection-start-line="59" selection-end-line="59" />
+          <folding>
+            <element signature="e#0#14#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/versions/1.2.4/user.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="381">
-          <caret line="40" column="65" selection-start-line="40" selection-start-column="65" selection-end-line="40" selection-end-column="65" />
+        <state relative-caret-position="346">
+          <caret line="37" selection-start-line="37" selection-end-line="40" selection-end-column="79" />
+          <folding>
+            <element signature="e#0#14#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/versions/1.2.4/connection.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="264">
+          <caret line="121" column="83" selection-start-line="121" selection-start-column="83" selection-end-line="121" selection-end-column="83" />
           <folding>
             <element signature="e#0#14#0" expanded="true" />
           </folding>

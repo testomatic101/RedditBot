@@ -18,10 +18,8 @@ class subreddit(commands.Cog):
             loadingMessage = await ctx.send(embed=loading)
 
             reddit = praw.Reddit(client_id='MYX2-K7jabb3LA',
-                     client_secret="gy6XLBwv_AcRcUZm_fN6Ef-n0Hs",
-                     password='Redtrucke2',
-                     user_agent='reddit',
-                     username='TheRedditBotDiscord')
+                                 client_secret='gy6XLBwv_AcRcUZm_fN6Ef-n0Hs',
+                                 user_agent='redditbot')
 
             subreddit = reddit.subreddit(subreddit_name)  # makes subreddit
             mods = ''
@@ -59,12 +57,8 @@ class subreddit(commands.Cog):
                               inline=False)
                 sub.add_field(name='\nSubscriber Count:', value=subreddit.subscribers, inline=False)
                 '''To be worked on: time'''
-                # sub.add_field(name='Created on:' , value=created_on_date, inline=False)
                 sub.add_field(name='NSFW:', value='No',
-                              inline=False)  # add variable here when i add channel nsfw checking
-                # sub.add_field(name='Mods:',
-#                              value=str(modAmount) + " mods. To see all mods do !mods r/" + subreddit_name,
- #                             inline=False)
+                              inline=False)
                 sub.set_author(name="RedditBot", icon_url="https://i.redd.it/rq36kl1xjxr01.png")
                 sub.set_thumbnail(url=subreddit.icon_img)
                 sub.set_footer(text="RedditBot " + version)
