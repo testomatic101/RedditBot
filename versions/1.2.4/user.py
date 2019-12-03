@@ -20,10 +20,8 @@ class user(commands.Cog):
             loadingMessage = await ctx.send(embed=loading)
 
             reddit = praw.Reddit(client_id='MYX2-K7jabb3LA',
-                     client_secret="gy6XLBwv_AcRcUZm_fN6Ef-n0Hs",
-                     password='Redtrucke2',
-                     user_agent='reddit',
-                     username='TheRedditBotDiscord')
+                                 client_secret='gy6XLBwv_AcRcUZm_fN6Ef-n0Hs',
+                                 user_agent='redditbot created by bwac#2517')
 
             loading = discord.Embed(title='', color=red)
             loading.add_field(name='Loading...', value='<a:loading:650579775433474088> Getting profile info...')
