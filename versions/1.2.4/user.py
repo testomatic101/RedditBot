@@ -20,7 +20,7 @@ class user(commands.Cog):
 
             reddit = praw.Reddit(client_id='HV16ttsYvjsrRw',
                                  client_secret="StcBK-8Ml-VXM83xFFb0teO5ElM",
-                                 password='Redtrucke',
+                                 password='Redtrucke2',
                                  user_agent='reddit',
                                  username='TheRedditBotDiscord')
 

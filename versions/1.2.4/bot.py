@@ -3,7 +3,7 @@ import discord
 import praw
 reddit = praw.Reddit(client_id='HV16ttsYvjsrRw',
                      client_secret="StcBK-8Ml-VXM83xFFb0teO5ElM",
-                     password='Redtrucke',
+                     password='Redtrucke2',
                      user_agent='reddit',
                      username='TheRedditBotDiscord')
 bot = commands.Bot(command_prefix='!')
@@ -65,4 +65,4 @@ if __name__ == "__main__":
         for extension in extensions:
             bot.load_extension(extension)
 
-    bot.run("")
+    bot.run("NDM3NDM5NTYyMzg2NTA1NzMw.XeTOHw.EsuRLcOh6Qbrh4PQ9F5Zb7PZWJQ")

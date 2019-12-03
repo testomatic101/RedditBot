@@ -19,7 +19,7 @@ class subreddit(commands.Cog):
 
             reddit = praw.Reddit(client_id='HV16ttsYvjsrRw',
                                  client_secret="StcBK-8Ml-VXM83xFFb0teO5ElM",
-                                 password='Redtrucke',
+                                 password='Redtrucke2',
                                  user_agent='reddit',
                                  username='TheRedditBotDiscord')
 
@@ -65,9 +65,9 @@ class subreddit(commands.Cog):
                 # sub.add_field(name='Created on:' , value=created_on_date, inline=False)
                 sub.add_field(name='NSFW:', value='No',
                               inline=False)  # add variable here when i add channel nsfw checking
-                sub.add_field(name='Mods:',
-                              value=str(modAmount) + " mods. To see all mods do !mods r/" + subreddit_name,
-                              inline=False)
+                # sub.add_field(name='Mods:',
+#                              value=str(modAmount) + " mods. To see all mods do !mods r/" + subreddit_name,
+ #                             inline=False)
                 sub.set_author(name="RedditBot", icon_url="https://i.redd.it/rq36kl1xjxr01.png")
                 sub.set_thumbnail(url=subreddit.icon_img)
                 sub.set_footer(text="RedditBot " + version)
