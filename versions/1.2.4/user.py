@@ -33,10 +33,13 @@ class user(commands.Cog):
             user.add_field(name='Link karma:', value=user_r.link_karma, inline=False)
             user.add_field(name='All karma:', value=user_r.link_karma + user_r.comment_karma, inline=False)
             user.add_field(name='Cake Day:', value=datetime.datetime.fromtimestamp(int(user_r.created)).strftime('%m/%d/%Y'), inline=False)
-            trophies = []
+            trophiestxt = ''
             for trophy in user_r.trophies():
-                trophies.append(trophy.name)
-            user.add_field(name='Trophies:', value=str(trophies), inline=False)
+                if trophiestxt == '':
+                    trophiestxt = trophy.name
+                else:
+                    trophiestxt = trophiestxt + ', ' + trophy.name
+            user.add_field(name='Trophies:', value=trophiestxt, inline=False)
 
             if user_r.is_employee:
                 user.add_field(name='This user', value='is an employee of reddit', inline=False)
