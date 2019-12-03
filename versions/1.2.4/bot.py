@@ -8,7 +8,7 @@ reddit = praw.Reddit(client_id='HV16ttsYvjsrRw',
                      username='TheRedditBotDiscord')
 bot = commands.Bot(command_prefix='!')
 
-version = '1.2.4'
+version = '1.2.4 (patch 1) Created by bwac#2517'
 red = 0xFF0000
 
 bot.remove_command('help')
@@ -59,10 +59,9 @@ async def on_ready():
 
     print('Servers connected to:')
     print(len(bot.guilds))
-
 if __name__ == "__main__":
     if __name__ == '__main__':
         for extension in extensions:
             bot.load_extension(extension)
 
-    bot.run("")
+    bot.run("NjUwNTgzNzk5MDQxNjIyMDQ2.XeV7LQ.u3-dQ82etBBUZJnY2F0rvAlP3xE")

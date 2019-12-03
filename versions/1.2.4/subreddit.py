@@ -2,7 +2,7 @@ import discord
 from discord.ext import commands
 import praw
 
-version = '1.2.4'
+version = '1.2.4 (patch 1) Created by bwac#2517'
 red = 0xFF0000
 
 class subreddit(commands.Cog):
@@ -33,12 +33,9 @@ class subreddit(commands.Cog):
                 await ctx.send(
                     ':underage: this is subreddit has been marked as nsfw! If you really what to see that, go to reddit your self!:underage:')
                 return
-            if subreddit_name in ['gore']:
+            if subreddit_name in ["gory", "watchpeopledie", "gore", "WPDtalk",]:
                 await ctx.send(
                     'Sorry ' + ctx.author.mention + 'Due to discords tos (https://discordapp.com/terms) this bot can only show very limited content content')
-                """To be worked on: time"""
-                # created_on = subreddit.created_utc
-                # created_on_date = time.strftime("%Y-%m-%d %H:%M:%S", created_on)
                 sub = discord.Embed(title='**Cant show name due to discord tos** info:', color=red)
                 sub.add_field(name='Description snippet:', value='**Cant show description due to discord tos**',
                               inline=False)
