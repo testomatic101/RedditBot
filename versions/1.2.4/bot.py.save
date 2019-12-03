@@ -1,14 +1,14 @@
-from discord.ext import commands
+xfrom discord.ext import commands
 import discord
 import praw
-reddit = praw.Reddit(client_id='MYX2-K7jabb3LA',
-                     client_secret="gy6XLBwv_AcRcUZm_fN6Ef-n0Hs",
-                     password='Redtrucke2',
+reddit = praw.Reddit(client_id='HV16ttsYvjsrRw',
+                     client_secret="StcBK-8Ml-VXM83xFFb0teO5ElM",
+                     password='Redtrucke',
                      user_agent='reddit',
                      username='TheRedditBotDiscord')
 bot = commands.Bot(command_prefix='!')
 
-version = '1.2.4 (patch 1) Created by bwac#2517'
+version = '1.2.4'
 red = 0xFF0000
 
 bot.remove_command('help')
@@ -59,6 +59,7 @@ async def on_ready():
 
     print('Servers connected to:')
     print(len(bot.guilds))
+
 if __name__ == "__main__":
     if __name__ == '__main__':
         for extension in extensions:

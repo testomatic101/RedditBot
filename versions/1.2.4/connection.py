@@ -17,12 +17,12 @@ class connection(commands.Cog):
 
     @commands.command()
     async def connect(self, ctx, username=None):
-        reddit = praw.Reddit(client_id='HV16ttsYvjsrRw',
-                             client_secret="StcBK-8Ml-VXM83xFFb0teO5ElM",
-                             password='Redtrucke',
-                             user_agent='reddit',
-                             username='TheRedditBotDiscord')
-
+        reddit = praw.Reddit(client_id='MYX2-K7jabb3LA',
+                     client_secret="gy6XLBwv_AcRcUZm_fN6Ef-n0Hs",
+                     password='Redtrucke2',
+                     user_agent='reddit',
+                     username='TheRedditBotDiscord')
+        
         user_r = reddit.redditor(username)
 
         code = 0
@@ -98,11 +98,11 @@ class connection(commands.Cog):
                 loading.add_field(name='Loading...', value='<a:loading:650579775433474088> Contacting reddit servers...')
                 await loadingMessage.edit(embed=loading)
 
-                reddit = praw.Reddit(client_id='HV16ttsYvjsrRw',
-                                     client_secret="StcBK-8Ml-VXM83xFFb0teO5ElM",
-                                     password='Redtrucke',
-                                     user_agent='reddit',
-                                     username='TheRedditBotDiscord')
+                reddit = praw.Reddit(client_id='MYX2-K7jabb3LA',
+                     client_secret="gy6XLBwv_AcRcUZm_fN6Ef-n0Hs",
+                     password='Redtrucke2',
+                     user_agent='reddit',
+                     username='TheRedditBotDiscord')
 
                 loading = discord.Embed(title='', color=red)
                 loading.add_field(name='Loading...', value='<a:loading:650579775433474088> Getting your profile info...')
