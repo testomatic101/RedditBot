@@ -91,8 +91,9 @@ class user(commands.Cog):
                 emoji = ''
                 if trophy.name in trophyEmojis:
                     emoji = trophyEmojis.get(trophy.name)
-                if len(trophiestxt) > 950:
-                    trophiestxt = trophiestxt + 'All the trophies are too long to send in a discord embed value'
+                if len(trophiestxt) > 900:
+                    trophiestxt = trophiestxt + 'All the trophies are too long to send in a discord embed value so I ' \
+                                                'shortened them '
                     break
                 trophiestxt = trophiestxt + emoji + trophy.name + '\n'
             user.add_field(name='Trophies:', value=trophiestxt, inline=False)
