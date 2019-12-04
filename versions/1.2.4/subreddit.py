@@ -1,6 +1,7 @@
 import discord
 from discord.ext import commands
 import praw
+import datetime
 
 version = '1.2.4 (patch 1) Created by bwac#2517'
 red = 0xFF0000
@@ -31,16 +32,17 @@ class subreddit(commands.Cog):
                 await ctx.send(
                     ':underage: this is subreddit has been marked as nsfw! If you really what to see that, go to reddit your self!:underage:')
                 return
-            if subreddit_name in ["gory", "watchpeopledie", "gore", "WPDtalk",]:
+            if subreddit_name in ["gory", "watchpeopledie", "gore", "WPDtalk"]:
                 await ctx.send(
                     'Sorry ' + ctx.author.mention + 'Due to discords tos (https://discordapp.com/terms) this bot can only show very limited content content')
                 sub = discord.Embed(title='**Cant show name due to discord tos** info:', color=red)
-                sub.add_field(name='Description snippet:', value='**Cant show description due to discord tos**',
+                sub.add_field(name='Short Description:', value='**Cant show description due to discord tos**',
                               inline=False)
                 sub.add_field(name='Subscriber Count:', value=subreddit.subscribers, inline=False)
-                '''To be worked on: time'''
-                # sub.add_field(name='Created on:' , value=created_on_date, inline=False)
-                sub.add_field(name='NSFW:', value='No but is on the black list for subs that violate the tos',
+
+                datetime.datetime.fromtimestamp(int(subreddit.created_utc)).strftime('%m/%d/%Y')
+
+                sub.add_field(name='NSFW:', value='No, but is on the black list for subs that violate the discord tos',
                               inline=False)  # add variable here when i add channel nsfw checking
                 sub.set_author(name="RedditBot", icon_url="https://i.redd.it/rq36kl1xjxr01.png")
                 sub.set_footer(text="RedditBot " + version)
@@ -49,12 +51,12 @@ class subreddit(commands.Cog):
                 subreddit_description = subreddit.description
                 subreddit_description = subreddit_description[:300]
                 """To be worked on: time"""
-                # created_on = subreddit.created_utc
-                # created_on_date = time.strftime("%Y-%m-%d %H:%M:%S", created_on)
+
+                datetime.datetime.fromtimestamp(int(subreddit.created_utc)).strftime('%m/%d/%Y')
+
                 sub = discord.Embed(title='r/' + subreddit_name + ' info:', color=red)
-                sub.add_field(name='\nDescription snippet:',
-                              value=subreddit_description,
-                              inline=False)
+                sub.add_field(name='\nSmall Description:', value=subreddit.public_description, inline=False)
+
                 sub.add_field(name='\nSubscriber Count:', value=subreddit.subscribers, inline=False)
                 '''To be worked on: time'''
                 sub.add_field(name='NSFW:', value='No',
