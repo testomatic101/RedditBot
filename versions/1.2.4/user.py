@@ -3,7 +3,7 @@ from discord.ext import commands
 import praw
 import datetime
 
-version = '1.2.4 (patch 1) Created by bwac#2517'
+version = '1.2.4 (patch 2) Created by bwac#2517'
 red = 0xFF0000
 
 trophyEmojis = {

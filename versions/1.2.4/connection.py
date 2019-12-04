@@ -6,7 +6,7 @@ import datetime
 import json
 import os
 
-version = '1.2.4 (patch 1) Created by bwac#2517'
+version = '1.2.4 (patch 2) Created by bwac#2517'
 red = 0xFF0000
 
 trophyEmojis = {
@@ -79,7 +79,7 @@ class connection(commands.Cog):
         data = {
             "registered": str(datetime.datetime.now()),
             "reddit name": username,
-            "discord name": ctx.author.tag,
+            "discord name": ctx.author.name,
             "discord id": ctx.author.id,
             "code": code,
             "connected": False,
@@ -191,8 +191,8 @@ class connection(commands.Cog):
                 await loadingMessage.edit(embed=user)
 
                 # Update user info if changed
-                if user_info["discord name"] != ctx.author.tag:
-                    user_info["discord name"] = ctx.author.tag
+                if user_info["discord name"] != ctx.author.name:
+                    user_info["discord name"] = ctx.author.name
 
                     with open("users/" + str(ctx.author.id) + '.json', 'w+') as outfile:
                         json.dump(user_info, outfile, indent=4)

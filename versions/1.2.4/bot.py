@@ -6,7 +6,7 @@ reddit = praw.Reddit(client_id='MYX2-K7jabb3LA',
                      user_agent='redditbot created by bwac#2517')
 bot = commands.Bot(command_prefix='!')
 
-version = '1.2.4 (patch 1) Created by bwac#2517'
+version = '1.2.4 (patch 2) Created by bwac#2517'
 red = 0xFF0000
 
 bot.remove_command('help')
