@@ -146,6 +146,8 @@ class connection(commands.Cog):
                 loading = discord.Embed(title='', color=red)
                 loading.add_field(name='Loading...',
                                   value='<a:loading:650579775433474088> Contacting reddit servers...')
+                loading.set_footer(text="if it never loads, something is probably wrong with your connected account. "
+                                        "Try !unconnect then reconnect then try again")
                 await loadingMessage.edit(embed=loading)
 
                 reddit = praw.Reddit(client_id='MYX2-K7jabb3LA',

@@ -105,7 +105,10 @@ class user(commands.Cog):
             user.set_footer(text="RedditBot " + version)
             await loadingMessage.edit(embed=user)
         else:
-            await ctx.send("Sorry, you didn't give a user!")
+            error = discord.Embed(title="You didn't give a subreddit!\n\nYou should use this command like:\n!r/ ["
+                                        "subreddit name]", color=red)
+            error.set_footer(text=version)
+            await ctx.send(embed=error)
 
 
 def setup(bot):

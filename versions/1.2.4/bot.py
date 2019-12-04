@@ -18,7 +18,10 @@ async def help(ctx):
                          description="**Welcome to the help page, here you can see all the commands RedditBot has to offer**",
                          color=red)
     help.add_field(name="Help support the bot with a vote", value='http://bit.ly/redditDiscordVote', inline=False)
+    help.add_field(name="Help support the bot by donating", value='https://donatebot.io/checkout/611147519317245992', inline=False)
+    help.add_field(name="Please give your feedback!", value="with the !feedback [feedback] command!", inline=False)
     help.add_field(name="!help", value="Shows this page", inline=False)
+
     help.add_field(name="!feedback [feed back here]", value="Give your feed back to the dev", inline=False)
     help.add_field(name="!r/ [sub name here]", value="Gives you some info on a subreddit", inline=False)
     help.add_field(name="!u/ [username here]", value="Gives you some info on a user", inline=False)
@@ -34,7 +37,6 @@ async def help(ctx):
     help_user.set_footer(text="RedditBot " + version)
     await ctx.author.send(embed=help)
     await ctx.author.send(embed=help_user)
-    await ctx.author.send('Please give your feedback with the !feedback [feedback] command!')
 bot.add_command(help)
 
 
