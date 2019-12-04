@@ -6,7 +6,7 @@ import datetime
 import json
 import os
 
-version = '1.2.4 (patch 2) Created by bwac#2517'
+version = '1.2.4 (patch 3) Created by bwac#2517'
 red = 0xFF0000
 
 trophyEmojis = {
