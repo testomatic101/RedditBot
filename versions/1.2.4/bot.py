@@ -10,11 +10,14 @@ version = '1.2.4 (patch 1) Created by bwac#2517'
 red = 0xFF0000
 
 bot.remove_command('help')
+
+
 @commands.command(name='help')
 async def help(ctx):
     help = discord.Embed(title="Help:",
                          description="**Welcome to the help page, here you can see all the commands RedditBot has to offer**",
                          color=red)
+    help.add_field(name="Help support the bot with a vote", value='http://bit.ly/redditDiscordVote', inline=False)
     help.add_field(name="!help", value="Shows this page", inline=False)
     help.add_field(name="!feedback [feed back here]", value="Give your feed back to the dev", inline=False)
     help.add_field(name="!r/ [sub name here]", value="Gives you some info on a subreddit", inline=False)
@@ -31,9 +34,9 @@ async def help(ctx):
     help_user.set_footer(text="RedditBot " + version)
     await ctx.author.send(embed=help)
     await ctx.author.send(embed=help_user)
-    await ctx.author.send(
-        "Give your feedback with the !feedback command! \n\nLike the bot? Support it with a vote! http://bit.ly/redditDiscordVote")
+    await ctx.author.send('Please give your feedback with the !feedback [feedback] command!')
 bot.add_command(help)
+
 
 @commands.command()
 async def feedback(ctx, feedback=None):

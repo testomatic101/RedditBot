@@ -107,5 +107,6 @@ class user(commands.Cog):
         else:
             await ctx.send("Sorry, you didn't give a user!")
 
+
 def setup(bot):
     bot.add_cog(user(bot))

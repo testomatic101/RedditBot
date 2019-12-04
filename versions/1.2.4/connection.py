@@ -59,6 +59,7 @@ trophyEmojis = {
     "Rally Monkey": "<:represent:651655848086470666>"
 }
 
+
 class connection(commands.Cog):
     def __init__(self, bot):
         self.bot = bot
@@ -69,7 +70,7 @@ class connection(commands.Cog):
         reddit = praw.Reddit(client_id='MYX2-K7jabb3LA',
                              client_secret='gy6XLBwv_AcRcUZm_fN6Ef-n0Hs',
                              user_agent='redditbot')
-        
+
         user_r = reddit.redditor(username)
 
         code = 0
@@ -78,7 +79,7 @@ class connection(commands.Cog):
         data = {
             "registered": str(datetime.datetime.now()),
             "reddit name": username,
-            "discord name": ctx.author.name,
+            "discord name": ctx.author.tag,
             "discord id": ctx.author.id,
             "code": code,
             "connected": False,
@@ -89,9 +90,10 @@ class connection(commands.Cog):
             json.dump(data, outfile, indent=4)
         reddit.redditor(username).message('Discord user ' + data[
             "discord name"] + ' has tryed to connect to your discord account. Your code for Reddit',
-                                           'This is your code: ' + str(
-                                               code) + '\n\nIf you are being spammed by codes, dm me here: https://discord.gg/ZmyYxQg')
-        await ctx.author.send('You have been sent a code on reddit. Do `!code [code]` to connect your account, if you have already have a connected account, it was removed')
+                                          'This is your code: ' + str(
+                                              code) + '\n\nIf you are being spammed by codes, dm me here: https://discord.gg/ZmyYxQg')
+        await ctx.author.send('You have been sent a code on reddit. Do `!code [code]` to connect your account, '
+                              'if you have already have a connected account, it was removed')
 
     @commands.command()
     async def unconnect(self, ctx):
@@ -109,7 +111,7 @@ class connection(commands.Cog):
         try:
             with open("users/" + user_id + '.json') as user_data:
                 user_info = json.load(user_data)
-                if user_info["connected"] == True:
+                if user_info["connected"]:
                     await ctx.channel.send(ctx.author.mention + " You already have a connected account!")
                     return
                 elif str(user_info["code"]) == code:
@@ -117,7 +119,7 @@ class connection(commands.Cog):
         except FileNotFoundError:
             await ctx.channel.send(ctx.author.mention + " You haven't requested a code!")
             return
-        if success == True:
+        if success:
             filename = "users/" + user_id + '.json'
             with open(filename, 'r') as f:
                 data = json.load(f)
@@ -142,7 +144,8 @@ class connection(commands.Cog):
                 user_info = json.load(user_data)
 
                 loading = discord.Embed(title='', color=red)
-                loading.add_field(name='Loading...', value='<a:loading:650579775433474088> Contacting reddit servers...')
+                loading.add_field(name='Loading...',
+                                  value='<a:loading:650579775433474088> Contacting reddit servers...')
                 await loadingMessage.edit(embed=loading)
 
                 reddit = praw.Reddit(client_id='MYX2-K7jabb3LA',
@@ -150,11 +153,12 @@ class connection(commands.Cog):
                                      user_agent='redditbot')
 
                 loading = discord.Embed(title='', color=red)
-                loading.add_field(name='Loading...', value='<a:loading:650579775433474088> Getting your profile info...')
+                loading.add_field(name='Loading...',
+                                  value='<a:loading:650579775433474088> Getting your profile info...')
                 await loadingMessage.edit(embed=loading)
 
                 user_r = reddit.redditor(user_info['reddit name'])  # makes user
-                if user_info["connected"] == False:
+                if not user_info["connected"]:
                     await ctx.channel.send(ctx.author.mention + ' No connected account')
                     return
 
@@ -185,13 +189,14 @@ class connection(commands.Cog):
                 await loadingMessage.edit(embed=user)
 
                 # Update user info if changed
-                if user_info["discord name"] != ctx.author.name:
-                    user_info["discord name"] = ctx.author.name
+                if user_info["discord name"] != ctx.author.tag:
+                    user_info["discord name"] = ctx.author.tag
 
                     with open("users/" + str(ctx.author.id) + '.json', 'w+') as outfile:
                         json.dump(user_info, outfile, indent=4)
         except FileNotFoundError:
             await loadingMessage.edit(ctx.author.mention + ' No connected account')
+
 
 def setup(bot):
     bot.add_cog(connection(bot))

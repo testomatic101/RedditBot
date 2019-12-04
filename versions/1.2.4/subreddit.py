@@ -6,6 +6,7 @@ import datetime
 version = '1.2.4 (patch 1) Created by bwac#2517'
 red = 0xFF0000
 
+
 class subreddit(commands.Cog):
     def __init__(self, bot):
         self.bot = bot
@@ -65,6 +66,7 @@ class subreddit(commands.Cog):
                 sub.set_thumbnail(url=subreddit.icon_img)
                 sub.set_footer(text="RedditBot " + version)
                 await loadingMessage.edit(embed=sub)
+
 
 def setup(bot):
     bot.add_cog(subreddit(bot))
