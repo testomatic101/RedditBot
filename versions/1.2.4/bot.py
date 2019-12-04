@@ -28,7 +28,7 @@ async def help(ctx):
 
     help_user = discord.Embed(title="User commands:",
                               description="**Commands to add accounts and account management**", color=red)
-    help_user.add_field(name="!connect u/[user name here]", value="Connect a reddit connect", inline=False)
+    help_user.add_field(name="!connect [user name here]", value="Connect a reddit connect", inline=False)
     help_user.add_field(name="!unconnect", value="Unconnect the reddit account that you have connected",
                         inline=False)
     help_user.add_field(name="!code", value="Submit the code you got from reddit", inline=False)
