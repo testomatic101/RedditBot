@@ -50,6 +50,10 @@ async def feedback(ctx, feedback=None):
         ctx.send('No feedback given. !feedback [feedback here]')
 bot.add_command(feedback)
 
+@commands.command()
+async def update(ctx):
+    await bot.change_presence(status=discord.Status.do_not_disturb, activity=discord.Game(name="!help | In " + str(len(bot.guilds)) + " servers"))
+
 extensions = ["user", "subreddit", "connection"]
 
 
@@ -62,6 +66,8 @@ async def on_ready():
 
     print('Servers connected to:')
     print(len(bot.guilds))
+
+    await bot.change_presence(status=discord.Status.do_not_disturb, activity=discord.Game(name="!help | In " + str(len(bot.guilds)) + " servers"))
 if __name__ == "__main__":
     if __name__ == '__main__':
         for extension in extensions:
