@@ -62,4 +62,4 @@ if __name__ == "__main__":
         for extension in extensions:
             bot.load_extension(extension)
 
-    bot.run("NDM3NDM5NTYyMzg2NTA1NzMw.XeTOHw.EsuRLcOh6Qbrh4PQ9F5Zb7PZWJQ")
+    bot.run("NDM3NDM5NTYyMzg2NTA1NzMw.Xede3A.x8tTiwnZt4VTm_GniqofMe1wGQU")
