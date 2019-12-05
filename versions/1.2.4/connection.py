@@ -139,6 +139,7 @@ class connection(commands.Cog):
 
         user_id = str(ctx.author.id)
 
+
         try:
             with open("users/" + user_id + '.json') as user_data:
                 user_info = json.load(user_data)
@@ -157,6 +158,7 @@ class connection(commands.Cog):
                 loading = discord.Embed(title='', color=red)
                 loading.add_field(name='Loading...',
                                   value='<a:loading:650579775433474088> Getting your profile info...')
+                loading.set_footer(text="if it never loads, something went wrong behind the scenes")
                 await loadingMessage.edit(embed=loading)
 
                 user_r = reddit.redditor(user_info['reddit name'])  # makes user

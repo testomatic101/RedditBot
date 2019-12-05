@@ -65,10 +65,9 @@ class user(commands.Cog):
     @commands.command(name='u/')
     async def user(self, ctx, username=None):
         if username:
-            letterCount = 0
-
             loading = discord.Embed(title='', ncolor=red)
             loading.add_field(name='Loading...', value='<a:loading:650579775433474088> Contacting reddit servers...')
+            loading.set_footer(text="if it never loads, RedditBot can't find the user")
             loadingMessage = await ctx.send(embed=loading)
 
             reddit = praw.Reddit(client_id='MYX2-K7jabb3LA',
@@ -77,6 +76,7 @@ class user(commands.Cog):
 
             loading = discord.Embed(title='', color=red)
             loading.add_field(name='Loading...', value='<a:loading:650579775433474088> Getting profile info...')
+            loading.set_footer(text="if it never loads, something went wrong behind the scenes")
             await loadingMessage.edit(embed=loading)
 
             user_r = reddit.redditor(username)  # makes user
