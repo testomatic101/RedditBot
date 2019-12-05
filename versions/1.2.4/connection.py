@@ -6,7 +6,7 @@ import datetime
 import json
 import os
 
-version = '1.2.4 (patch 3) Created by bwac#2517'
+version = '1.2.4 (patch 4) Created by bwac#2517'
 red = 0xFF0000
 
 trophyEmojis = {
@@ -91,7 +91,8 @@ class connection(commands.Cog):
         reddit.redditor(username).message('Discord user ' + data[
             "discord name"] + ' has tryed to connect to your discord account. Your code for Reddit',
                                           'This is your code: ' + str(
-                                              code) + '\n\nIf you are being spammed by codes, dm me here: https://discord.gg/ZmyYxQg')
+                                              code) + '\n\nIf you are being spammed by codes, dm me here: '
+                                                      'https://discord.gg/ZmyYxQg')
         await ctx.author.send('You have been sent a code on reddit. Do `!code [code]` to connect your account, '
                               'if you have already have a connected account, it was removed')
 
@@ -167,9 +168,9 @@ class connection(commands.Cog):
                     return
 
                 user = discord.Embed(title='u/' + user_r.name + ' info:', color=red)
-                user.add_field(name='Karma:', value=user_r.comment_karma, inline=False)
-                user.add_field(name='Link karma:', value=user_r.link_karma, inline=False)
-                user.add_field(name='All karma:', value=user_r.link_karma + user_r.comment_karma, inline=False)
+                user.add_field(name='Karma:', value=user_r.comment_karma)
+                user.add_field(name='Link karma:', value=user_r.link_karma)
+                user.add_field(name='All karma:', value=user_r.link_karma + user_r.comment_karma)
                 user.add_field(name='Cake Day:',
                                value=datetime.datetime.fromtimestamp(int(user_r.created)).strftime('%m/%d/%Y'),
                                inline=False)
@@ -182,10 +183,10 @@ class connection(commands.Cog):
                         trophiestxt = trophiestxt + 'All the trophies are too long to send in a discord embed value'
                         break
                     trophiestxt = trophiestxt + emoji + trophy.name + '\n'
-                user.add_field(name='Trophies:', value=trophiestxt, inline=False)
+                user.add_field(name='Trophies:', value=trophiestxt)
 
                 if user_r.is_employee:
-                    user.add_field(name='You are', value='an employee of reddit!', inline=False)
+                    user.add_field(name='You are', value='an employee of reddit!')
 
                 user.set_author(name="RedditBot", icon_url="https://i.redd.it/rq36kl1xjxr01.png")
                 user.set_thumbnail(url=user_r.icon_img)

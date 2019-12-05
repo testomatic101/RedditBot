@@ -3,7 +3,7 @@ from discord.ext import commands
 import praw
 import datetime
 
-version = '1.2.4 (patch 3) Created by bwac#2517'
+version = '1.2.4 (patch 4) Created by bwac#2517'
 red = 0xFF0000
 
 trophyEmojis = {
@@ -81,10 +81,12 @@ class user(commands.Cog):
 
             user_r = reddit.redditor(username)  # makes user
             user = discord.Embed(title='u/' + user_r.name + ' info:', color=red)
-            user.add_field(name='Karma:', value=user_r.comment_karma, inline=False)
-            user.add_field(name='Link karma:', value=user_r.link_karma, inline=False)
-            user.add_field(name='All karma:', value=user_r.link_karma + user_r.comment_karma, inline=False)
-            user.add_field(name='Cake Day:', value=datetime.datetime.fromtimestamp(int(user_r.created)).strftime('%m/%d/%Y'), inline=False)
+            user.add_field(name='Karma:', value=user_r.comment_karma)
+            user.add_field(name='Link karma:', value=user_r.link_karma)
+            user.add_field(name='All karma:', value=user_r.link_karma + user_r.comment_karma)
+            user.add_field(name='Cake Day:', value=datetime.datetime.fromtimestamp(int(user_r.created)).strftime('%m'
+                                                                                                                 '/%d'
+                                                                                                                 '/%Y'))
 
             trophiestxt = ''
             for trophy in user_r.trophies():
@@ -96,7 +98,7 @@ class user(commands.Cog):
                                                 'shortened them '
                     break
                 trophiestxt = trophiestxt + emoji + trophy.name + '\n'
-            user.add_field(name='Trophies:', value=trophiestxt, inline=False)
+            user.add_field(name='Trophies:', value=trophiestxt)
 
             if user_r.is_employee:
                 user.add_field(name='This user', value='is an employee of reddit', inline=False)

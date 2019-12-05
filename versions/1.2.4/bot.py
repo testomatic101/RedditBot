@@ -6,7 +6,7 @@ reddit = praw.Reddit(client_id='MYX2-K7jabb3LA',
                      user_agent='redditbot created by bwac#2517')
 bot = commands.Bot(command_prefix='!')
 
-version = '1.2.4 (patch 3) Created by bwac#2517'
+version = '1.2.4 (patch 4) Created by bwac#2517'
 red = 0xFF0000
 
 bot.remove_command('help')
@@ -15,7 +15,8 @@ bot.remove_command('help')
 @commands.command(name='help')
 async def help(ctx):
     help = discord.Embed(title="Help:",
-                         description="**Welcome to the help page, here you can see all the commands RedditBot has to offer**",
+                         description="**Welcome to the help page, here you can see all the commands RedditBot has to "
+                                     "offer**",
                          color=red)
     help.add_field(name="Help support the bot with a vote", value='http://bit.ly/redditDiscordVote', inline=False)
     help.add_field(name="Help support the bot by donating", value='https://donatebot.io/checkout/611147519317245992', inline=False)
@@ -45,7 +46,8 @@ async def feedback(ctx, feedback=None):
     if feedback:
         reddit.redditor('-_-BWAC-_-').message('FeedBack sent by ' + ctx.author.name + '#' + ctx.author.discriminator,
                                               feedback + '\n\nUser Info: \nID: ' + str(ctx.author.id))
-        await ctx.author.send('Thanks for the feedback! Hopefully we can get back to you on that. If you want to tell it to the devs face, do that here: discord.gg/62GSYwN.')
+        await ctx.author.send('Thanks for the feedback! Hopefully we can get back to you on that. If you want to tell '
+                              'it to the devs face, do that here: discord.gg/62GSYwN.')
     else:
         ctx.send('No feedback given. !feedback [feedback here]')
 bot.add_command(feedback)
@@ -55,7 +57,7 @@ async def update(ctx):
     await bot.change_presence(status=discord.Status.do_not_disturb, activity=discord.Game(name="!help | In " + str(len(bot.guilds)) + " servers"))
 bot.add_command(update)
 
-extensions = ["user", "subreddit", "connection"]
+extensions = ["user", "subreddit", "connection", "topgg"]
 
 
 @bot.event
@@ -73,5 +75,6 @@ if __name__ == "__main__":
     if __name__ == '__main__':
         for extension in extensions:
             bot.load_extension(extension)
-    #NDM3NDM5NTYyMzg2NTA1NzMw.Xede3A.x8tTiwnZt4VTm_GniqofMe1wGQU
-    bot.run("NjUwNTgzNzk5MDQxNjIyMDQ2.XegePg.9AsWwPevhV6QrSG-Dk0SecyrqLw")
+    #NjUwNTgzNzk5MDQxNjIyMDQ2.XegePg.9AsWwPevhV6QrSG-Dk0SecyrqLw
+    #NDM3NDM5NTYyMzg2NTA1NzMw.XemCLQ.xeC39YxL2O1gLfAH1bgnDa5JQsg
+    bot.run("NDM3NDM5NTYyMzg2NTA1NzMw.XemCLQ.xeC39YxL2O1gLfAH1bgnDa5JQsg")
