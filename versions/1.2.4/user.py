@@ -113,6 +113,10 @@ class user(commands.Cog):
             error.set_footer(text=version)
             await ctx.send(embed=error)
 
+    @commands.command(name='u/')
+    async def achivedr(self, ctx):
+        await ctx.send('Sorry !u/ has moved to !u')
+
 
 def setup(bot):
     bot.add_cog(user(bot))

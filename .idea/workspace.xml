@@ -2,9 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="7829b319-422a-403e-a069-1fa549835f17" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/versions/1.2.4/bot.py" beforeDir="false" afterPath="$PROJECT_DIR$/versions/1.2.4/bot.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/versions/1.2.4/connection.py" beforeDir="false" afterPath="$PROJECT_DIR$/versions/1.2.4/connection.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/versions/1.2.4/subreddit.py" beforeDir="false" afterPath="$PROJECT_DIR$/versions/1.2.4/subreddit.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/versions/1.2.4/user.py" beforeDir="false" afterPath="$PROJECT_DIR$/versions/1.2.4/user.py" afterDir="false" />
     </list>
@@ -16,11 +13,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/versions/1.2.4/bot.py">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="153">
-              <caret line="9" column="25" lean-forward="true" selection-start-line="9" selection-start-column="25" selection-end-line="9" selection-end-column="25" />
+              <caret line="9" column="25" selection-start-line="9" selection-start-column="25" selection-end-line="9" selection-end-column="25" />
               <folding>
                 <element signature="e#0#32#0" expanded="true" />
               </folding>
@@ -43,7 +40,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/versions/1.2.4/connection.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="51">
+            <state relative-caret-position="-1224">
               <caret line="9" selection-start-line="9" selection-end-line="9" />
               <folding>
                 <element signature="e#0#14#0" expanded="true" />
@@ -55,8 +52,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/versions/1.2.4/subreddit.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="187">
-              <caret line="15" column="29" selection-start-line="15" selection-start-column="29" selection-end-line="15" selection-end-column="29" />
+            <state relative-caret-position="935">
+              <caret line="56" selection-start-line="56" selection-end-line="58" selection-end-column="51" />
               <folding>
                 <element signature="e#0#14#0" expanded="true" />
               </folding>
@@ -64,11 +61,11 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/versions/1.2.4/user.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1037">
-              <caret line="64" column="29" selection-start-line="64" selection-start-column="29" selection-end-line="64" selection-end-column="29" />
+            <state relative-caret-position="476">
+              <caret line="117" column="49" selection-start-line="117" selection-start-column="49" selection-end-line="117" selection-end-column="49" />
               <folding>
                 <element signature="e#0#14#0" expanded="true" />
               </folding>
@@ -114,10 +111,10 @@
         <option value="$PROJECT_DIR$/versions/1.2.4/users/566931386305609728.json" />
         <option value="$PROJECT_DIR$/versions/1.2.4/users/408355239108935681.json" />
         <option value="$PROJECT_DIR$/versions/1.2.4/connection.py" />
-        <option value="$PROJECT_DIR$/versions/1.2.4/user.py" />
-        <option value="$PROJECT_DIR$/versions/1.2.4/subreddit.py" />
         <option value="$PROJECT_DIR$/versions/1.2.4/topgg.py" />
         <option value="$PROJECT_DIR$/versions/1.2.4/bot.py" />
+        <option value="$PROJECT_DIR$/versions/1.2.4/subreddit.py" />
+        <option value="$PROJECT_DIR$/versions/1.2.4/user.py" />
       </list>
     </option>
   </component>
@@ -135,7 +132,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -171,6 +167,7 @@
           <select />
         </subPane>
       </pane>
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -544,7 +541,7 @@
     <entry file="file://$PROJECT_DIR$/versions/1.2.4/bot.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="153">
-          <caret line="9" column="25" lean-forward="true" selection-start-line="9" selection-start-column="25" selection-end-line="9" selection-end-column="25" />
+          <caret line="9" column="25" selection-start-line="9" selection-start-column="25" selection-end-line="9" selection-end-column="25" />
           <folding>
             <element signature="e#0#32#0" expanded="true" />
           </folding>
@@ -563,7 +560,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/versions/1.2.4/connection.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="51">
+        <state relative-caret-position="-1224">
           <caret line="9" selection-start-line="9" selection-end-line="9" />
           <folding>
             <element signature="e#0#14#0" expanded="true" />
@@ -573,8 +570,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/versions/1.2.4/subreddit.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="187">
-          <caret line="15" column="29" selection-start-line="15" selection-start-column="29" selection-end-line="15" selection-end-column="29" />
+        <state relative-caret-position="935">
+          <caret line="56" selection-start-line="56" selection-end-line="58" selection-end-column="51" />
           <folding>
             <element signature="e#0#14#0" expanded="true" />
           </folding>
@@ -583,8 +580,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/versions/1.2.4/user.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1037">
-          <caret line="64" column="29" selection-start-line="64" selection-start-column="29" selection-end-line="64" selection-end-column="29" />
+        <state relative-caret-position="476">
+          <caret line="117" column="49" selection-start-line="117" selection-start-column="49" selection-end-line="117" selection-end-column="49" />
           <folding>
             <element signature="e#0#14#0" expanded="true" />
           </folding>
