@@ -1,31 +1,39 @@
 from discord.ext import commands
 import discord
 import praw
+import dbl
 reddit = praw.Reddit(client_id='MYX2-K7jabb3LA',
                      client_secret='gy6XLBwv_AcRcUZm_fN6Ef-n0Hs',
                      user_agent='redditbot created by bwac#2517')
 bot = commands.Bot(command_prefix='!')
 
-version = '1.2.4 (patch 4) Created by bwac#2517'
+version = '1.2.4 (patch 5) Created by bwac#2517'
 red = 0xFF0000
 
 bot.remove_command('help')
 
+topggclient = dbl.DBLClient(bot, 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9'
+                                 '.eyJpZCI6IjQzNzQzOTU2MjM4NjUwNTczMCIsImJvdCI6dHJ1ZSwiaWF0IjoxNTc1NTc2MTU1fQ'
+                                 '.LbuHaiap7xTKvytdqGnkSpgISUp8cbOzyJ4BETm2eYg')
 
 @commands.command(name='help')
 async def help(ctx):
+    print(await topggclient.get_bot_info())
+
     help = discord.Embed(title="Help:",
                          description="**Welcome to the help page, here you can see all the commands RedditBot has to "
                                      "offer**",
                          color=red)
-    help.add_field(name="Help support the bot with a vote", value='http://bit.ly/redditDiscordVote', inline=False)
+    botinfo = await topggclient.get_bot_info()
+    getto = botinfo.get('monthlyPoints') + 10
+    help.add_field(name="The bot currently has **" + str(botinfo.get('monthlyPoints')) + "** votes, can we get it to **" + str(getto) + "**?", value='http://bit.ly/redditDiscordVote', inline=False)
     help.add_field(name="Help support the bot by donating", value='https://donatebot.io/checkout/611147519317245992', inline=False)
     help.add_field(name="Please give your feedback!", value="with the !feedback [feedback] command!", inline=False)
     help.add_field(name="!help", value="Shows this page", inline=False)
 
     help.add_field(name="!feedback [feed back here]", value="Give your feed back to the dev", inline=False)
-    help.add_field(name="!r/ [sub name here]", value="Gives you some info on a subreddit", inline=False)
-    help.add_field(name="!u/ [username here]", value="Gives you some info on a user", inline=False)
+    help.add_field(name="!r [sub name here]", value="Gives you some info on a subreddit", inline=False)
+    help.add_field(name="!u [username here]", value="Gives you some info on a user", inline=False)
 
     help_user = discord.Embed(title="User commands:",
                               description="**Commands to add accounts and account management**", color=red)

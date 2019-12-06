@@ -3,7 +3,7 @@ from discord.ext import commands
 import praw
 import datetime
 
-version = '1.2.4 (patch 4) Created by bwac#2517'
+version = '1.2.4 (patch 5) Created by bwac#2517'
 red = 0xFF0000
 
 trophyEmojis = {
@@ -62,7 +62,7 @@ class user(commands.Cog):
         self.bot = bot
         type(self).__name__ = ''
 
-    @commands.command(name='u/')
+    @commands.command(name='u')
     async def user(self, ctx, username=None):
         if username:
             loading = discord.Embed(title='', ncolor=red)
