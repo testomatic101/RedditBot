@@ -26,7 +26,7 @@ async def help(ctx):
                          color=red)
     botinfo = await topggclient.get_bot_info()
     getto = botinfo.get('monthlyPoints') + 10
-    help.add_field(name="The bot currently has **" + str(botinfo.get('monthlyPoints')) + "** votes, can we get it to **" + str(getto) + "**?", value='http://bit.ly/redditDiscordVote', inline=False)
+    help.add_field(name="The bot currently has **" + str(botinfo.get('monthlyPoints')) + "** votes, can we get it to **" + str(getto) + "**?", value='https://top.gg/bot/437439562386505730/vote', inline=False)
     help.add_field(name="Help support the bot by donating", value='https://donatebot.io/checkout/611147519317245992', inline=False)
     help.add_field(name="Please give your feedback!", value="with the !feedback [feedback] command!", inline=False)
     help.add_field(name="!help", value="Shows this page", inline=False)
