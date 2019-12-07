@@ -5,7 +5,7 @@ import dbl
 reddit = praw.Reddit(client_id='MYX2-K7jabb3LA',
                      client_secret='gy6XLBwv_AcRcUZm_fN6Ef-n0Hs',
                      user_agent='redditbot created by bwac#2517')
-bot = commands.Bot(command_prefix='!')
+bot = commands.Bot(command_prefix='r')
 
 version = '1.2.4 (patch 5) Created by bwac#2517'
 red = 0xFF0000
@@ -26,14 +26,14 @@ async def help(ctx):
                          color=red)
     botinfo = await topggclient.get_bot_info()
     getto = botinfo.get('monthlyPoints') + 10
-    help.add_field(name="The bot currently has **" + str(botinfo.get('monthlyPoints')) + "** votes, can we get it to **" + str(getto) + "**?", value='https://top.gg/bot/437439562386505730/vote', inline=False)
+    help.add_field(name="\nThe bot currently has **" + str(botinfo.get('monthlyPoints')) + "** votes, can we get it to **" + str(getto) + "**?", value='https://top.gg/bot/437439562386505730/vote\nIt would help the dev a lot!\n', inline=False)
     help.add_field(name="Help support the bot by donating", value='https://donatebot.io/checkout/611147519317245992', inline=False)
-    help.add_field(name="Please give your feedback!", value="with the !feedback [feedback] command!", inline=False)
-    help.add_field(name="!help", value="Shows this page", inline=False)
+    help.add_field(name="Please give your feedback!", value="with the rfeedback [feedback] command!", inline=False)
+    help.add_field(name="rhelp", value="Shows this page", inline=False)
 
-    help.add_field(name="!feedback [feed back here]", value="Give your feed back to the dev", inline=False)
-    help.add_field(name="!r [sub name here]", value="Gives you some info on a subreddit", inline=False)
-    help.add_field(name="!u [username here]", value="Gives you some info on a user", inline=False)
+    help.add_field(name="rfeedback [feed back here]", value="Give your feed back to the dev", inline=False)
+    help.add_field(name="rr [sub name here]", value="Gives you some info on a subreddit", inline=False)
+    help.add_field(name="ru [username here]", value="Gives you some info on a user", inline=False)
 
     help_user = discord.Embed(title="User commands:",
                               description="**Commands to add accounts and account management**", color=red)
@@ -85,4 +85,4 @@ if __name__ == "__main__":
             bot.load_extension(extension)
     #NjUwNTgzNzk5MDQxNjIyMDQ2.XegePg.9AsWwPevhV6QrSG-Dk0SecyrqLw
     #NDM3NDM5NTYyMzg2NTA1NzMw.XemCLQ.xeC39YxL2O1gLfAH1bgnDa5JQsg
-    bot.run("NDM3NDM5NTYyMzg2NTA1NzMw.XemCLQ.xeC39YxL2O1gLfAH1bgnDa5JQsg")
+    bot.run("NjUwNTgzNzk5MDQxNjIyMDQ2.XegePg.9AsWwPevhV6QrSG-Dk0SecyrqLw")
