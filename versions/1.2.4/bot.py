@@ -37,11 +37,11 @@ async def help(ctx):
 
     help_user = discord.Embed(title="User commands:",
                               description="**Commands to add accounts and account management**", color=red)
-    help_user.add_field(name="!connect [user name here]", value="Connect a reddit connect", inline=False)
-    help_user.add_field(name="!unconnect", value="Unconnect the reddit account that you have connected",
+    help_user.add_field(name="rconnect [user name here]", value="Connect a reddit connect", inline=False)
+    help_user.add_field(name="runconnect", value="Unconnect the reddit account that you have connected",
                         inline=False)
-    help_user.add_field(name="!code", value="Submit the code you got from reddit", inline=False)
-    help.add_field(name="!me", value="See your account", inline=False)
+    help_user.add_field(name="rcode", value="Submit the code you got from reddit", inline=False)
+    help.add_field(name="rme", value="See your account", inline=False)
 
     help_user.set_footer(text="RedditBot " + version)
     await ctx.author.send(embed=help)
@@ -57,12 +57,12 @@ async def feedback(ctx, feedback=None):
         await ctx.author.send('Thanks for the feedback! Hopefully we can get back to you on that. If you want to tell '
                               'it to the devs face, do that here: discord.gg/62GSYwN.')
     else:
-        ctx.send('No feedback given. !feedback [feedback here]')
+        ctx.send('No feedback given. rfeedback [feedback here]')
 bot.add_command(feedback)
 
 @commands.command()
 async def update(ctx):
-    await bot.change_presence(status=discord.Status.do_not_disturb, activity=discord.Game(name="!help | In " + str(len(bot.guilds)) + " servers"))
+    await bot.change_presence(status=discord.Status.do_not_disturb, activity=discord.Game(name="rhelp | In " + str(len(bot.guilds)) + " servers"))
 bot.add_command(update)
 
 extensions = ["user", "subreddit", "connection", "topgg"]
@@ -78,7 +78,7 @@ async def on_ready():
     print('Servers connected to:')
     print(len(bot.guilds))
 
-    await bot.change_presence(status=discord.Status.do_not_disturb, activity=discord.Game(name="!help | In " + str(len(bot.guilds)) + " servers"))
+    await bot.change_presence(status=discord.Status.do_not_disturb, activity=discord.Game(name="rhelp | In " + str(len(bot.guilds)) + " servers"))
 if __name__ == "__main__":
     if __name__ == '__main__':
         for extension in extensions:

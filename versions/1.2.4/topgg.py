@@ -15,7 +15,7 @@ class topgg(commands.Cog):
 
     async def on_guild_post(self, ctx):
         await ctx.change_presence(status=discord.Status.do_not_disturb,
-                                  activity=discord.Game(name="!help | In " + str(len(ctx.guilds)) + " servers"))
+                                  activity=discord.Game(name="rhelp | In " + str(len(ctx.guilds)) + " servers"))
         print("Server count posted successfully")
 
 def setup(bot):

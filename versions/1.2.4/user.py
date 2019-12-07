@@ -115,7 +115,7 @@ class user(commands.Cog):
 
     @commands.command(name='u/')
     async def achivedr(self, ctx):
-        await ctx.send('Sorry !u/ has moved to !u')
+        await ctx.send('Sorry ru/ has moved to ru')
 
 
 def setup(bot):

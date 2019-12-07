@@ -93,7 +93,7 @@ class connection(commands.Cog):
                                           'This is your code: ' + str(
                                               code) + '\n\nIf you are being spammed by codes, dm me here: '
                                                       'https://discord.gg/ZmyYxQg')
-        await ctx.author.send('You have been sent a code on reddit. Do `!code [code]` to connect your account, '
+        await ctx.author.send('You have been sent a code on reddit. Do `rcode [code]` to connect your account, '
                               'if you have already have a connected account, it was removed')
 
     @commands.command()

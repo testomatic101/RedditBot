@@ -56,7 +56,7 @@ class subreddit(commands.Cog):
 
     @commands.command(name='r/')
     async def achivedr(self, ctx):
-        await ctx.send('Sorry !r/ has moved to !r')
+        await ctx.send('Sorry rr/ has moved to rr')
 
 
 def setup(bot):
