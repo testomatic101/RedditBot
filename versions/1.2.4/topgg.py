@@ -4,7 +4,7 @@ from discord.ext import commands
 import json
 
 secrets = None
-with open('/home/secrets.json') as json_file:
+with open('/home/bobwithacamera/secrets.json') as json_file:
     secrets = json.load(json_file)
 
 class topgg(commands.Cog):
