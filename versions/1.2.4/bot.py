@@ -32,7 +32,7 @@ bot.remove_command('help')
 async def newhelp(ctx):
     # custom help command
 
-    # made the embeds
+    # make the embeds
     helpembed = discord.Embed(title="Help:",
                          description="**Welcome to the help page, here you can see all the commands RedditBot has to "
                                      "offer**",
