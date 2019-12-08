@@ -5,7 +5,7 @@ import dbl
 import json
 
 secrets = None
-with open('/home/secrets.json') as json_file:
+with open('/home/bobwithacamera/secrets.json') as json_file:
     secrets = json.load(json_file)
 
 reddit = praw.Reddit(client_id=secrets["reddit"]["client_id"],
