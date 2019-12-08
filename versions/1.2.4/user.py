@@ -8,7 +8,7 @@ version = '1.2.4 (patch 6) Created by bwac#2517'
 red = 0xFF0000
 
 secrets = None
-with open('/home/bobwithacamera/secrets.json') as json_file:
+with open('C:/Users/Noahd/Documents/secrets.json') as json_file:
     secrets = json.load(json_file)
 
 trophyemojis = None
