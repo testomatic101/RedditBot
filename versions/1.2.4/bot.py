@@ -2,23 +2,28 @@ from discord.ext import commands
 import discord
 import praw
 import dbl
-reddit = praw.Reddit(client_id='MYX2-K7jabb3LA',
-                     client_secret='gy6XLBwv_AcRcUZm_fN6Ef-n0Hs',
+import json
+
+secrets = None
+with open('/home/secrets.json') as json_file:
+    secrets = json.load(json_file)
+
+reddit = praw.Reddit(client_id=secrets["reddit"]["client_id"],
+                     client_secret=secrets["reddit"]["client_secret"],
                      user_agent='redditbot created by bwac#2517')
 bot = commands.Bot(command_prefix='r')
 
-version = '1.2.4 (patch 5) Created by bwac#2517'
+version = '1.2.4 (patch 6) Created by bwac#2517'
 red = 0xFF0000
 
 bot.remove_command('help')
 
-topggclient = dbl.DBLClient(bot, 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9'
-                                 '.eyJpZCI6IjQzNzQzOTU2MjM4NjUwNTczMCIsImJvdCI6dHJ1ZSwiaWF0IjoxNTc1NTc2MTU1fQ'
-                                 '.LbuHaiap7xTKvytdqGnkSpgISUp8cbOzyJ4BETm2eYg')
+topggclient = dbl.DBLClient(bot, secrets["top.gg"]["token"])
 
 @commands.command(name='help')
 async def help(ctx):
-    print(await topggclient.get_bot_info())
+    #print(await topggclient.get_bot_info())
+    print(ctx.author)
 
     help = discord.Embed(title="Help:",
                          description="**Welcome to the help page, here you can see all the commands RedditBot has to "
@@ -26,7 +31,7 @@ async def help(ctx):
                          color=red)
     botinfo = await topggclient.get_bot_info()
     getto = botinfo.get('monthlyPoints') + 10
-    help.add_field(name="\nThe bot currently has **" + str(botinfo.get('monthlyPoints')) + "** votes, can we get it to **" + str(getto) + "**?", value='https://top.gg/bot/437439562386505730/vote\nIt would help the dev a lot!\n', inline=False)
+    help.add_field(name="\n\nThe bot currently has **" + str(botinfo.get('monthlyPoints')) + "** votes, can we get it to **" + str(getto) + "**?", value='https://top.gg/bot/437439562386505730/vote', inline=False)
     help.add_field(name="Help support the bot by donating", value='https://donatebot.io/checkout/611147519317245992', inline=False)
     help.add_field(name="Please give your feedback!", value="with the rfeedback [feedback] command!", inline=False)
     help.add_field(name="rhelp", value="Shows this page", inline=False)
@@ -70,19 +75,15 @@ extensions = ["user", "subreddit", "connection", "topgg"]
 
 @bot.event
 async def on_ready():
-    print('Logged in as')
-    print(bot.user.name)
-    print(bot.user.id)
-    print('------')
-
-    print('Servers connected to:')
-    print(len(bot.guilds))
-
+    print('ready')
+    # print(bot.guilds)
+    # for guild in bot.guilds:
+    #     for invite in await guild.invites():
+    #         print(invite)
     await bot.change_presence(status=discord.Status.do_not_disturb, activity=discord.Game(name="rhelp | In " + str(len(bot.guilds)) + " servers"))
+
 if __name__ == "__main__":
     if __name__ == '__main__':
         for extension in extensions:
             bot.load_extension(extension)
-    #NjUwNTgzNzk5MDQxNjIyMDQ2.XegePg.9AsWwPevhV6QrSG-Dk0SecyrqLw
-    #NDM3NDM5NTYyMzg2NTA1NzMw.XemCLQ.xeC39YxL2O1gLfAH1bgnDa5JQsg
-    bot.run("NjUwNTgzNzk5MDQxNjIyMDQ2.XegePg.9AsWwPevhV6QrSG-Dk0SecyrqLw")
+    bot.run(secrets["discord"]["production"])
