@@ -77,7 +77,7 @@ async def feedback(ctx, text=None):
 bot.add_command(feedback)
 
 # update status
-@command.command()
+@commands.command()
 async def update(ctx):
     await bot.change_presence(status=discord.Status.do_not_disturb, activity=discord.Game(name="rhelp | In " + str(len(bot.guilds)) + " servers"))
 bot.add_command(update)
