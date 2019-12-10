@@ -12,6 +12,7 @@ red = 0xFF0000
 secrets = None
 with open('C:/Users/Noahd/Documents/secrets.json') as json_file:
     secrets = json.load(json_file)
+    json_file.close()
 
 trophyemojis = None
 with open('trophyemoji.json') as json_file:
@@ -47,9 +48,9 @@ class connection(commands.Cog):
         with open("users/" + str(ctx.author.id) + '.json', 'w+') as outfile:
             json.dump(data, outfile, indent=4)
         reddit.redditor(username).message('Discord user ' + data[
-            "discord name"] + ' has tryed to connect to your discord account. Your code for Reddit',
+            "discord name"] + ' has tryed to connect to your discord account with RedditBot (https://top.gg/bot/437439562386505730). Your code for Reddit',
                                           'This is your code: ' + str(
-                                              code) + '\n\nIf you are being spammed by codes, dm me here: '
+                                              code) + '\n\nIf you are being spammed by codes, dm bwac here: '
                                                       'https://discord.gg/ZmyYxQg')
         await ctx.author.send('You have been sent a code on reddit. Do `rcode [code]` to connect your account, '
                               'if you have already have a connected account, it was removed')
