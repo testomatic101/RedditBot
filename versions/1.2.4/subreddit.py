@@ -4,7 +4,7 @@ import praw
 import datetime
 import json
 
-version = '1.2.4 (patch 6) Created by bwac#2517'
+version = '1.2.4 (patch 7) Created by bwac#2517'
 red = 0xFF0000
 
 secrets = None
@@ -61,7 +61,6 @@ class subreddit(commands.Cog):
     @commands.command(name='r/')
     async def achivedr(self, ctx):
         await ctx.send('Sorry rr/ has moved to rr')
-
 
 def setup(bot):
     bot.add_cog(subreddit(bot))

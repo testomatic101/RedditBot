@@ -4,7 +4,7 @@ import praw
 import datetime
 import json
 
-version = '1.2.4 (patch 6) Created by bwac#2517'
+version = '1.2.4 (patch 7) Created by bwac#2517'
 red = 0xFF0000
 
 secrets = None

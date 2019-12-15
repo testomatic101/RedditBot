@@ -3,6 +3,7 @@ import discord
 import praw
 import dbl
 import json
+import random
 
 # secrets.json has tokens ect
 secrets = None
@@ -17,7 +18,7 @@ reddit = praw.Reddit(client_id=secrets["reddit"]["client_id"],
 bot = commands.Bot(command_prefix='r')
 
 # this is used for the footer of embeds
-version = '1.2.4 (patch 6) Created by bwac#2517'
+version = '1.2.4 (patch 7) Created by bwac#2517'
 # red for embeds
 red = 0xFF0000
 
@@ -57,8 +58,7 @@ async def newhelp(ctx):
     help_user.add_field(name="rme", value="See your account", inline=False)
 
     help_user.set_footer(text="RedditBot " + version)
-    await ctx.author.send(embed=help_user)
-    await ctx.author.send(embed=help_user)
+    await ctx.author.send(embed=helpembed)
 # add the new help command
 bot.add_command(newhelp)
 
@@ -83,7 +83,7 @@ async def update(ctx):
 bot.add_command(update)
     
 # all the cogs
-extensions = ["user", "subreddit", "connection", "topgg"]
+extensions = ["user", "subreddit", "topgg"]
 
 
 @bot.event
@@ -96,6 +96,14 @@ async def on_ready():
         for invite in await guild.invites():
             print(invite)
     await bot.change_presence(status=discord.Status.do_not_disturb, activity=discord.Game(name="rhelp | In " + str(len(bot.guilds)) + " servers"))
+
+
+@bot.event
+async def on_command_completion(ctx):
+    votemessage = discord.Embed(title="wanna help out the bot?",
+                              description="if you like the bot, it would mean a lot to the dev if you voted at https://top.gg/bot/437439562386505730/vote'",
+                              color=red)
+    await ctx.send(embed=votemessage)
 
 if __name__ == "__main__":
     if __name__ == '__main__':
