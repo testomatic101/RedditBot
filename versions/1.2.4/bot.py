@@ -7,7 +7,7 @@ import random
 
 # secrets.json has tokens ect
 secrets = None
-with open('C:/Users/Noahd/Documents/secrets.json') as json_file:
+with open('/home/bobwithacamera/secrets.json') as json_file:
     secrets = json.load(json_file)
 
 # login to reddit
@@ -101,7 +101,7 @@ async def on_ready():
 @bot.event
 async def on_command_completion(ctx):
     votemessage = discord.Embed(title="wanna help out the bot?",
-                              description="if you like the bot, it would mean a lot to the dev if you voted at https://top.gg/bot/437439562386505730/vote'",
+                              description="if you like the bot, it would mean a lot to the dev if you voted at https://top.gg/bot/437439562386505730/vote",
                               color=red)
     await ctx.send(embed=votemessage)
 
