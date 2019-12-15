@@ -1,4 +1,4 @@
-## RedditBot powering 150(!) servers
+## RedditBot powering 170(!) servers
 RedditBot can fetch infomation on subreddits, user profiles and more
 
 You can even connect your own reddit account to your discord account, and access it with rme
