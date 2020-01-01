@@ -4,6 +4,7 @@ import praw
 import dbl
 import json
 import random
+from sys import platform
 
 # secrets.json has tokens ect
 secrets = None
