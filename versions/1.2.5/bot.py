@@ -7,8 +7,12 @@ import random
 
 # secrets.json has tokens ect
 secrets = None
-with open('/home/bobwithacamera/secrets.json') as json_file:
-    secrets = json.load(json_file)
+if platform == "win32" or "win32":
+    with open('C:/Users/Noahd/Documents/secrets.json') as json_file:
+        secrets = json.load(json_file)
+else:
+    with open('/home/bobwithacamera/secrets.json') as json_file:
+        secrets = json.load(json_file)
 
 # login to reddit
 reddit = praw.Reddit(client_id=secrets["reddit"]["client_id"],
