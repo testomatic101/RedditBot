@@ -105,10 +105,11 @@ async def on_ready():
 
 @bot.event
 async def on_command_completion(ctx):
-    votemessage = discord.Embed(title="wanna help out the bot?",
-                              description="if you like the bot, it would mean a lot to the dev if you voted at https://top.gg/bot/437439562386505730/vote",
-                              color=red)
-    await ctx.send(embed=votemessage)
+    if random.randint(1, 100) > 50:
+        votemessage = discord.Embed(title="wanna help out the bot?",
+                                  description="if you didnt know, top.gg resets all votes every month. So it would mean even more to me if you voted at https://top.gg/bot/437439562386505730/vote",
+                                  color=red)
+        await ctx.send(embed=votemessage)
 
 if __name__ == "__main__":
     # load the cogs
