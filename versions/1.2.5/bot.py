@@ -110,4 +110,4 @@ if __name__ == "__main__":
     for extension in extensions:
         bot.load_extension(extension)
     # run the bot
-    bot.run(secrets["discord"]["RedditBot"]["production"])
+    bot.run(secrets["discord"]["reddit"]["production"])
