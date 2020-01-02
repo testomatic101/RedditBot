@@ -9,13 +9,8 @@ version = '1.2.5 Created by bwac#2517'
 red = 0xFF0000
 
 secrets = None
-if platform == "win32" or "win32":
-    with open('C:/Users/Noahd/Documents/secrets.json') as json_file:
-        secrets = json.load(json_file)
-else:
-    with open('/home/bobwithacamera/secrets.json') as json_file:
-        secrets = json.load(json_file)
-
+with open('/home/bobwithacamera/secrets.json') as json_file:
+    secrets = json.load(json_file)
 
 class subreddit(commands.Cog):
     def __init__(self, bot):
