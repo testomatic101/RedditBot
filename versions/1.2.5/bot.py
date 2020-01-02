@@ -44,9 +44,9 @@ async def newhelp(ctx):
     botinfo = await topggclient.get_bot_info()
     getto = botinfo.get('monthlyPoints') + 10
     helpembed.add_field(name="\n\nThe bot currently has **" + str(botinfo.get('monthlyPoints')) + "** votes, can we get it to **" + str(getto) + "**?", value='https://top.gg/bot/437439562386505730/vote', inline=False)
-    helpembed.add_field(name="rfeedback [feed back here]", value="Give your feed back to the dev", inline=False)
+    helpembed.add_field(name="Found a bug?", value="Report it here http://rbdis.xyz/?page_id=474", inline=False)
 
-    helpembed.add_field(name="Please give your feedback!", value="with the rfeedback [feedback] command!", inline=False)
+    helpembed.add_field(name="Please give your feedback!", value="http://rbdis.xyz/?page_id=474", inline=False)
     helpembed.add_field(name="rhelp", value="Shows this page", inline=False)
     helpembed.add_field(name="rr [sub name here]", value="Gives you some info on a subreddit", inline=False)
     helpembed.add_field(name="ru [username here]", value="Gives you some info on a user", inline=False)
@@ -66,7 +66,7 @@ bot.add_command(newhelp)
 # the feedback command is for users to send feedback
 @commands.command()
 async def feedback(ctx):
-    await ctx.send("You can send feedback here ")
+    await ctx.send("You can send feedback here http://rbdis.xyz/?page_id=474")
 # add the feedback command
 bot.add_command(feedback)
 
@@ -98,11 +98,16 @@ async def on_ready():
 
 @bot.event
 async def on_command_completion(ctx):
-    if random.randint(1, 100) > 50:
+    if random.randint(1, 2) == 1:
         votemessage = discord.Embed(title="wanna help out the bot?",
                                   description="if you didnt know, top.gg resets all votes every month. So it would mean even more to me if you voted at https://top.gg/bot/437439562386505730/vote",
                                   color=red)
         await ctx.send(embed=votemessage)
+    else:
+        feedbackmessage = discord.Embed(title="Have you found a bug?",
+                                    description="report it here http://rbdis.xyz/?page_id=474",
+                                    color=red)
+        await ctx.send(embed=feedbackmessage)
 
 if __name__ == "__main__":
     # load the cogs
