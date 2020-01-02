@@ -111,9 +111,8 @@ async def on_command_completion(ctx):
     await ctx.send(embed=votemessage)
 
 if __name__ == "__main__":
-    if __name__ == '__main__':
-        # load the cogs
-        for extension in extensions:
-            bot.load_extension(extension)
+    # load the cogs
+    for extension in extensions:
+        bot.load_extension(extension)
     # run the bot
     bot.run(secrets["discord"]["RedditBot"]["production"])
