@@ -5,12 +5,8 @@ import json
 from sys import platform
 
 secrets = None
-if platform == "win32" or "win32":
-    with open('C:/Users/Noahd/Documents/secrets.json') as json_file:
-        secrets = json.load(json_file)
-else:
-    with open('/home/bobwithacamera/secrets.json') as json_file:
-        secrets = json.load(json_file)
+with open('/home/bobwithacamera/secrets.json') as json_file:
+    secrets = json.load(json_file)
 
 class topgg(commands.Cog):
     """Handles interactions with the top.gg API"""
