@@ -3,6 +3,7 @@ from discord.ext import commands
 import praw
 import datetime
 import json
+from sys import platform
 
 version = '1.2.5 Created by bwac#2517'
 red = 0xFF0000
@@ -11,9 +12,13 @@ secrets = None
 with open('/home/bobwithacamera/secrets.json') as json_file:
     secrets = json.load(json_file)
 
-trophyemojis = None
-with open('trophyemoji.json') as json_file:
-    trophyemojis = json.load(json_file)
+secrets = None
+if platform == "win32" or "win32":
+    with open('C:/Users/Noahd/Documents/secrets.json') as json_file:
+        secrets = json.load(json_file)
+else:
+    with open('/home/bobwithacamera/secrets.json') as json_file:
+        secrets = json.load(json_file)
 
 
 class user(commands.Cog):

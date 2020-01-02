@@ -2,10 +2,15 @@ import dbl
 import discord
 from discord.ext import commands
 import json
+from sys import platform
 
 secrets = None
-with open('/home/bobwithacamera/secrets.json') as json_file:
-    secrets = json.load(json_file)
+if platform == "win32" or "win32":
+    with open('C:/Users/Noahd/Documents/secrets.json') as json_file:
+        secrets = json.load(json_file)
+else:
+    with open('/home/bobwithacamera/secrets.json') as json_file:
+        secrets = json.load(json_file)
 
 class topgg(commands.Cog):
     """Handles interactions with the top.gg API"""
