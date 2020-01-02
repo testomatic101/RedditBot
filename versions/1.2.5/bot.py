@@ -37,23 +37,19 @@ bot.remove_command('help')
 @commands.command(name='help')
 async def newhelp(ctx):
     # custom help command
-
     # make the embeds
     helpembed = discord.Embed(title="Help:",
-                         description="**Welcome to the help page, here you can see all the commands RedditBot has to "
-                                     "offer**",
+                         description="**http://rbdis.xyz**",
                          color=red)
     botinfo = await topggclient.get_bot_info()
     getto = botinfo.get('monthlyPoints') + 10
     helpembed.add_field(name="\n\nThe bot currently has **" + str(botinfo.get('monthlyPoints')) + "** votes, can we get it to **" + str(getto) + "**?", value='https://top.gg/bot/437439562386505730/vote', inline=False)
-    helpembed.add_field(name="Help support the bot by donating", value='https://donatebot.io/checkout/611147519317245992', inline=False)
+    helpembed.add_field(name="rfeedback [feed back here]", value="Give your feed back to the dev", inline=False)
+
     helpembed.add_field(name="Please give your feedback!", value="with the rfeedback [feedback] command!", inline=False)
     helpembed.add_field(name="rhelp", value="Shows this page", inline=False)
-
-    helpembed.add_field(name="rfeedback [feed back here]", value="Give your feed back to the dev", inline=False)
     helpembed.add_field(name="rr [sub name here]", value="Gives you some info on a subreddit", inline=False)
     helpembed.add_field(name="ru [username here]", value="Gives you some info on a user", inline=False)
-
     help_user = discord.Embed(title="User commands:",
                               description="**Commands to add accounts and account management**", color=red)
     help_user.add_field(name="rconnect [user name here]", value="Connect a reddit connect", inline=False)
@@ -61,7 +57,6 @@ async def newhelp(ctx):
                         inline=False)
     help_user.add_field(name="rcode", value="Submit the code you got from reddit", inline=False)
     help_user.add_field(name="rme", value="See your account", inline=False)
-
     help_user.set_footer(text="RedditBot " + version)
     await ctx.author.send(embed=helpembed)
 # add the new help command
@@ -70,14 +65,8 @@ bot.add_command(newhelp)
 
 # the feedback command is for users to send feedback
 @commands.command()
-async def feedback(ctx, text=None):
-    if text:
-        reddit.redditor('-_-BWAC-_-').message('FeedBack sent by ' + ctx.author.name + '#' + ctx.author.discriminator,
-                                              text + '\n\nUser Info: \nID: ' + str(ctx.author.id))
-        await ctx.author.send('Thanks for the feedback! Hopefully we can get back to you on that. If you want to tell '
-                              'it to the devs face, do that here: discord.gg/62GSYwN.')
-    else:
-        ctx.send('No feedback given. rfeedback [feedback here]')
+async def feedback(ctx):
+    await ctx.send("You can send feedback here ")
 # add the feedback command
 bot.add_command(feedback)
 
