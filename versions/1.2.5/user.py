@@ -12,6 +12,9 @@ secrets = None
 with open('/home/bobwithacamera/secrets.json') as json_file:
     secrets = json.load(json_file)
 
+trophyemojis = None
+with open('trophyemoji.json') as json_file:
+    trophyemojis = json.load(json_file)
 
 class user(commands.Cog):
     def __init__(self, bot):
