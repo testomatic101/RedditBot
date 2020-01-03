@@ -4,7 +4,6 @@ import praw
 import dbl
 import json
 import random
-from sys import platform
 from pathlib import Path
 
 # secrets.json has tokens ect
