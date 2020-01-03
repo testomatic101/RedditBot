@@ -5,11 +5,12 @@ import dbl
 import json
 import random
 from sys import platform
+from pathlib import Path
 
 # secrets.json has tokens ect
 secrets = None
 
-with open('/home/bobwithacamera/secrets.json') as json_file:
+with open(str(Path(__file__).parents[3]) + "\\secrets.json") as json_file:
     secrets = json.load(json_file)
 
 # login to reddit
