@@ -35,8 +35,8 @@ bot.remove_command('help')
 async def newhelp(ctx):
     # custom help command
     # make the embeds
-    helpembed = discord.Embed(title="Help:",
-                         description="**http://rbdis.xyz**",
+    helpembed = discord.Embed(title="**http://rbdis.xyz**",
+                         description="help",
                          color=red)
     botinfo = await topggclient.get_bot_info()
     getto = botinfo.get('monthlyPoints') + 10
