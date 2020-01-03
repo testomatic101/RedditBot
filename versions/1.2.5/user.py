@@ -11,7 +11,7 @@ red = 0xFF0000
 from pathlib import Path
 # secrets.json has tokens ect
 secrets = None
-with open(str(Path(__file__).parents[3]) + "\\secrets.json") as json_file:
+with open("/home/bobwithacamera/secrets.json") as json_file:
     secrets = json.load(json_file)
 
 trophyemojis = None
