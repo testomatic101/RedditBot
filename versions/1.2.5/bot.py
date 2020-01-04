@@ -106,7 +106,7 @@ async def on_command_completion(ctx):
         await ctx.send(embed=votemessage)
     else:
         feedbackmessage = discord.Embed(title="Have you found a bug?",
-                                    description="report it here http://rbdis.xyz/?page_id=474",
+                                    description="report it here http://rbdis.xyz/bugreport",
                                     color=red)
         await ctx.send(embed=feedbackmessage)
 
