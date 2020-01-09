@@ -2,17 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="7829b319-422a-403e-a069-1fa549835f17" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/versions/1.2.6/stream.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/versions/1.2.6/streams/askreddit.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/versions/1.2.6/streams/dankmemes.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/versions/1.2.6/streams/funny.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/versions/1.2.6/streams/redditdev.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/versions/1.2.5/bot.py" beforeDir="false" afterPath="$PROJECT_DIR$/versions/1.2.6/bot.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/versions/1.2.5/subreddit.py" beforeDir="false" afterPath="$PROJECT_DIR$/versions/1.2.6/subreddit.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/versions/1.2.5/topgg.py" beforeDir="false" afterPath="$PROJECT_DIR$/versions/1.2.6/topgg.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/versions/1.2.5/trophyemoji.json" beforeDir="false" afterPath="$PROJECT_DIR$/versions/1.2.6/trophyemoji.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/versions/1.2.5/user.py" beforeDir="false" afterPath="$PROJECT_DIR$/versions/1.2.6/user.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/versions/1.2.6/bot.py" beforeDir="false" afterPath="$PROJECT_DIR$/versions/1.2.6/bot.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/versions/1.2.6/stream.py" beforeDir="false" afterPath="$PROJECT_DIR$/versions/1.2.6/stream.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/versions/1.2.6/subreddit.py" beforeDir="false" afterPath="$PROJECT_DIR$/versions/1.2.6/subreddit.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/versions/1.2.6/user.py" beforeDir="false" afterPath="$PROJECT_DIR$/versions/1.2.6/user.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />

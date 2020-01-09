@@ -8,7 +8,7 @@ from os import path, remove, listdir
 from os.path import isfile, join
 import asyncio
 
-version = '1.2.6 Created by bwac#2517'
+version = '1.3 Created by bwac#2517'
 red = 0xFF0000
 
 secrets = None
