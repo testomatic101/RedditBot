@@ -3,6 +3,12 @@
   <component name="ChangeListManager">
     <list default="true" id="7829b319-422a-403e-a069-1fa549835f17" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/versions/1.3/bot.py" beforeDir="false" afterPath="$PROJECT_DIR$/versions/1.3/bot.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/versions/1.3/stream.py" beforeDir="false" afterPath="$PROJECT_DIR$/versions/1.3/stream.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/versions/1.3/streams/askreddit.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/versions/1.3/streams/dankmemes.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/versions/1.3/streams/funny.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/versions/1.3/streams/redditdev.json" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -51,7 +57,7 @@
       <recent name="$PROJECT_DIR$/versions/1.2.2" />
     </key>
   </component>
-  <component name="RunManager" selected="Python.bot (1)">
+  <component name="RunManager" selected="Python.bot (3)">
     <configuration name="bot (1)" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <module name="Reddit" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -94,7 +100,7 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="bot" type="PythonConfigurationType" factoryName="Python" temporary="true">
+    <configuration name="bot (3)" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="Reddit" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -102,11 +108,11 @@
         <env name="PYTHONUNBUFFERED" value="1" />
       </envs>
       <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/versions/1.2.5" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/versions/1.3" />
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/versions/1.2.5/bot.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/versions/1.3/bot.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -115,7 +121,7 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="stream (1)" type="PythonConfigurationType" factoryName="Python" temporary="true">
+    <configuration name="stream (2)" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="Reddit" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -123,11 +129,11 @@
         <env name="PYTHONUNBUFFERED" value="1" />
       </envs>
       <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/versions/1.2.6" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/versions/1.3" />
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/versions/1.2.6/stream.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/versions/1.3/stream.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -140,6 +146,9 @@
       <module name="Reddit" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
       <option name="SDK_HOME" value="" />
       <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/versions/1.2.6" />
       <option name="IS_MODULE_SDK" value="true" />
@@ -177,11 +186,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Python.bot (3)" />
+        <item itemvalue="Python.stream (2)" />
         <item itemvalue="Python.bot (1)" />
         <item itemvalue="Python.stream" />
         <item itemvalue="Python.streamer" />
-        <item itemvalue="Python.stream (1)" />
-        <item itemvalue="Python.bot" />
       </list>
     </recent_temporary>
   </component>
@@ -249,45 +258,49 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="223" y="116" width="1256" height="810" key="CommitChangelistDialog2/0.0.1920.1040@0.0.1920.1040" timestamp="1578379939320" />
-    <state width="1899" height="259" key="GridCell.Tab.0.bottom" timestamp="1578536812171">
+    <state width="1899" height="232" key="GridCell.Tab.0.bottom" timestamp="1578877889061">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1899" height="259" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1578536812171" />
-    <state width="1899" height="259" key="GridCell.Tab.0.center" timestamp="1578536812171">
+    <state width="1899" height="232" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1578877889061" />
+    <state width="1899" height="232" key="GridCell.Tab.0.center" timestamp="1578877889061">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1899" height="259" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1578536812171" />
-    <state width="1899" height="259" key="GridCell.Tab.0.left" timestamp="1578536812171">
+    <state width="1899" height="232" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1578877889061" />
+    <state width="1899" height="232" key="GridCell.Tab.0.left" timestamp="1578877889061">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1899" height="259" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1578536812171" />
-    <state width="1899" height="259" key="GridCell.Tab.0.right" timestamp="1578536812171">
+    <state width="1899" height="232" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1578877889061" />
+    <state width="1899" height="232" key="GridCell.Tab.0.right" timestamp="1578877889061">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1899" height="259" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1578536812171" />
+    <state width="1899" height="232" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1578877889061" />
     <state x="457" y="174" key="SettingsEditor" timestamp="1578266828825">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="457" y="174" key="SettingsEditor/0.0.1920.1040@0.0.1920.1040" timestamp="1578266828825" />
-    <state x="92" y="92" width="1736" height="856" key="com.intellij.history.integration.ui.views.FileHistoryDialog" timestamp="1578536405542">
+    <state x="92" y="92" width="1736" height="856" maximized="true" key="com.intellij.history.integration.ui.views.FileHistoryDialog" timestamp="1578869699337">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="92" y="92" width="1736" height="856" key="com.intellij.history.integration.ui.views.FileHistoryDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1578536405542" />
-    <state x="459" y="243" width="1073" height="615" key="com.intellij.ide.util.TipDialog" timestamp="1578523492736">
+    <state x="92" y="92" width="1736" height="856" maximized="true" key="com.intellij.history.integration.ui.views.FileHistoryDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1578869699337" />
+    <state x="459" y="243" width="1073" height="615" key="com.intellij.ide.util.TipDialog" timestamp="1578874901112">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="459" y="243" width="1073" height="615" key="com.intellij.ide.util.TipDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1578523492736" />
-    <state x="531" y="256" key="com.intellij.xdebugger.impl.breakpoints.ui.BreakpointsDialogFactory$2" timestamp="1578381423347">
+    <state x="459" y="243" width="1073" height="615" key="com.intellij.ide.util.TipDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1578874901112" />
+    <state x="619" y="200" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser" timestamp="1578866185948">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="531" y="256" key="com.intellij.xdebugger.impl.breakpoints.ui.BreakpointsDialogFactory$2/0.0.1920.1040@0.0.1920.1040" timestamp="1578381423347" />
+    <state x="619" y="200" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser/0.0.1920.1040@0.0.1920.1040" timestamp="1578866185948" />
+    <state x="531" y="256" key="com.intellij.xdebugger.impl.breakpoints.ui.BreakpointsDialogFactory$2" timestamp="1578815589175">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="531" y="256" key="com.intellij.xdebugger.impl.breakpoints.ui.BreakpointsDialogFactory$2/0.0.1920.1040@0.0.1920.1040" timestamp="1578815589175" />
     <state x="648" y="367" width="707" height="306" key="org.intellij.images.editor.actions.BackgroundImageDialog" timestamp="1578266798619">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="648" y="367" width="707" height="306" key="org.intellij.images.editor.actions.BackgroundImageDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1578266798619" />
-    <state x="623" y="225" width="672" height="678" key="search.everywhere.popup" timestamp="1578521238437">
+    <state x="623" y="225" width="672" height="678" key="search.everywhere.popup" timestamp="1578869119130">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="623" y="225" width="672" height="678" key="search.everywhere.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1578521238437" />
+    <state x="623" y="225" width="672" height="678" key="search.everywhere.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1578869119130" />
   </component>
 </project>

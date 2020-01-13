@@ -37,11 +37,11 @@ async def newhelp(ctx):
     helpembed = discord.Embed(title="**http://rbdis.xyz**",
                          description="help",
                          color=red)
-    # botinfo = await topggclient.get_bot_info()
-    # getto = botinfo.get('monthlyPoints') + 10
-    # helpembed.add_field(name="\n\nThe bot currently has **" + str(botinfo.get('monthlyPoints')) + "** votes, can we "
-    #                                                                                               "get it to **" +
-    #                          str(getto) + "**?", value='https://top.gg/bot/437439562386505730/vote', inline=False)
+    botinfo = await topggclient.get_bot_info()
+    getto = botinfo.get('monthlyPoints') + 10
+    helpembed.add_field(name="\n\nThe bot currently has **" + str(botinfo.get('monthlyPoints')) + "** votes, can we "
+                                                                                                  "get it to **" +
+                             str(getto) + "**?", value='https://top.gg/bot/437439562386505730/vote', inline=False)
     helpembed.add_field(name="Found a bug?", value="Report it here http://rbdis.xyz/bugreport/", inline=False)
     helpembed.add_field(name="Please give your feedback!", value="http://rbdis.xyz/feedback", inline=False)
     helpembed.add_field(name="rhelp", value="Shows this page", inline=False)
@@ -55,7 +55,8 @@ async def newhelp(ctx):
     streamembed = discord.Embed(title="",
                          description='NEW **"Stream" commands**',
                          color=red)
-    streamembed.add_field(name="rstartstream [sub name here]", value='***BETA STUFF WILL PROBABLY BREAK*** Streaming '
+    streamembed.add_field(name="rstartstream [sub name here]", value='***BETA*** **STUFF WILL PROBABLY BREAK** '
+                                                                     'Streaming '
                                                                      'a subreddit shows all posts made to '
                                                                      'the subreddit automatically to a channel '
                                                                      'created by '
@@ -103,7 +104,9 @@ async def on_command_completion(ctx):
     ranint = random.randint(1, 3)
     if ranint == 1:
         votemessage = discord.Embed(title="wanna help out the bot?",
-                                  description="if you didnt know, top.gg resets all votes every month. So it would mean even more to me if you voted at https://top.gg/bot/437439562386505730/vote",
+                                  description="if you didnt know, top.gg resets all votes every month. So it would "
+                                              "mean even more to me if you voted at "
+                                              "https://top.gg/bot/437439562386505730/vote",
                                   color=red)
         await ctx.send(embed=votemessage)
     elif ranint == 2:
