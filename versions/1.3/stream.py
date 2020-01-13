@@ -139,6 +139,7 @@ class stream(commands.Cog):
             files.append(item)
             i = i + 1
         subs = ''
+        print(files)
         i = 0
         for sub in files:
             subs = subs + files[i] + "+"
@@ -185,9 +186,9 @@ class stream(commands.Cog):
                             post.set_footer(
                                 text="if it never loads, something went wrong, "
                                      "https://rbdis.xyz/bugreport")
-                            if channel is not None:
+                            if channel:
                                 postMessage = await channel.send(embed=post)
-                        if channel is not None:
+                        if channel:
                             if str(channel).__contains__('stream'):
                                 if domain == 'i.redd.it' or domain == 'i.imgur.com':
                                     post = discord.Embed(title='r/' + sub + ', ' + submission.title,
@@ -236,8 +237,9 @@ class stream(commands.Cog):
                                         post.add_field(name="request", value="Want this website to be supported? "
                                                                              "https://rbdis.xyz/feedback", inline=False)
 
-                                if channel is not None:
+                                if channel:
                                     await postMessage.edit(embed=post)
+
                         k = k + 1
 
 def setup(bot):
