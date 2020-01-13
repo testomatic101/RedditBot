@@ -143,17 +143,17 @@ class stream(commands.Cog):
         i = 0
         for sub in files:
             subname = sub
-            with open('streams/' + sub + '.json') as json_file:
+            with open('streams/' + subname + '.json') as json_file:
                 dump = json.load(json_file)
                 lastredeemed = dump["last redeemed"]
-                dump["last redeemed"] = time.time()
-                with open('streams/' + sub + '.json', 'w') as json_file:
-                    json.dump(dump, json_file, indent=4)
 
-                for submission in reddit.subreddit(sub).new(limit=20):
+                for submission in reddit.subreddit(subname).new(limit=20):
                     createdon = submission.created_utc
                     if createdon > lastredeemed:
-                        await self.post(sub, submission, createdon)
+                        dump["last redeemed"] = time.time()
+                        with open('streams/' + subname + '.json', 'w') as json_file:
+                            json.dump(dump, json_file, indent=4)
+                        await self.post(subname, submission, createdon)
         return
 
     @streamer.before_loop
