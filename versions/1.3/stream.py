@@ -11,7 +11,7 @@ version = '1.3 Created by bwac#2517'
 red = 0xFF0000
 
 secrets = None
-with open("/home/bobwithacamera/secrets.json") as json_file:
+with open("/home/bobwithacamera/secrets.jsonn") as json_file:
     secrets = json.load(json_file)
 
 # login to reddit
@@ -129,7 +129,7 @@ class stream(commands.Cog):
 
     @tasks.loop(seconds=1.0)
     async def streamer(self):
-        print('starting stream_one...')
+        print('starting stream...')
         self.index += 1
         files_ = [f for f in listdir('streams/') if isfile(join('streams/', f))]
         files = []
@@ -141,10 +141,6 @@ class stream(commands.Cog):
         subs = ''
         print(files)
         i = 0
-        for sub in files:
-            subs = subs + files[i] + "+"
-            i = i + 1
-        subs = subs[:-1]
         for sub in files:
             subname = sub
             with open('streams/' + sub + '.json') as json_file:
@@ -158,10 +154,11 @@ class stream(commands.Cog):
                     createdon = submission.created_utc
                     if createdon > lastredeemed:
                         await self.post(sub, submission, createdon)
+        return
 
     @streamer.before_loop
     async def before_streamer(self):
-        print('stream_one is waiting to start...')
+        print('stream is waiting to start...')
         await self.bot.wait_until_ready()
 
     async def post(self, sub, submission, createdon):
