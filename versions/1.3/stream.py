@@ -11,7 +11,7 @@ version = '1.3 Created by bwac#2517'
 red = 0xFF0000
 
 secrets = None
-with open("/home/bobwithacamera/secrets.jsonn") as json_file:
+with open("/home/bobwithacamera/secrets.json") as json_file:
     secrets = json.load(json_file)
 
 # login to reddit
