@@ -144,6 +144,7 @@ class stream(commands.Cog):
             subs = subs + files[i] + "+"
             i = i + 1
         subs = subs[:-1]
+        print(files)
         for sub in files:
             subname = sub
             with open('streams/' + sub + '.json') as json_file:
