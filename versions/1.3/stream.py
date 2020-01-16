@@ -11,7 +11,7 @@ version = '1.3 Created by bwac#2517'
 red = 0xFF0000
 
 secrets = None
-with open("/home/bobwithacamera/secrets.json") as json_file:
+with open("C:/Users/Noahd/Documents/secrets.json") as json_file:
     secrets = json.load(json_file)
 
 # login to reddit
@@ -130,6 +130,7 @@ class stream(commands.Cog):
     @tasks.loop(seconds=1.0)
     async def streamer(self):
         print('starting stream...')
+        time.sleep(5)
         self.index += 1
         files_ = [f for f in listdir('streams/') if isfile(join('streams/', f))]
         files = []
@@ -143,18 +144,144 @@ class stream(commands.Cog):
         i = 0
         for sub in files:
             subname = sub
-            with open('streams/' + subname + '.json') as json_file:
-                dump = json.load(json_file)
-                lastredeemed = dump["last redeemed"]
+            if path.exists('streams/' + subname + '.json'):
+                with open('streams/' + subname + '.json') as json_file:
+                    if path.exists('streams/' + subname + '.json'):
+                        dump = json.load(json_file)
+                        lastredeemed = dump["last redeemed"]
+                        print('yes3')
 
-                for submission in reddit.subreddit(subname).new(limit=20):
-                    createdon = submission.created_utc
-                    if createdon > lastredeemed:
-                        dump["last redeemed"] = time.time()
-                        with open('streams/' + subname + '.json', 'w') as json_file:
-                            json.dump(dump, json_file, indent=4)
-                        await self.post(subname, submission, createdon)
-        return
+                        for submission in reddit.subreddit(subname).new(limit=20):
+                            createdon = submission.created_utc
+                            print(4)
+                            if createdon > lastredeemed:
+                                dump["last redeemed"] = time.time()
+                                print(5)
+                                if path.exists('streams/' + subname + '.json'):
+                                    with open('streams/' + subname + '.json', 'w') as json_file:
+                                        print(6)
+                                        if path.exists('streams/' + subname + '.json'):
+                                            json.dump(dump, json_file, indent=4)
+                                        print(7)
+                                        #await self.post(subname, submission, createdon)
+                                        url = submission.url
+                                        domain = url.split("://")[1].split("/")[0]
+                                        print(8)
+                                        with open('streams/' + sub + '.json') as json_file:
+                                            print(9)
+                                            print(json_file)
+                                            subdict = json.load(json_file)
+                                            for server in subdict["channels"]:
+                                                k = 0
+                                                print(10)
+                                                if len(subdict["channels"][server]) > 0 or len(
+                                                        subdict["channels"][server]) == 0:
+                                                    for channelid in subdict["channels"][server]:
+                                                        channel = self.bot.get_channel(channelid)
+                                                        if channel is None:
+                                                            print(11)
+                                                            with open('streams/' + sub + '.json', 'w') as json_file:
+                                                                del subdict['channels'][server][k]
+                                                                print(12)
+                                                                json.dump(subdict, json_file, indent=4)
+                                                                return
+                                                        else:
+                                                            print(13)
+                                                            post = discord.Embed(title='', color=red)
+                                                            post.add_field(name='Loading...',
+                                                                           value='<a:loading:650579775433474088> Loading...')
+                                                            post.set_footer(
+                                                                text="if it never loads, something went wrong, "
+                                                                     "https://rbdis.xyz/bugreport")
+                                                            if channel:
+                                                                postMessage = await channel.send(embed=post)
+                                                        if channel:
+                                                            if str(channel).__contains__('stream'):
+                                                                if domain == 'i.redd.it' or domain == 'i.imgur.com':
+                                                                    post = discord.Embed(
+                                                                        title='r/' + sub + ', ' + submission.title,
+                                                                        color=red)
+                                                                    post.set_image(url=url)
+                                                                    post.add_field(name="Author",
+                                                                                   value=submission.author)
+                                                                    post.add_field(name="Posted on",
+                                                                                   value=time.ctime(createdon))
+                                                                    post.add_field(name='Link:',
+                                                                                   value=submission.shortlink,
+                                                                                   inline=False)
+                                                                    post.set_footer(
+                                                                        text="something wrong? https://rbdis.xyz/bugreport")
+                                                                elif domain.__contains__('reddit.com'):
+                                                                    selftext = submission.selftext
+                                                                    post = discord.Embed(
+                                                                        title='r/' + sub + ', ' + submission.title,
+                                                                        color=red)
+                                                                    post.add_field(name="Author",
+                                                                                   value=submission.author)
+                                                                    post.add_field(name="Posted on",
+                                                                                   value=time.ctime(createdon))
+                                                                    if selftext != '':
+                                                                        post.add_field(name='Text:', value=selftext)
+                                                                    post.add_field(name='Link:',
+                                                                                   value=submission.shortlink,
+                                                                                   inline=False)
+                                                                    post.set_footer(
+                                                                        text="something wrong? https://rbdis.xyz/bugreport")
+                                                                    if len(post) > 2000:
+                                                                        post = discord.Embed(
+                                                                            title='r/' + sub + ', ' + submission.title,
+                                                                            color=red)
+                                                                        post.add_field(name="Author",
+                                                                                       value=submission.author)
+                                                                        post.add_field(name="Posted on",
+                                                                                       value=time.ctime(createdon))
+                                                                        post.add_field(name='Link:',
+                                                                                       value=submission.shortlink,
+                                                                                       inline=False)
+                                                                        post.add_field(name='error:',
+                                                                                       value='Text is over 2000')
+                                                                        post.set_footer(
+                                                                            text="something wrong? https://rbdis.xyz/bugreport")
+                                                                else:
+                                                                    if domain == 'v.redd.it' or domain.__contains__(
+                                                                            'youtube'):
+                                                                        post = discord.Embed(
+                                                                            title='r/' + sub + ', ' + submission.title,
+                                                                            color=red)
+                                                                        post.add_field(name="Author",
+                                                                                       value=submission.author)
+                                                                        post.add_field(name="Posted on",
+                                                                                       value=time.ctime(createdon))
+                                                                        post.add_field(name='Link:',
+                                                                                       value=submission.shortlink,
+                                                                                       inline=False)
+                                                                        post.add_field(name='error',
+                                                                                       value="RedditBot can't play video (" + domain +
+                                                                                             ")\nIf you want this in discord upvote this "
+                                                                                             "https://support.discordapp.com/hc/en-us"
+                                                                                             "/community/posts/360037387352")
+                                                                        post.set_footer(
+                                                                            text="something wrong? https://rbdis.xyz/bugreport")
+                                                                    else:
+                                                                        post = discord.Embed(
+                                                                            title='r/' + sub + ', ' + submission.title,
+                                                                            color=red)
+                                                                        post.add_field(name="Author",
+                                                                                       value=submission.author)
+                                                                        post.add_field(name="Posted on",
+                                                                                       value=time.ctime(createdon))
+                                                                        post.add_field(name='Link:',
+                                                                                       value=submission.shortlink,
+                                                                                       inline=False)
+                                                                        post.add_field(name='error',
+                                                                                       value="RedditBot doesn't support " + domain)
+                                                                        post.add_field(name="request",
+                                                                                       value="Want this website to be supported? "
+                                                                                             "https://rbdis.xyz/feedback",
+                                                                                       inline=False)
+                                                                if channel:
+                                                                    await postMessage.edit(embed=post)
+                                                        k = k + 1
 
     @streamer.before_loop
     async def before_streamer(self):
@@ -164,19 +291,26 @@ class stream(commands.Cog):
     async def post(self, sub, submission, createdon):
         url = submission.url
         domain = url.split("://")[1].split("/")[0]
+        print(8)
         with open('streams/' + sub + '.json') as json_file:
+            print(9)
+            print(json_file)
             subdict = json.load(json_file)
             for server in subdict["channels"]:
                 k = 0
+                print(10)
                 if len(subdict["channels"][server]) > 0 or len(subdict["channels"][server]) == 0:
                     for channelid in subdict["channels"][server]:
                         channel = self.bot.get_channel(channelid)
                         if channel is None:
+                            print(11)
                             with open('streams/' + sub + '.json', 'w') as json_file:
                                 del subdict['channels'][server][k]
+                                print(12)
                                 json.dump(subdict, json_file, indent=4)
                                 return
                         else:
+                            print(13)
                             post = discord.Embed(title='', color=red)
                             post.add_field(name='Loading...',
                                            value='<a:loading:650579775433474088> Loading...')
@@ -233,10 +367,8 @@ class stream(commands.Cog):
                                         post.add_field(name='error', value="RedditBot doesn't support " + domain)
                                         post.add_field(name="request", value="Want this website to be supported? "
                                                                              "https://rbdis.xyz/feedback", inline=False)
-
                                 if channel:
                                     await postMessage.edit(embed=post)
-
                         k = k + 1
 
 def setup(bot):

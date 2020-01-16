@@ -11,7 +11,7 @@ red = 0xFF0000
 from pathlib import Path
 # secrets.json has tokens ect
 secrets = None
-with open("/home/bobwithacamera/secrets.json") as json_file:
+with open("C:/Users/Noahd/Documents/secrets.json") as json_file:
     secrets = json.load(json_file)
 
 class subreddit(commands.Cog):

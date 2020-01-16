@@ -1,0 +1,1 @@
+worker: python versions\1.3\bot.py
