@@ -121,7 +121,7 @@ async def on_command_completion(ctx):
         await ctx.send(embed=newmessage)
 
 # all the cogs
-extensions = ["user", "subreddit", "topgg", "stream"]
+extensions = ["user", "subreddit", "topgg"]
 
 if __name__ == "__main__":
     # load the cogs
