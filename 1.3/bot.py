@@ -8,7 +8,7 @@ import random
 # secrets.json has tokens ect
 secrets = None
 
-with open("/home/ubuntu/secrets.json") as json_file:
+with open("/home/redditbot/secrets.json") as json_file:
     secrets = json.load(json_file)
 
 # login to reddit
@@ -128,4 +128,4 @@ if __name__ == "__main__":
     for extension in extensions:
         bot.load_extension(extension)
     # run the bot
-    bot.run(secrets["discord"]["RedditBot"]["testing"])
+    bot.run(secrets["discord"]["RedditBot"]["production"])

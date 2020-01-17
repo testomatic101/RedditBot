@@ -3,15 +3,11 @@
   <component name="ChangeListManager">
     <list default="true" id="7829b319-422a-403e-a069-1fa549835f17" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Profile" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bot.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/readme.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/requirments.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/stream.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/subreddit.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/topgg.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/trophyemoji.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/user.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/1.3/bot.py" beforeDir="false" afterPath="$PROJECT_DIR$/1.3/bot.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/1.3/stream.py" beforeDir="false" afterPath="$PROJECT_DIR$/1.3/stream.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/1.3/subreddit.py" beforeDir="false" afterPath="$PROJECT_DIR$/1.3/subreddit.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/1.3/topgg.py" beforeDir="false" afterPath="$PROJECT_DIR$/1.3/topgg.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/1.3/user.py" beforeDir="false" afterPath="$PROJECT_DIR$/1.3/user.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
