@@ -8,7 +8,7 @@ import random
 # secrets.json has tokens ect
 secrets = None
 
-with open("/home/redditbot/secrets.json") as json_file:
+with open("/home/ubuntu/secrets.json") as json_file:
     secrets = json.load(json_file)
 
 # login to reddit
