@@ -8,12 +8,6 @@ from sys import platform
 version = '1.2.5 Created by bwac#2517'
 red = 0xFF0000
 
-from pathlib import Path
-# secrets.json has tokens ect
-secrets = None
-with open("/home/ubuntu/secrets.json") as json_file:
-    secrets = json.load(json_file)
-
 trophyemojis = None
 with open('trophyemoji.json') as json_file:
     trophyemojis = json.load(json_file)
@@ -31,8 +25,8 @@ class user(commands.Cog):
             loading.set_footer(text="if it never loads, RedditBot can't find the user")
             loadingMessage = await ctx.send(embed=loading)
 
-            reddit = praw.Reddit(client_id=secrets["reddit"]["client_id"],
-                                 client_secret=secrets["reddit"]["client_secret"],
+            reddit = praw.Reddit(client_id="ivBqfmemZfkbCg",
+                                 client_secret="FoCd7bYKppGz2gsAX8cVNHJ9Vy4",
                                  user_agent='redditbot created by bwac#2517')
 
             loading = discord.Embed(title='', color=red)
