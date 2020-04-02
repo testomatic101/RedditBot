@@ -6,15 +6,10 @@ import json
 import random
 from pathlib import Path
 
-# secrets.json has tokens ect
-secrets = None
-
-with open("/home/ubuntu/secrets.json") as json_file:
-    secrets = json.load(json_file)
 
 # login to reddit
-reddit = praw.Reddit(client_id=secrets["reddit"]["client_id"],
-                     client_secret=secrets["reddit"]["client_secret"],
+reddit = praw.Reddit(client_id="ivBqfmemZfkbCg",
+                     client_secret="FoCd7bYKppGz2gsAX8cVNHJ9Vy4",
                      user_agent='redditbot created by bwac#2517')
 # make the bot client
 bot = commands.Bot(command_prefix='r')
@@ -25,7 +20,7 @@ version = '1.2.5 https://rbdis.xyz redditbot created by bwac#2517'
 red = 0xFF0000
 
 # make the top.gg api client
-topggclient = dbl.DBLClient(bot, secrets["top.gg"]["token"])
+topggclient = dbl.DBLClient(bot, "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjQzNzQzOTU2MjM4NjUwNTczMCIsImJvdCI6dHJ1ZSwiaWF0IjoxNTg1ODA5MDQ2fQ.5IZ449Tf5mj5ZEaXORVKuZ2SKL6KcaySkgE8unc59-4")
 
 # remove the help so we can have a custom one
 bot.remove_command('help')
@@ -115,4 +110,4 @@ if __name__ == "__main__":
     for extension in extensions:
         bot.load_extension(extension)
     # run the bot
-    bot.run(secrets["discord"]["RedditBot"]["production"])
+    bot.run("lV30ctXjGC56kAUxldKyfq7SDqB-GYVj")
