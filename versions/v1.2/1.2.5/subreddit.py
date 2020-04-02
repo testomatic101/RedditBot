@@ -8,12 +8,6 @@ from sys import platform
 version = '1.2.5 Created by bwac#2517'
 red = 0xFF0000
 
-from pathlib import Path
-# secrets.json has tokens ect
-secrets = None
-with open("/home/ubuntu/secrets.json") as json_file:
-    secrets = json.load(json_file)
-
 class subreddit(commands.Cog):
     def __init__(self, bot):
         self.bot = bot
@@ -29,8 +23,8 @@ class subreddit(commands.Cog):
                 loading.set_footer(text="if it never loads, RedditBot can't find the subreddit")
                 loadingMessage = await ctx.send(embed=loading)
 
-                reddit = praw.Reddit(client_id=secrets["reddit"]["client_id"],
-                                     client_secret=secrets["reddit"]["client_secret"],
+                reddit = praw.Reddit(client_id="ivBqfmemZfkbCg",
+                                     client_secret="FoCd7bYKppGz2gsAX8cVNHJ9Vy4",
                                      user_agent='redditbot created by bwac#2517')
 
                 subreddit = reddit.subreddit(subreddit_name)
