@@ -60,13 +60,6 @@ async def newhelp(ctx):
 bot.add_command(newhelp)
 
 
-# the feedback command is for users to send feedback
-@commands.command()
-async def feedback(ctx):
-    await ctx.send("You can send feedback here http://rbdis.xyz/?page_id=474")
-# add the feedback command
-bot.add_command(feedback)
-
 # update status
 @commands.command()
 async def update(ctx):
