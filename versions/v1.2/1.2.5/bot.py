@@ -36,6 +36,7 @@ async def newhelp(ctx):
     botinfo = await topggclient.get_bot_info()
     getto = botinfo.get('monthlyPoints') + 10
     helpembed.add_field(name="\n\nThe bot currently has **" + str(botinfo.get('monthlyPoints')) + "** votes, can we get it to **" + str(getto) + "**?", value='https://top.gg/bot/437439562386505730/vote', inline=False)
+    helpembed.add_field(name="Join the server!", value="http://rbdis.xyz/server/", inline=False)
     helpembed.add_field(name="Found a bug?", value="Report it here http://rbdis.xyz/bugreport/", inline=False)
     helpembed.add_field(name="Please give your feedback!", value="http://rbdis.xyz/feedback", inline=False)
 
@@ -95,8 +96,8 @@ async def on_ready():
 @bot.event
 async def on_command_completion(ctx):
     if random.randint(1, 2) == 1:
-        votemessage = discord.Embed(title="wanna help out the bot?",
-                                  description="if you didnt know, top.gg resets all votes every month. So it would mean even more to me if you voted at https://top.gg/bot/437439562386505730/vote",
+        votemessage = discord.Embed(title="Hey! We are doing a giveaway in our server!",
+                                  description="If you didnt know we have a server, come join (and maybe score nitro one day) :D https://rbdis.xyz/server",
                                   color=red)
         await ctx.send(embed=votemessage)
     else:
