@@ -5,14 +5,8 @@ import datetime
 import json
 from sys import platform
 
-version = '1.3 Created by bwac#2517'
+version = '1.2.5 Created by bwac#2517'
 red = 0xFF0000
-
-from pathlib import Path
-# secrets.json has tokens ect
-secrets = None
-with open("/home/ubuntu/secrets.json") as json_file:
-    secrets = json.load(json_file)
 
 class subreddit(commands.Cog):
     def __init__(self, bot):
@@ -29,8 +23,8 @@ class subreddit(commands.Cog):
                 loading.set_footer(text="if it never loads, RedditBot can't find the subreddit")
                 loadingMessage = await ctx.send(embed=loading)
 
-                reddit = praw.Reddit(client_id=secrets["reddit"]["client_id"],
-                                     client_secret=secrets["reddit"]["client_secret"],
+                reddit = praw.Reddit(client_id="ivBqfmemZfkbCg",
+                                     client_secret="FoCd7bYKppGz2gsAX8cVNHJ9Vy4",
                                      user_agent='redditbot created by bwac#2517')
 
                 subreddit = reddit.subreddit(subreddit_name)
@@ -59,6 +53,10 @@ class subreddit(commands.Cog):
                                         "subreddit name]", color=red)
             error.set_footer(text=version)
             await ctx.send(embed=error)
+
+    @commands.command(name='r/')
+    async def achivedr(self, ctx):
+        await ctx.send('Sorry rr/ has moved to rr')
 
 def setup(bot):
     bot.add_cog(subreddit(bot))
