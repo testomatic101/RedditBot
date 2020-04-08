@@ -68,5 +68,6 @@ class user(commands.Cog):
             error.set_footer(text=version)
             await ctx.send(embed=error)
 
+
 def setup(bot):
     bot.add_cog(user(bot))
