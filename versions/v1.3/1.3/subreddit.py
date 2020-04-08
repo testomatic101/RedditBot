@@ -5,7 +5,7 @@ import datetime
 import json
 from sys import platform
 
-version = '1.2.5 Created by bwac#2517'
+version = '1.3 Created by bwac#2517'
 red = 0xFF0000
 
 class subreddit(commands.Cog):

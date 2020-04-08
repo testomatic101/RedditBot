@@ -15,7 +15,7 @@ reddit = praw.Reddit(client_id="ivBqfmemZfkbCg",
 bot = commands.Bot(command_prefix='r')
 
 # this is used for the footer of embeds
-version = '1.2.5 https://rbdis.xyz redditbot created by bwac#2517'
+version = '1.3 https://rbdis.xyz redditbot created by bwac#2517'
 # red for embeds
 red = 0xFF0000
 
@@ -65,7 +65,7 @@ bot.add_command(newhelp)
 async def update(ctx):
     await bot.change_presence(status=discord.Status.do_not_disturb, activity=discord.Game(name="rhelp | In " + str(len(bot.guilds)) + " servers"))
 bot.add_command(update)
-    
+
 # all the cogs
 extensions = ["user", "subreddit", "topgg"]
 
