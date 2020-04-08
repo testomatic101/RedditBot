@@ -67,7 +67,7 @@ async def update(ctx):
 bot.add_command(update)
 
 # all the cogs
-extensions = ["user", "subreddit", "topgg"]
+extensions = ["user", "subreddit", "topgg", "me"]
 
 
 @bot.event
