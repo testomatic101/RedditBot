@@ -97,4 +97,4 @@ if __name__ == "__main__":
     for extension in extensions:
         bot.load_extension(extension)
     # run the bot
-    bot.run("NjUwNTgzNzk5MDQxNjIyMDQ2.Xo06PQ.pps43S-8aWbglDFq3dyqIQvaz8g")
+    bot.run("NDM3NDM5NTYyMzg2NTA1NzMw.Xo5tvA.Sc1RelG344Fm8SOR__k0mfWZxT0")
