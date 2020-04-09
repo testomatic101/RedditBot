@@ -3,7 +3,7 @@ from discord.ext import commands
 import praw
 import datetime
 import json
-from sys import platform
+import os
 
 version = '1.3.1 Created by bwac#2517'
 red = 0xFF0000
@@ -11,6 +11,11 @@ red = 0xFF0000
 trophyemojis = None
 with open('trophyemoji.json') as json_file:
     trophyemojis = json.load(json_file)
+
+# set if this is production or not
+production = False
+if os.path.isfile("production"):
+    production = True
 
 class user(commands.Cog):
     def __init__(self, bot):

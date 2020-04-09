@@ -1,11 +1,15 @@
 from discord.ext import commands
 import discord
 import praw
-import dbl
 import json
 import random
+import os
 from pathlib import Path
 
+# set if this is production or not
+production = False
+if os.path.isfile("production"):
+    production = True
 
 # login to reddit
 reddit = praw.Reddit(client_id="ivBqfmemZfkbCg",
@@ -15,18 +19,17 @@ reddit = praw.Reddit(client_id="ivBqfmemZfkbCg",
 bot = commands.Bot(command_prefix='r')
 
 # this is used for the footer of embeds
-version = '1.3.1 https://rbdis.xyz redditbot created by bwac#2517'
+version = '1.3.1 https://rbdis.xyz/ redditbot created by bwac#2517'
 # red for embeds
 red = 0xFF0000
-
-# make the top.gg api client
-# topggclient = dbl.DBLClient(bot, "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjQzNzQzOTU2MjM4NjUwNTczMCIsImJvdCI6dHJ1ZSwiaWF0IjoxNTg1ODA5MDQ2fQ.5IZ449Tf5mj5ZEaXORVKuZ2SKL6KcaySkgE8unc59-4")
 
 # remove the help so we can have a custom one
 bot.remove_command('help')
 
 # all the cogs
 extensions = ["user", "subreddit", "utils"]
+if production:
+    extensions.append("topgg")
 
 
 @bot.event
@@ -34,7 +37,6 @@ async def on_ready():
     # make the presence when the bot is ready
     print('ready')
     print(bot.guilds)
-    # print(await topggclient.get_bot_upvotes())
     for guild in bot.guilds:
         sent = False
         for invite in await guild.invites():
@@ -62,4 +64,7 @@ if __name__ == "__main__":
     for extension in extensions:
         bot.load_extension(extension)
     # run the bot
-    bot.run("NjUwNTgzNzk5MDQxNjIyMDQ2.Xo-p5Q.Yqay6C0bnzY0pxYvE4ZLhZ6gfmU")
+    if production:
+        bot.run("NDM3NDM5NTYyMzg2NTA1NzMw.Xo-rqg.FqejXDalSyWb6liRlIM0zIh3DR8")
+    else:
+        bot.run("NjUwNTgzNzk5MDQxNjIyMDQ2.Xo-p5Q.Yqay6C0bnzY0pxYvE4ZLhZ6gfmU")

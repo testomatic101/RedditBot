@@ -4,10 +4,14 @@ import praw
 import datetime
 import json
 import os
-from sys import platform
 
 version = '1.3.1 Created by bwac#2517'
 red = 0xFF0000
+
+# set if this is production or not
+production = False
+if os.path.isfile("production"):
+    production = True
 
 class subreddit(commands.Cog):
     def __init__(self, bot):

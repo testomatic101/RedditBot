@@ -2,9 +2,6 @@ import dbl
 import discord
 from discord.ext import commands
 import json
-from sys import platform
-
-from pathlib import Path
 
 class topgg(commands.Cog):
     """Handles interactions with the top.gg API"""
