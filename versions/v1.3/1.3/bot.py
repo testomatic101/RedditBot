@@ -20,7 +20,8 @@ version = '1.3 https://rbdis.xyz redditbot created by bwac#2517'
 red = 0xFF0000
 
 # make the top.gg api client
-topggclient = dbl.DBLClient(bot, "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjQzNzQzOTU2MjM4NjUwNTczMCIsImJvdCI6dHJ1ZSwiaWF0IjoxNTg1ODA5MDQ2fQ.5IZ449Tf5mj5ZEaXORVKuZ2SKL6KcaySkgE8unc59-4")
+#ADD THIS AFTER
+#topggclient = dbl.DBLClient(bot, "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjQzNzQzOTU2MjM4NjUwNTczMCIsImJvdCI6dHJ1ZSwiaWF0IjoxNTg1ODA5MDQ2fQ.5IZ449Tf5mj5ZEaXORVKuZ2SKL6KcaySkgE8unc59-4")
 
 # remove the help so we can have a custom one
 bot.remove_command('help')
@@ -33,9 +34,10 @@ async def newhelp(ctx):
     helpembed = discord.Embed(title="**http://rbdis.xyz**",
                          description="help",
                          color=red)
-    botinfo = await topggclient.get_bot_info()
-    getto = botinfo.get('monthlyPoints') + 10
-    helpembed.add_field(name="\n\nThe bot currently has **" + str(botinfo.get('monthlyPoints')) + "** votes, can we get it to **" + str(getto) + "**?", value='https://top.gg/bot/437439562386505730/vote', inline=False)
+    # ADD THIS AFTER
+    #botinfo = await topggclient.get_bot_info()
+    #getto = botinfo.get('monthlyPoints') + 10
+    #helpembed.add_field(name="\n\nThe bot currently has **" + str(botinfo.get('monthlyPoints')) + "** votes, can we get it to **" + str(getto) + "**?", value='https://top.gg/bot/437439562386505730/vote', inline=False)
     helpembed.add_field(name="Join the server!", value="http://rbdis.xyz/server/", inline=False)
     helpembed.add_field(name="Found a bug?", value="Report it here http://rbdis.xyz/bugreport/", inline=False)
     helpembed.add_field(name="Please give your feedback!", value="http://rbdis.xyz/feedback", inline=False)
@@ -46,6 +48,7 @@ async def newhelp(ctx):
     commandsembed.add_field(name="rhelp", value="Shows this page", inline=False)
     commandsembed.add_field(name="rr [sub name here]", value="Gives you some info on a subreddit", inline=False)
     commandsembed.add_field(name="ru [username here]", value="Gives you some info on a user", inline=False)
+    commandsembed.add_field(name="rforce [sub name here]", value="Removes subreddit cache", inline=False)
     # help_user = discord.Embed(title="User commands:",
     #                           description="**Commands to add accounts and account management**", color=red)
     # help_user.add_field(name="rconnect [user name here]", value="Connect a reddit connect", inline=False)
@@ -67,7 +70,7 @@ async def update(ctx):
 bot.add_command(update)
 
 # all the cogs
-extensions = ["user", "subreddit", "topgg", "me"]
+extensions = ["user", "subreddit",]
 
 
 @bot.event
@@ -76,7 +79,7 @@ async def on_ready():
 
     print('ready')
     print(bot.guilds)
-    print(await topggclient.get_bot_upvotes())
+    #print(await topggclient.get_bot_upvotes())
     for guild in bot.guilds:
         sent = False
         for invite in await guild.invites():
@@ -104,4 +107,4 @@ if __name__ == "__main__":
     for extension in extensions:
         bot.load_extension(extension)
     # run the bot
-    bot.run("NDM3NDM5NTYyMzg2NTA1NzMw.XoWF0Q.ZhIO4UrLklNfKAz2vSeQ86aI4c0")
+    bot.run("NjUwNTgzNzk5MDQxNjIyMDQ2.Xo06PQ.pps43S-8aWbglDFq3dyqIQvaz8g")
