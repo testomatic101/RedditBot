@@ -32,7 +32,7 @@ class subreddit(commands.Cog):
                 if ctx.channel.is_nsfw():
                     loading = discord.Embed(title='', color=red)
                     loading.add_field(name='Cache...', value="<a:loading:650579775433474088> checking if this has been cached")
-                    loading.set_footer(text="if it never loads, something went wrong in the backround")
+                    loading.set_footer(text="if it never loads, something went wrong in the backround, or the subreddit cant be found")
                     await loadingMessage.edit(embed=loading)
 
                     time_cached = None
@@ -45,7 +45,7 @@ class subreddit(commands.Cog):
                         # If cache exists, read from it
                         loading = discord.Embed(title='', color=red)
                         loading.add_field(name='Cache...', value="<a:loading:650579775433474088> cache found! now loading from")
-                        loading.set_footer(text="if it never loads, something went wrong in the backround")
+                        loading.set_footer(text="if it never loads, something went wrong in the backround, or the subreddit cant be found")
                         await loadingMessage.edit(embed=loading)
 
                         with open("cache/subreddits/" + subreddit_name + ".json") as json_file:
@@ -60,7 +60,7 @@ class subreddit(commands.Cog):
                         # If cache doesnt exit, make it
                         loading = discord.Embed(title='', color=red)
                         loading.add_field(name='Cache...', value="<a:loading:650579775433474088> cache not found.. creating")
-                        loading.set_footer(text="if it never loads, something went wrong in the backround")
+                        loading.set_footer(text="if it never loads, something went wrong in the backround, or the subreddit cant be found")
                         await loadingMessage.edit(embed=loading)
 
                         smalldes = subreddit.public_description
@@ -120,7 +120,7 @@ class subreddit(commands.Cog):
                     os.remove("cache/subreddits/" + subreddit_name + ".json")
 
                     loading = discord.Embed(title='', color=red)
-                    loading.add_field(name='Deleted!...', value="now say rr" + subreddit_name)
+                    loading.add_field(name='Deleted!...', value="now say rr " + subreddit_name)
                     await loadingMessage.edit(embed=loading)
                 else:
                     loading = discord.Embed(title='', color=red)
