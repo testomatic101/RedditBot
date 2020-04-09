@@ -17,8 +17,9 @@ class me(commands.Cog):
         self.bot = bot
         type(self).__name__ = ''
 
-    @commands.command(name='u')
-    async def me(self, ctx, username=None):
+    @commands.command(name='me')
+    async def me(self, ctx):
+        print(ctx.author)
             #loading = discord.Embed(title='', ncolor=red)
             #loading.add_field(name='Loading...', value='<a:loading:650579775433474088> Contacting reddit servers...')
             #loading.set_footer(text="if it never loads, RedditBot can't find your connected username")
@@ -63,4 +64,4 @@ class me(commands.Cog):
             #await loadingMessage.edit(embed=user)
 
 def setup(bot):
-    bot.add_cog(user(bot))
+    bot.add_cog(me(bot))
