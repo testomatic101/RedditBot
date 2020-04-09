@@ -63,7 +63,10 @@ class subreddit(commands.Cog):
                         loading.set_footer(text="if it never loads, something went wrong in the backround, or the subreddit cant be found")
                         await loadingMessage.edit(embed=loading)
 
-                        smalldes = subreddit.public_description
+                        try:
+                            smalldes = subreddit.public_description
+                        except:
+                            smalldes = None
                         subcount = subreddit.subscribers
                         nsfw = subreddit.over18
                         thumbnail = subreddit.icon_img
@@ -83,6 +86,8 @@ class subreddit(commands.Cog):
                     sub = discord.Embed(title='r/' + subreddit_name + ' info:', color=red)
                     if smalldes:
                         sub.add_field(name='\nSmall Description:', value=smalldes, inline=False)
+                    else:
+                        sub.add_field(name='\There is no small description for this server', value="*nothing*", inline=False)
                     sub.add_field(name='\nSubscriber Count:', value=subcount)
                     sub.add_field(name='NSFW:', value=nsfw)
                     if time_cached:
