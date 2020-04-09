@@ -49,7 +49,7 @@ class subreddit(commands.Cog):
             else:
                 await ctx.send('Please do this in a server')
         else:
-            error = discord.Embed(title="You didn't give a subreddit!\n\nYou should use this command like:\n!r/ ["
+            error = discord.Embed(title="You didn't give a subreddit!\n\nYou should use this command like:\nrr ["
                                         "subreddit name]", color=red)
             error.set_footer(text=version)
             await ctx.send(embed=error)
