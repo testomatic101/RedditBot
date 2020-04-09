@@ -81,7 +81,8 @@ class subreddit(commands.Cog):
 
                     datetime.datetime.fromtimestamp(int(subreddit.created_utc)).strftime('%m/%d/%Y')
                     sub = discord.Embed(title='r/' + subreddit_name + ' info:', color=red)
-                    sub.add_field(name='\nSmall Description:', value=smalldes, inline=False)
+                    if smalldes:
+                        sub.add_field(name='\nSmall Description:', value=smalldes, inline=False)
                     sub.add_field(name='\nSubscriber Count:', value=subcount)
                     sub.add_field(name='NSFW:', value=nsfw)
                     if time_cached:
