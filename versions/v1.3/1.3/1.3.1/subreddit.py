@@ -91,12 +91,12 @@ class subreddit(commands.Cog):
                     if smalldes:
                         sub.add_field(name='\nSmall Description:', value=smalldes, inline=False)
                     else:
-                        sub.add_field(name='\There is no small description for this server', value="*nothing*", inline=False)
+                        sub.add_field(name='\There is no small description for this subreddit', value="*nothing*", inline=False)
                     sub.add_field(name='\nSubscriber Count:', value=subcount)
                     sub.add_field(name='NSFW:', value=nsfw)
                     if time_cached:
                         sub.add_field(name='*these results are from a cache made at*:', value=time_cached, inline=False)
-                        sub.add_field(name='*if you want the latest stats, use rforce ' + subreddit_name + '*', value="keep in mind that you should only force a subreddit every so often", inline=False)
+                        sub.add_field(name='*if you want the latest stats, use rresetsub ' + subreddit_name + '*', value="keep in mind that you should only reset a subreddit cache every so often", inline=False)
                     sub.set_author(name="RedditBot", icon_url="https://i.redd.it/rq36kl1xjxr01.png")
                     sub.set_thumbnail(url=thumbnail)
                     sub.set_footer(text="RedditBot " + version)
@@ -118,7 +118,7 @@ class subreddit(commands.Cog):
             await ctx.send(embed=error)
 
 
-    @commands.command(name='force')
+    @commands.command(name='resetsub')
     async def force(self, ctx, subreddit_name=None):
         if subreddit_name:
                 loading = discord.Embed(title='', color=red)
@@ -137,7 +137,7 @@ class subreddit(commands.Cog):
                     loading.add_field(name='No cache!...', value="try saying rr " + subreddit_name)
                     await loadingMessage.edit(embed=loading)
         else:
-            error = discord.Embed(title="You didn't give a subreddit!\n\nYou should use this command like:\nrforce ["
+            error = discord.Embed(title="You didn't give a subreddit!\n\nYou should use this command like:\nresetsub ["
                                         "subreddit name]", color=red)
             error.set_footer(text=version)
             await ctx.send(embed=error)
