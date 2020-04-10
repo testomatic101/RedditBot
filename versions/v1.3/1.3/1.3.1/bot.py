@@ -52,9 +52,10 @@ async def newhelp(ctx):
     commandsembed.add_field(name="rhelp", value="Shows this page", inline=False)
     commandsembed.add_field(name="rr [sub name here]", value="Gives you some info on a subreddit", inline=False)
     commandsembed.add_field(name="ru [username here]", value="Gives you some info on a user", inline=False)
-    commandsembed.add_field(name="rforce [sub name here]", value="Removes subreddit cache", inline=False)
-    await ctx.author.send(embed=helpembed)
-    await ctx.author.send(embed=commandsembed)
+    commandsembed.add_field(name="rresetsub [sub name here]", value="Removes subreddit cache", inline=False)
+    commandsembed.add_field(name="rresetuser [user name here]", value="Removes user cache", inline=False)
+    await ctx.send(embed=helpembed)
+    await ctx.send(embed=commandsembed)
 # add the new help command
 bot.add_command(newhelp)
 
@@ -65,7 +66,7 @@ async def update(ctx):
 bot.add_command(update)
 
 # all the cogs
-extensions = ["user", "subreddit", "utils"]
+extensions = ["user", "subreddit"]
 if production:
     extensions.append("topgg")
 
