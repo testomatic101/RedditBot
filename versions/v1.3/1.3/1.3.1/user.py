@@ -39,14 +39,58 @@ class user(commands.Cog):
             loading.set_footer(text="if it never loads, something went wrong behind the scenes")
             await loadingMessage.edit(embed=loading)
 
+            time_cached = None
+            name = None
+            karma = None
+            link_karma = None
+            cake_day = None
+            is_employee = None
+
             user_r = reddit.redditor(username)  # makes user
-            user = discord.Embed(title='u/' + user_r.name + ' info:', color=red)
-            user.add_field(name='Karma:', value=user_r.comment_karma)
-            user.add_field(name='Link karma:', value=user_r.link_karma)
-            user.add_field(name='All karma:', value=user_r.link_karma + user_r.comment_karma)
-            user.add_field(name='Cake Day:', value=datetime.datetime.fromtimestamp(int(user_r.created)).strftime('%m'
-                                                                                                                 '/%d'
-                                                                                                                 '/%Y'))
+
+            if os.path.isfile("cache/users/" + username + ".json"):
+                # If cache exists, read from it
+                loading = discord.Embed(title='', color=red)
+                loading.add_field(name='Cache...', value="<a:loading:650579775433474088> cache found! now loading from")
+                loading.set_footer(text="if it never loads, something went wrong in the backround, or the username cant be found")
+                await loadingMessage.edit(embed=loading)
+                with open("cache/users/" + username + ".json") as json_file:
+                    cache = json.load(json_file)
+
+                    time_cached = cache["time_cached"]
+                    name = cache["name"]
+                    karma = cache["karma"]
+                    link_karma = cache["link_karma"]
+                    cake_day = cache["cake_day"]
+                    is_employee = cache["is_employee"]
+            else:
+                name = username
+                karma = user_r.comment_karma
+                link_karma = user_r.link_karma
+                cake_day = datetime.datetime.fromtimestamp(int(user_r.created)).strftime('%m/%d/%Y')
+                is_employee = user_r.is_employee
+
+                cache = {
+                    'time_cached': str(datetime.datetime.now()),
+                    'name': name,
+                    'karma': karma,
+                    'link_karma': link_karma,
+                    'cake_day': cake_day,
+                    'is_employee': is_employee,
+                }
+                print(cache)
+                with open("cache/users/" + username + ".json", 'w') as outfile:
+                    json.dump(cache, outfile)
+
+            user = discord.Embed(title='u/' + username + ' info:', color=red)
+            user.add_field(name='Karma:', value=karma)
+            user.add_field(name='Link karma:', value=link_karma)
+            user.add_field(name='All karma:', value=link_karma + karma)
+            user.add_field(name='Cake Day:', value=cake_day)
+            if time_cached:
+                user.add_field(name='*these results are from a cache made at*:', value=time_cached, inline=False)
+                user.add_field(name='*if you want the latest stats, use rresetuser ' + username + '*', value="keep in mind that you should only reset a user cache every so often", inline=False)
+
 
             trophiestxt = ''
             for trophy in user_r.trophies():
@@ -60,7 +104,7 @@ class user(commands.Cog):
                 trophiestxt = trophiestxt + emoji + trophy.name + '\n'
             user.add_field(name='Trophies:', value=trophiestxt)
 
-            if user_r.is_employee:
+            if is_employee:
                 user.add_field(name='This user', value='is an employee of reddit', inline=False)
 
             user.set_author(name="RedditBot", icon_url="https://i.redd.it/rq36kl1xjxr01.png")
@@ -72,6 +116,31 @@ class user(commands.Cog):
                                         "username]", color=red)
             error.set_footer(text=version)
             await ctx.send(embed=error)
+
+    @commands.command(name='resetuser')
+    async def force(self, ctx, user_name=None):
+        if user_name:
+                loading = discord.Embed(title='', color=red)
+                loading.add_field(name='Deleting cache...', value="<a:loading:650579775433474088>")
+                loading.set_footer(text="if it never loads, RedditBot can't find the user")
+                loadingMessage = await ctx.send(embed=loading)
+
+                if os.path.isfile("cache/users/" + user_name + ".json"):
+                    os.remove("cache/users/" + user_name + ".json")
+
+                    loading = discord.Embed(title='', color=red)
+                    loading.add_field(name='Deleted!...', value="now say ru " + user_name)
+                    await loadingMessage.edit(embed=loading)
+                else:
+                    loading = discord.Embed(title='', color=red)
+                    loading.add_field(name='No cache!...', value="try saying ru " + user_name)
+                    await loadingMessage.edit(embed=loading)
+        else:
+            error = discord.Embed(title="You didn't give a user name!\n\nYou should use this command like:\nresetuser ["
+                                        "user name]", color=red)
+            error.set_footer(text=version)
+            await ctx.send(embed=error)
+
 
 
 def setup(bot):
