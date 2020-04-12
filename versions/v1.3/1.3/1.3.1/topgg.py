@@ -12,7 +12,7 @@ class topgg(commands.Cog):
         self.dblpy = dbl.DBLClient(self.bot, self.token, autopost=True)
 
     async def on_guild_post(self, ctx):
-        await ctx.change_presence(status=discord.Status.do_not_disturb,
+        await bot.change_presence(status=discord.Status.do_not_disturb,
                                   activity=discord.Game(name="rhelp | In " + str(len(ctx.guilds)) + " servers"))
         print("Server count posted successfully")
 
