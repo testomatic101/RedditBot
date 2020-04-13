@@ -102,7 +102,7 @@ class subreddit(commands.Cog):
                     if time_cached:
                         sub.add_field(name='*these results are from a cache made at*:', value=time_cached, inline=False)
                         sub.add_field(name='*if you want the latest stats, use rresetsub ' + subreddit_name + '*', value="keep in mind that you should only reset a subreddit cache every so often", inline=False)
-                    sub.set_author(name="RedditBot", icon_url="https://i.redd.it/rq36kl1xjxr01.png")
+                    sub.set_author(name="RedditBot", icon_url="https://images.discordapp.net/avatars/437439562386505730/2874f76dd780cb0af624e3049a6bfad0.png")
                     sub.set_thumbnail(url=thumbnail)
                     sub.set_footer(text="RedditBot " + version)
                     await loadingMessage.edit(embed=sub)
