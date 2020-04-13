@@ -93,17 +93,6 @@ async def on_ready():
 async def on_command_completion(ctx):
     await bot.change_presence(status=discord.Status.do_not_disturb, activity=discord.Game(name="rhelp | In " + str(len(bot.guilds)) + " servers"))
 
-    if random.randint(1, 2) == 1:
-        votemessage = discord.Embed(title="Hey! We are doing a giveaway in our server!",
-                                  description="If you didnt know we have a server, come join (and maybe score nitro one day) :D https://rbdis.xyz/server",
-                                  color=red)
-        await ctx.send(embed=votemessage)
-    else:
-        feedbackmessage = discord.Embed(title="Have you found a bug?",
-                                    description="report it here http://rbdis.xyz/bugreport",
-                                    color=red)
-        await ctx.send(embed=feedbackmessage)
-
 if __name__ == "__main__":
     # load the cogs
     for extension in extensions:
