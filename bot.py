@@ -86,7 +86,6 @@ async def on_ready():
             if not sent:
                 print(invite)
                 sent = True
-    await bot.change_presence(status=discord.Status.do_not_disturb, activity=discord.Game(name="rhelp | In " + str(len(bot.guilds)) + " servers"))
 
 
 @bot.event
