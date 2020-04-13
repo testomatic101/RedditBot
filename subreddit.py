@@ -17,6 +17,8 @@ with open("secrets.json") as json_file:
     secrets = json.load(json_file)
 
 class subreddit(commands.Cog):
+    """Subreddit command, rr"""
+
     def __init__(self, bot):
         self.bot = bot
         type(self).__name__ = ''

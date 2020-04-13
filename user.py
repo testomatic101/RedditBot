@@ -21,6 +21,8 @@ if os.path.isfile("production"):
     production = True
 
 class user(commands.Cog):
+    """User command, ru"""
+
     def __init__(self, bot):
         self.bot = bot
         type(self).__name__ = ''
