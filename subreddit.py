@@ -124,7 +124,7 @@ class subreddit(commands.Cog):
 
 
     @commands.command(name='resetsub')
-    async def force(self, ctx, subreddit_name=None):
+    async def resetsub(self, ctx, subreddit_name=None):
         if subreddit_name:
                 loading = discord.Embed(title='', color=red)
                 loading.add_field(name='Deleting cache...', value="<a:loading:650579775433474088>")
