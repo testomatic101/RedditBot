@@ -23,7 +23,7 @@ reddit = praw.Reddit(client_id=secrets["reddit_id"],
 bot = commands.Bot(command_prefix='r')
 
 # this is used for the footer of embeds
-version = '1.3.1 https://rbdis.xyz/ redditbot created by bwac#2517'
+version = '1.3.2 https://rbdis.xyz/ redditbot created by bwac#2517'
 # red for embeds
 red = 0xFF0000
 

@@ -5,7 +5,7 @@ import datetime
 import json
 import os
 
-version = '1.3.1 Created by bwac#2517'
+version = '1.3.2 Created by bwac#2517'
 red = 0xFF0000
 
 with open("secrets.json") as json_file:

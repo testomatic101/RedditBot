@@ -5,7 +5,7 @@ import datetime
 import json
 import os
 
-version = '1.3.1 Created by bwac#2517'
+version = '1.3.2 Created by bwac#2517'
 red = 0xFF0000
 
 # set if this is production or not
