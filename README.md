@@ -1,5 +1,6 @@
 ## RedditBot can grab info on subreddits and user profiles
 [![Discord Bots](https://top.gg/api/widget/437439562386505730.svg)](https://top.gg/bot/437439562386505730)
+
 [Invite the bot](https://discordapp.com/api/oauth2/authorize?client_id=437439562386505730&permissions=8&redirect_uri=http%3A%2F%2Frbdis.xyz%2Finvited&response_type=code&scope=bot%20identify)
 
 ![example](https://rbdis.xyz/wp-content/uploads/2020/04/combined.png)
