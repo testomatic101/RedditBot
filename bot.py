@@ -18,7 +18,7 @@ with open("secrets.json") as json_file:
 # login to reddit
 reddit = praw.Reddit(client_id=secrets["reddit_id"],
                      client_secret=secrets["reddit_secret"],
-                     user_agent='redditbot created by bwac#2517')
+                     user_agent='discord:n/a:1.3.2 (by /u/-_-BWAC-_-)')
 # make the bot client
 bot = commands.Bot(command_prefix='r')
 

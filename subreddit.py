@@ -35,7 +35,7 @@ class subreddit(commands.Cog):
 
                 reddit = praw.Reddit(client_id=secrets["reddit_id"],
                                      client_secret=secrets["reddit_secret"],
-                                     user_agent='redditbot created by bwac#2517')
+                                     user_agent='discord:n/a:1.3.2 (by /u/-_-BWAC-_-)')
 
                 subreddit = reddit.subreddit(subreddit_name)
                 if ctx.channel.is_nsfw():
