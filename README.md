@@ -3,8 +3,6 @@
 
 [Invite the bot](https://discordapp.com/api/oauth2/authorize?client_id=437439562386505730&permissions=8&redirect_uri=http%3A%2F%2Frbdis.xyz%2Finvited&response_type=code&scope=bot%20identify)
 
-![example](https://rbdis.xyz/wp-content/uploads/2020/04/combined.png)
-
 RedditBot can fetch infomation on subreddits, user profiles and more!
 
 If your ever confused you can always use rhelp
