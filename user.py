@@ -123,7 +123,7 @@ class user(commands.Cog):
             await ctx.send(embed=error)
 
     @commands.command(name='resetuser')
-    async def force(self, ctx, user_name=None):
+    async def resetuser(self, ctx, user_name=None):
         if user_name:
                 loading = discord.Embed(title='', color=red)
                 loading.add_field(name='Deleting cache...', value="<a:loading:650579775433474088>")
