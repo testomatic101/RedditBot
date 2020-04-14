@@ -112,7 +112,7 @@ class user(commands.Cog):
             if is_employee:
                 user.add_field(name='This user', value='is an employee of reddit', inline=False)
 
-                    sub.set_author(name="RedditBot", icon_url="https://images.discordapp.net/avatars/437439562386505730/2874f76dd780cb0af624e3049a6bfad0.png")
+            sub.set_author(name="RedditBot", icon_url="https://images.discordapp.net/avatars/437439562386505730/2874f76dd780cb0af624e3049a6bfad0.png")
             user.set_thumbnail(url=user_r.icon_img)
             user.set_footer(text="RedditBot " + version)
             await loadingMessage.edit(embed=user)
