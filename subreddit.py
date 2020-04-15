@@ -18,14 +18,14 @@ with open("secrets.json") as json_file:
     secrets = json.load(json_file)
 
 class subreddit(commands.Cog):
-    """Subreddit command, rr"""
-
     def __init__(self, bot):
         self.bot = bot
         type(self).__name__ = ''
 
     @commands.command(name='r')
     async def subreddit(self, ctx, subreddit_name=None):
+        """Subreddit command, rr"""
+
         if subreddit_name:
             if ctx.guild:
                 loading = discord.Embed(title='', color=red)
