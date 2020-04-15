@@ -59,6 +59,9 @@ async def newhelp(ctx):
     commandsembed.add_field(name="ru [username here]", value="Gives you some info on a user", inline=False)
     commandsembed.add_field(name="rresetsub [sub name here]", value="Removes subreddit cache", inline=False)
     commandsembed.add_field(name="rresetuser [user name here]", value="Removes user cache", inline=False)
+    commandsembed.add_field(name="rhot [sub name here]", value="Shows the top 10 hot posts\n*try rhot all :)*", inline=False)
+    commandsembed.add_field(name="rtop [sub name here]", value="Shows the top 10 top posts\n*try rtop all :)*", inline=False)
+
     await ctx.send(embed=helpembed)
     await ctx.send(embed=commandsembed)
 # add the new help command
