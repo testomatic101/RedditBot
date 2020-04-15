@@ -104,7 +104,7 @@ class subreddit(commands.Cog):
                         sub.add_field(name='*these results are from a cache made at*:', value=time_cached, inline=False)
                         sub.add_field(name='*if you want the latest stats, use rresetsub ' + subreddit_name + '*', value="keep in mind that you should only reset a subreddit cache every so often", inline=False)
 
-                    sub.add_field(name="maybe try:", value=f"try rhot {subreddit_name} and rtop {subreddit_name} to show the top 10 top and hot posts", inline=False)
+                    sub.add_field(name="maybe try:", value="try rhot "+subreddit_name+" and rtop "+subreddit_name+" to show the top 10 top and hot posts", inline=False)
 
                     sub.set_author(name="RedditBot", icon_url="https://images.discordapp.net/avatars/437439562386505730/2874f76dd780cb0af624e3049a6bfad0.png")
                     sub.set_thumbnail(url=thumbnail)
@@ -142,12 +142,12 @@ class subreddit(commands.Cog):
                                  client_secret=secrets["reddit_secret"],
                                  user_agent='discord:n/a:' + version_number + ' (by /u/-_-BWAC-_-)')
 
-            embed = discord.Embed(title=f"r/{subreddit_name}'s top 10 top posts as of right now",
+            embed = discord.Embed(title="r/"+subreddit_name+"'s top 10 top posts as of right now",
                                 description="", color=red)
 
             for submission in reddit.subreddit(subreddit_name).top(limit=10):
                 if len(embed) < 6000:
-                    embed.description = embed.description + f"\n\n[{submission.title}](https://reddit.com{submission.permalink})\n:thumbsup:{submission.score}, u/{submission.author}, {datetime.datetime.fromtimestamp(int(submission.created_utc)).strftime('%m/%d/%Y')}"
+                    embed.description = embed.description + "\n\n["+submission.title+"](https://reddit.com"+submission.permalink+")\n:thumbsup:"+submission.score+", u/"+submission.author+", "+datetime.datetime.fromtimestamp(int(submission.created_utc)).strftime('%m/%d/%Y')
                     await loadingMessage.edit(embed=embed)
         else:
             error = discord.Embed(title="You didn't give a subreddit!\n\nYou should use this command like:\nrtop ["
@@ -172,11 +172,11 @@ class subreddit(commands.Cog):
                                     client_secret=secrets["reddit_secret"],
                                     user_agent='discord:n/a:' + version_number + ' (by /u/-_-BWAC-_-)')
 
-                embed = discord.Embed(title=f"r/{subreddit_name}'s top 10 hot posts as of right now",
+                embed = discord.Embed(title="r/"+subreddit_name+"'s top 10 hot posts as of right now",
                                     description="", color=red)
                 for submission in reddit.subreddit(subreddit_name).top(limit=10):
                     if len(embed) < 6000:
-                        embed.description = embed.description + f"\n\n[{submission.title}](https://reddit.com{submission.permalink})\n:thumbsup:{submission.score}, u/{submission.author}, {datetime.datetime.fromtimestamp(int(submission.created_utc)).strftime('%m/%d/%Y')}"
+                        embed.description = embed.description + "\n\n["+submission.title+"](https://reddit.com"+submission.permalink+")\n:thumbsup:"+submission.score+", u/"+submission.author+", "+datetime.datetime.fromtimestamp(int(submission.created_utc)).strftime('%m/%d/%Y')
                         await loadingMessage.edit(embed=embed)
                 await loadingMessage.edit(embed=embed)
             else:
