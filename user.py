@@ -23,14 +23,14 @@ if os.path.isfile("production"):
     production = True
 
 class user(commands.Cog):
-    """User command, ru"""
-
     def __init__(self, bot):
         self.bot = bot
         type(self).__name__ = ''
 
     @commands.command(name='u')
     async def user(self, ctx, username=None):
+        """User command, ru"""
+
         if username:
             loading = discord.Embed(title='', ncolor=red)
             loading.add_field(name='Loading...', value='<a:loading:650579775433474088> Contacting reddit servers...')
@@ -126,6 +126,8 @@ class user(commands.Cog):
 
     @commands.command(name='resetuser')
     async def resetuser(self, ctx, user_name=None):
+        """resets a user cache"""
+
         if user_name:
                 loading = discord.Embed(title='', color=red)
                 loading.add_field(name='Deleting cache...', value="<a:loading:650579775433474088>")
