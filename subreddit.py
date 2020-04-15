@@ -17,6 +17,7 @@ if os.path.isfile("production"):
 with open("secrets.json") as json_file:
     secrets = json.load(json_file)
 
+
 class subreddit(commands.Cog):
     def __init__(self, bot):
         self.bot = bot
@@ -24,7 +25,6 @@ class subreddit(commands.Cog):
 
     @commands.command(name='r')
     async def subreddit(self, ctx, subreddit_name=None):
-        """Subreddit command, rr"""
 
         if subreddit_name:
             if ctx.guild:
@@ -126,6 +126,8 @@ class subreddit(commands.Cog):
 
     @commands.command(name='top')
     async def top(self, ctx, subreddit_name=None):
+        """get the top posts of a subreddit, rtop"""
+
         loading = discord.Embed(title='', color=red)
         loading.add_field(name='Loading...', value="<a:loading:650579775433474088> Contacting reddit "
                                                    "servers...")
@@ -154,6 +156,8 @@ class subreddit(commands.Cog):
 
     @commands.command(name='hot')
     async def hot(self, ctx, subreddit_name=None):
+        """get the current hot posts of a subreddit, rhot"""
+
         loading = discord.Embed(title='', color=red)
         loading.add_field(name='Loading...', value="<a:loading:650579775433474088> Contacting reddit "
                                                    "servers...")
@@ -193,6 +197,8 @@ class subreddit(commands.Cog):
 
     @commands.command(name='resetsub')
     async def resetsub(self, ctx, subreddit_name=None):
+        """resets a subreddit cache"""
+
         if subreddit_name:
                 loading = discord.Embed(title='', color=red)
                 loading.add_field(name='Deleting cache...', value="<a:loading:650579775433474088>")
