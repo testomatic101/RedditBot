@@ -147,7 +147,7 @@ class subreddit(commands.Cog):
 
             for submission in reddit.subreddit(subreddit_name).top(limit=10):
                 if len(embed) < 6000:
-                    embed.description = embed.description + "\n\n["+submission.title+"](https://reddit.com"+submission.permalink+")\n:thumbsup:"+submission.score+", u/"+submission.author+", "+datetime.datetime.fromtimestamp(int(submission.created_utc)).strftime('%m/%d/%Y')
+                    embed.description = embed.description + "\n\n["+submission.title+"](https://reddit.com"+submission.permalink+")\n:thumbsup:"+submission.score+", u/"+submission.author+", "+str(datetime.datetime.fromtimestamp(int(submission.created_utc)).strftime('%m/%d/%Y'))
                     await loadingMessage.edit(embed=embed)
         else:
             error = discord.Embed(title="You didn't give a subreddit!\n\nYou should use this command like:\nrtop ["
@@ -176,7 +176,7 @@ class subreddit(commands.Cog):
                                     description="", color=red)
                 for submission in reddit.subreddit(subreddit_name).top(limit=10):
                     if len(embed) < 6000:
-                        embed.description = embed.description + "\n\n["+submission.title+"](https://reddit.com"+submission.permalink+")\n:thumbsup:"+submission.score+", u/"+submission.author+", "+datetime.datetime.fromtimestamp(int(submission.created_utc)).strftime('%m/%d/%Y')
+                        embed.description = embed.description + "\n\n["+submission.title+"](https://reddit.com"+submission.permalink+")\n:thumbsup:"+submission.score+", u/"+submission.author+", "+str(datetime.datetime.fromtimestamp(int(submission.created_utc)).strftime('%m/%d/%Y'))
                         await loadingMessage.edit(embed=embed)
                 await loadingMessage.edit(embed=embed)
             else:
