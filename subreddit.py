@@ -147,8 +147,8 @@ class subreddit(commands.Cog):
 
             for submission in reddit.subreddit(subreddit_name).top(limit=10):
                 if len(embed) < 6000:
-                    embed.description = embed.description + "\n\n["+submission.title+"](https://reddit.com"+submission.permalink+")\n:thumbsup:"+submission.score+", u/"+submission.author+", "+str(datetime.datetime.fromtimestamp(int(submission.created_utc)).strftime('%m/%d/%Y'))
-                    await loadingMessage.edit(embed=embed)
+                    embed.description = embed.description + "\n\n["+submission.title+"](https://reddit.com"+submission.permalink+")\n:thumbsup:"+str(submission.score)+", u/"+str(submission.author)+", "+str(datetime.datetime.fromtimestamp(submission.created_utc).strftime('%m/%d/%Y'))
+                await loadingMessage.edit(embed=embed)
         else:
             error = discord.Embed(title="You didn't give a subreddit!\n\nYou should use this command like:\nrtop ["
                                         "subreddit name]", color=red)
@@ -174,11 +174,10 @@ class subreddit(commands.Cog):
 
                 embed = discord.Embed(title="r/"+subreddit_name+"'s top 10 hot posts as of right now",
                                     description="", color=red)
-                for submission in reddit.subreddit(subreddit_name).top(limit=10):
+                for submission in reddit.subreddit(subreddit_name).hot(limit=10):
                     if len(embed) < 6000:
-                        embed.description = embed.description + "\n\n["+submission.title+"](https://reddit.com"+submission.permalink+")\n:thumbsup:"+submission.score+", u/"+submission.author+", "+str(datetime.datetime.fromtimestamp(int(submission.created_utc)).strftime('%m/%d/%Y'))
-                        await loadingMessage.edit(embed=embed)
-                await loadingMessage.edit(embed=embed)
+                        embed.description = embed.description + "\n\n["+submission.title+"](https://reddit.com"+submission.permalink+")\n:thumbsup:"+str(submission.score)+", u/"+str(submission.author)+", "+str(datetime.datetime.fromtimestamp(submission.created_utc).strftime('%m/%d/%Y'))
+                    await loadingMessage.edit(embed=embed)
             else:
                 error = discord.Embed(title='Error', color=red)
                 error.add_field(name='Sorry',
