@@ -2,3 +2,5 @@
 secrets.json
 __pycache__/
 __pycache__/user.cpython-38.pyc
+__pycache__/subreddit.cpython-38.pyc
+*.pyc
