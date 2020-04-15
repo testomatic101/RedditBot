@@ -103,6 +103,9 @@ class subreddit(commands.Cog):
                     if time_cached:
                         sub.add_field(name='*these results are from a cache made at*:', value=time_cached, inline=False)
                         sub.add_field(name='*if you want the latest stats, use rresetsub ' + subreddit_name + '*', value="keep in mind that you should only reset a subreddit cache every so often", inline=False)
+
+                    sub.add_field(name="maybe try:", value=f"try rhot {subreddit_name} and rtop {subreddit_name} to show the top 10 top and hot posts", inline=False)
+
                     sub.set_author(name="RedditBot", icon_url="https://images.discordapp.net/avatars/437439562386505730/2874f76dd780cb0af624e3049a6bfad0.png")
                     sub.set_thumbnail(url=thumbnail)
                     sub.set_footer(text="RedditBot " + version)
@@ -131,7 +134,7 @@ class subreddit(commands.Cog):
         loading = discord.Embed(title='', color=red)
         loading.add_field(name='Loading...', value="<a:loading:650579775433474088> Contacting reddit "
                                                    "servers...")
-        loading.set_footer(text="if it never loads, RedditBot can't find the subreddit")
+        loading.set_footer(text="if it never loads, RedditBot can't find the subreddit, or something broke")
         loadingMessage = await ctx.send(embed=loading)
 
         if subreddit_name:
@@ -140,14 +143,12 @@ class subreddit(commands.Cog):
                                  user_agent='discord:n/a:' + version_number + ' (by /u/-_-BWAC-_-)')
 
             embed = discord.Embed(title=f"r/{subreddit_name}'s top 10 top posts as of right now",
-                                    description=f"for info on {subreddit_name} do rr {subreddit_name}", color=red)
+                                description="", color=red)
 
             for submission in reddit.subreddit(subreddit_name).top(limit=10):
                 if len(embed) < 6000:
-                    embed.add_field(name=submission.title, value=f"u/{submission.author}, {datetime.datetime.fromtimestamp(int(submission.created_utc)).strftime('%m/%d/%Y')}, https://reddit.com{submission.permalink}", inline=False)
-                else:
-                    embed.add_field(name='the embed is too long', value="oof", inline=False)
-            await loadingMessage.edit(embed=embed)
+                    embed.description = embed.description + f"\n\n[{submission.title}](https://reddit.com{submission.permalink})\n:thumbsup:{submission.score}, u/{submission.author}, {datetime.datetime.fromtimestamp(int(submission.created_utc)).strftime('%m/%d/%Y')}"
+                    await loadingMessage.edit(embed=embed)
         else:
             error = discord.Embed(title="You didn't give a subreddit!\n\nYou should use this command like:\nrtop ["
                                         "subreddit name]", color=red)
@@ -161,7 +162,7 @@ class subreddit(commands.Cog):
         loading = discord.Embed(title='', color=red)
         loading.add_field(name='Loading...', value="<a:loading:650579775433474088> Contacting reddit "
                                                    "servers...")
-        loading.set_footer(text="if it never loads, RedditBot can't find the subreddit")
+        loading.set_footer(text="if it never loads, RedditBot can't find the subreddit, or something broke")
         loadingMessage = await ctx.send(embed=loading)
 
 
@@ -172,13 +173,11 @@ class subreddit(commands.Cog):
                                     user_agent='discord:n/a:' + version_number + ' (by /u/-_-BWAC-_-)')
 
                 embed = discord.Embed(title=f"r/{subreddit_name}'s top 10 hot posts as of right now",
-                    description=f"for info on {subreddit_name} do rr {subreddit_name}", color=red)
-                over = False
+                                    description="", color=red)
                 for submission in reddit.subreddit(subreddit_name).top(limit=10):
                     if len(embed) < 6000:
-                        embed.add_field(name=submission.title, value=f":thumbsup:{submission.score}\nu/{submission.author}, {datetime.datetime.fromtimestamp(int(submission.created_utc)).strftime('%m/%d/%Y')}, https://reddit.com{submission.permalink}", inline=False)
-                    else:
-                        embed.add_field(name='the embed is too long', value="oof", inline=False)
+                        embed.description = embed.description + f"\n\n[{submission.title}](https://reddit.com{submission.permalink})\n:thumbsup:{submission.score}, u/{submission.author}, {datetime.datetime.fromtimestamp(int(submission.created_utc)).strftime('%m/%d/%Y')}"
+                        await loadingMessage.edit(embed=embed)
                 await loadingMessage.edit(embed=embed)
             else:
                 error = discord.Embed(title='Error', color=red)
