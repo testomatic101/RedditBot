@@ -5,7 +5,8 @@ import datetime
 import json
 import os
 
-version = '1.3.2 Created by bwac#2517'
+version_number = '1.3.2'
+version = version_number + ' Created by bwac#2517'
 red = 0xFF0000
 
 # set if this is production or not
@@ -35,7 +36,7 @@ class subreddit(commands.Cog):
 
                 reddit = praw.Reddit(client_id=secrets["reddit_id"],
                                      client_secret=secrets["reddit_secret"],
-                                     user_agent='discord:n/a:1.3.2 (by /u/-_-BWAC-_-)')
+                                     user_agent='discord:n/a:' + version_number + ' (by /u/-_-BWAC-_-)')
 
                 subreddit = reddit.subreddit(subreddit_name)
                 if ctx.channel.is_nsfw():
@@ -118,6 +119,73 @@ class subreddit(commands.Cog):
                 await ctx.send('Please do this in a server')
         else:
             error = discord.Embed(title="You didn't give a subreddit!\n\nYou should use this command like:\nrr ["
+                                        "subreddit name]", color=red)
+            error.set_footer(text=version)
+            await ctx.send(embed=error)
+
+
+    @commands.command(name='top')
+    async def top(self, ctx, subreddit_name=None):
+        loading = discord.Embed(title='', color=red)
+        loading.add_field(name='Loading...', value="<a:loading:650579775433474088> Contacting reddit "
+                                                   "servers...")
+        loading.set_footer(text="if it never loads, RedditBot can't find the subreddit")
+        loadingMessage = await ctx.send(embed=loading)
+
+        if subreddit_name:
+            reddit = praw.Reddit(client_id=secrets["reddit_id"],
+                                 client_secret=secrets["reddit_secret"],
+                                 user_agent='discord:n/a:' + version_number + ' (by /u/-_-BWAC-_-)')
+
+            embed = discord.Embed(title=f"r/{subreddit_name}'s top 10 top posts as of right now",
+                                    description=f"for info on {subreddit_name} do rr {subreddit_name}", color=red)
+
+            for submission in reddit.subreddit(subreddit_name).top(limit=10):
+                if len(embed) < 6000:
+                    embed.add_field(name=submission.title, value=f"u/{submission.author}, {datetime.datetime.fromtimestamp(int(submission.created_utc)).strftime('%m/%d/%Y')}, https://reddit.com{submission.permalink}", inline=False)
+                else:
+                    embed.add_field(name='the embed is too long', value="oof", inline=False)
+            await loadingMessage.edit(embed=embed)
+        else:
+            error = discord.Embed(title="You didn't give a subreddit!\n\nYou should use this command like:\nrtop ["
+                                        "subreddit name]", color=red)
+            error.set_footer(text=version)
+            await ctx.send(embed=error)
+
+    @commands.command(name='hot')
+    async def hot(self, ctx, subreddit_name=None):
+        loading = discord.Embed(title='', color=red)
+        loading.add_field(name='Loading...', value="<a:loading:650579775433474088> Contacting reddit "
+                                                   "servers...")
+        loading.set_footer(text="if it never loads, RedditBot can't find the subreddit")
+        loadingMessage = await ctx.send(embed=loading)
+
+
+        if subreddit_name:
+            if ctx.channel.is_nsfw():
+                reddit = praw.Reddit(client_id=secrets["reddit_id"],
+                                    client_secret=secrets["reddit_secret"],
+                                    user_agent='discord:n/a:' + version_number + ' (by /u/-_-BWAC-_-)')
+
+                embed = discord.Embed(title=f"r/{subreddit_name}'s top 10 hot posts as of right now",
+                    description=f"for info on {subreddit_name} do rr {subreddit_name}", color=red)
+                over = False
+                for submission in reddit.subreddit(subreddit_name).top(limit=10):
+                    if len(embed) < 6000:
+                        embed.add_field(name=submission.title, value=f":thumbsup:{submission.score}\nu/{submission.author}, {datetime.datetime.fromtimestamp(int(submission.created_utc)).strftime('%m/%d/%Y')}, https://reddit.com{submission.permalink}", inline=False)
+                    else:
+                        embed.add_field(name='the embed is too long', value="oof", inline=False)
+                await loadingMessage.edit(embed=embed)
+            else:
+                error = discord.Embed(title='Error', color=red)
+                error.add_field(name='Sorry',
+                                value="The channel **" + ctx.channel.name + "** is not nsfw, to be safe "
+                                                                            "with the discord tos and "
+                                                                            "such, you will have to "
+                                                                            "change the channel to nsfw.")
+                await loadingMessage.edit(embed=error)
+        else:
+            error = discord.Embed(title="You didn't give a subreddit!\n\nYou should use this command like:\nrhot ["
                                         "subreddit name]", color=red)
             error.set_footer(text=version)
             await ctx.send(embed=error)

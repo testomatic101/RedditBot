@@ -5,7 +5,9 @@ import datetime
 import json
 import os
 
-version = '1.3.2 Created by bwac#2517'
+
+version_number = '1.3.2'
+version = version_number + ' Created by bwac#2517'
 red = 0xFF0000
 
 with open("secrets.json") as json_file:
@@ -37,7 +39,7 @@ class user(commands.Cog):
 
             reddit = praw.Reddit(client_id=secrets["reddit_id"],
                                  client_secret=secrets["reddit_secret"],
-                                 user_agent='discord:n/a:1.3.2 (by /u/-_-BWAC-_-)')
+                                 user_agent='discord:n/a:' + version_number + ' (by /u/-_-BWAC-_-)')
 
             loading = discord.Embed(title='', color=red)
             loading.add_field(name='Loading...', value='<a:loading:650579775433474088> Getting profile info...')

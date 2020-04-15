@@ -15,17 +15,18 @@ if os.path.isfile("production"):
 with open("secrets.json") as json_file:
     secrets = json.load(json_file)
 
+# this is used for the footer of embeds
+version_number = '1.3.2'
+version = version_number + "https://rbdis.xyz/ redditbot created by bwac#2517"
+# red for embeds
+red = 0xFF0000
+
 # login to reddit
 reddit = praw.Reddit(client_id=secrets["reddit_id"],
                      client_secret=secrets["reddit_secret"],
-                     user_agent='discord:n/a:1.3.2 (by /u/-_-BWAC-_-)')
+                     user_agent='discord:n/a:' + version_number + ' (by /u/-_-BWAC-_-)')
 # make the bot client
 bot = commands.Bot(command_prefix='r')
-
-# this is used for the footer of embeds
-version = '1.3.2 https://rbdis.xyz/ redditbot created by bwac#2517'
-# red for embeds
-red = 0xFF0000
 
 if production:
     # make the top.gg api client
