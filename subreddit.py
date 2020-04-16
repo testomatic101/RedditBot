@@ -25,6 +25,7 @@ class subreddit(commands.Cog):
 
     @commands.command(name='subreddit')
     async def subreddit(self, ctx, subreddit_name=None):
+        """Subreddit command, rsubreddit"""
 
         if subreddit_name:
             if ctx.guild:
