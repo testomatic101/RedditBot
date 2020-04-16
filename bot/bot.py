@@ -93,15 +93,8 @@ if production:
 
 @bot.event
 async def on_ready():
-    # make the presence when the bot is ready
-    print('ready')
-    print(bot.guilds)
-    for guild in bot.guilds:
-        sent = False
-        for invite in await guild.invites():
-            if not sent:
-                print(invite)
-                sent = True
+    """When the bot is ready."""
+    print('ready>')
 
 if __name__ == "__main__":
     # load the cogs
