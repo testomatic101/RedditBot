@@ -75,9 +75,9 @@ async def on_command_error(ctx, error):
     await ctx.send(str(ctx.author)+', something went wrong. \n`'+str(error)+'`\nIf it keeps happening report it here https://rbdis.xyz/bugreport or https://rbdis.xyz/server\nThank you!')
 
 # all the cogs
-extensions = ["user", "subreddit"]
+extensions = ["cogs.user", "cogs.subreddit"]
 if production:
-    extensions.append("topgg")
+    extensions.append("cogs.topgg")
 
 @bot.event
 async def on_ready():
