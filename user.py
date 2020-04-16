@@ -29,7 +29,7 @@ class user(commands.Cog):
 
     @commands.command(name='user')
     async def user(self, ctx, username=None):
-        """User command, ru"""
+        """User command, ruser"""
 
         if username:
             loading = discord.Embed(title='', ncolor=red)
@@ -119,7 +119,7 @@ class user(commands.Cog):
             user.set_footer(text="RedditBot " + version)
             await loadingMessage.edit(embed=user)
         else:
-            error = discord.Embed(title="You didn't give a username!\n\nYou should use this command like:\nru ["
+            error = discord.Embed(title="You didn't give a username!\n\nYou should use this command like:\nruser ["
                                         "username]", color=red)
             error.set_footer(text=version)
             await ctx.send(embed=error)
@@ -138,11 +138,11 @@ class user(commands.Cog):
                     os.remove("cache/users/" + user_name + ".json")
 
                     loading = discord.Embed(title='', color=red)
-                    loading.add_field(name='Deleted!...', value="now say ru " + user_name)
+                    loading.add_field(name='Deleted!...', value="now say ruser " + user_name)
                     await loadingMessage.edit(embed=loading)
                 else:
                     loading = discord.Embed(title='', color=red)
-                    loading.add_field(name='No cache!...', value="try saying ru " + user_name)
+                    loading.add_field(name='No cache!...', value="try saying ruser " + user_name)
                     await loadingMessage.edit(embed=loading)
         else:
             error = discord.Embed(title="You didn't give a user name!\n\nYou should use this command like:\nresetuser ["
