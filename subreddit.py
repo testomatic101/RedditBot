@@ -138,17 +138,26 @@ class subreddit(commands.Cog):
         loadingMessage = await ctx.send(embed=loading)
 
         if subreddit_name:
-            reddit = praw.Reddit(client_id=secrets["reddit_id"],
-                                 client_secret=secrets["reddit_secret"],
-                                 user_agent='discord:n/a:' + version_number + ' (by /u/-_-BWAC-_-)')
+            if ctx.channel.is_nsfw()
+                reddit = praw.Reddit(client_id=secrets["reddit_id"],
+                                    client_secret=secrets["reddit_secret"],
+                                    user_agent='discord:n/a:' + version_number + ' (by /u/-_-BWAC-_-)')
 
-            embed = discord.Embed(title="r/"+subreddit_name+"'s top 10 top posts as of right now",
-                                description="", color=red)
+                embed = discord.Embed(title="r/"+subreddit_name+"'s top 10 top posts as of right now",
+                description="", color=red)
 
-            for submission in reddit.subreddit(subreddit_name).top(limit=10):
-                if len(embed) < 6000:
-                    embed.description = embed.description + "\n\n["+submission.title+"](https://reddit.com"+submission.permalink+")\n:thumbsup:"+str(submission.score)+", u/"+str(submission.author)+", "+str(datetime.datetime.fromtimestamp(submission.created_utc).strftime('%m/%d/%Y'))
-                await loadingMessage.edit(embed=embed)
+                for submission in reddit.subreddit(subreddit_name).top(limit=10):
+                    if len(embed) < 6000:
+                        embed.description = embed.description + "\n\n["+submission.title+"](https://reddit.com"+submission.permalink+")\n:thumbsup:"+str(submission.score)+", u/"+str(submission.author)+", "+str(datetime.datetime.fromtimestamp(submission.created_utc).strftime('%m/%d/%Y'))
+                        await loadingMessage.edit(embed=embed)
+            else:
+                error = discord.Embed(title='Error', color=red)
+                error.add_field(name='Sorry',
+                                value="The channel **" + ctx.channel.name + "** is not nsfw, to be safe "
+                                                                            "with the discord tos and "
+                                                                            "such, you will have to "
+                                                                            "change the channel to nsfw.")
+                await loadingMessage.edit(embed=error)
         else:
             error = discord.Embed(title="You didn't give a subreddit!\n\nYou should use this command like:\nrtop ["
                                         "subreddit name]", color=red)
