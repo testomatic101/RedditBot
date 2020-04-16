@@ -55,8 +55,8 @@ async def newhelp(ctx):
                          description="**Commands**",
                          color=red)
     commandsembed.add_field(name="rhelp", value="Shows this page", inline=False)
-    commandsembed.add_field(name="rr [sub name here]", value="Gives you some info on a subreddit", inline=False)
-    commandsembed.add_field(name="ru [username here]", value="Gives you some info on a user", inline=False)
+    commandsembed.add_field(name="rsubreddit [sub name here]", value="Gives you some info on a subreddit", inline=False)
+    commandsembed.add_field(name="ruser [username here]", value="Gives you some info on a user", inline=False)
     commandsembed.add_field(name="rresetsub [sub name here]", value="Removes subreddit cache", inline=False)
     commandsembed.add_field(name="rresetuser [user name here]", value="Removes user cache", inline=False)
     commandsembed.add_field(name="rhot [sub name here]", value="Shows the top 10 hot posts", inline=False)
