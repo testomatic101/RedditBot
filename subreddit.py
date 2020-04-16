@@ -23,7 +23,7 @@ class subreddit(commands.Cog):
         self.bot = bot
         type(self).__name__ = ''
 
-    @commands.command(name='r')
+    @commands.command(name='subreddit')
     async def subreddit(self, ctx, subreddit_name=None):
 
         if subreddit_name:
