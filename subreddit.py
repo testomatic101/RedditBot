@@ -121,7 +121,7 @@ class subreddit(commands.Cog):
             else:
                 await ctx.send('Please do this in a server')
         else:
-            error = discord.Embed(title="You didn't give a subreddit!\n\nYou should use this command like:\nrr ["
+            error = discord.Embed(title="You didn't give a subreddit!\n\nYou should use this command like:\nrsubreddit ["
                                         "subreddit name]", color=red)
             error.set_footer(text=version)
             await ctx.send(embed=error)
@@ -211,7 +211,7 @@ class subreddit(commands.Cog):
                     await loadingMessage.edit(embed=loading)
                 else:
                     loading = discord.Embed(title='', color=red)
-                    loading.add_field(name='No cache!...', value="try saying rr " + subreddit_name)
+                    loading.add_field(name='No cache!...', value="try saying rsubreddit " + subreddit_name)
                     await loadingMessage.edit(embed=loading)
         else:
             error = discord.Embed(title="You didn't give a subreddit!\n\nYou should use this command like:\nresetsub ["
