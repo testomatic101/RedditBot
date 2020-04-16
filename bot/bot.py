@@ -75,6 +75,10 @@ async def on_command_error(ctx, error):
     """Sends error to user and channel"""
     await ctx.send(str(ctx.author)+', something went wrong. \n`'+str(error)+'`\nIf it keeps happening report it here https://rbdis.xyz/bugreport or https://rbdis.xyz/server\nThank you!')
 
+@bot.event
+async def on_command_completion(ctx):
+    await bot.change_presence(status=discord.Status.do_not_disturb, activity=discord.Game(name="rhelp | In " + str(len(bot.guilds)) + " servers"))
+
 # all the cogs
 extensions = ["cogs.user", "cogs.subreddit"]
 if production:
@@ -91,11 +95,6 @@ async def on_ready():
             if not sent:
                 print(invite)
                 sent = True
-
-
-@bot.event
-async def on_command_completion(ctx):
-    await bot.change_presence(status=discord.Status.do_not_disturb, activity=discord.Game(name="rhelp | In " + str(len(bot.guilds)) + " servers"))
 
 if __name__ == "__main__":
     # load the cogs
