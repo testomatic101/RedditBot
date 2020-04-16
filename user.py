@@ -27,7 +27,7 @@ class user(commands.Cog):
         self.bot = bot
         type(self).__name__ = ''
 
-    @commands.command(name='u')
+    @commands.command(name='user')
     async def user(self, ctx, username=None):
         """User command, ru"""
 
