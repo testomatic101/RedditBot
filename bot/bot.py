@@ -25,6 +25,7 @@ red = 0xFF0000
 reddit = praw.Reddit(client_id=secrets["reddit_id"],
                      client_secret=secrets["reddit_secret"],
                      user_agent='discord:n/a:' + version_number + ' (by /u/-_-BWAC-_-)')
+
 # make the bot client
 bot = commands.Bot(command_prefix='r', help_command=None)
 
@@ -64,11 +65,13 @@ async def newhelp(ctx):
 # add the new help command
 bot.add_command(newhelp)
 
+
 # update status
 @commands.command()
 async def update(ctx):
     await bot.change_presence(status=discord.Status.do_not_disturb, activity=discord.Game(name="rhelp | In " + str(len(bot.guilds)) + " servers"))
 bot.add_command(update)
+
 
 @bot.event
 async def on_command_error(ctx, error):
@@ -81,6 +84,7 @@ async def on_command_error(ctx, error):
 @bot.event
 async def on_command_completion(ctx):
     await bot.change_presence(status=discord.Status.do_not_disturb, activity=discord.Game(name="rhelp | In " + str(len(bot.guilds)) + " servers"))
+
 
 # all the cogs
 extensions = ["cogs.user", "cogs.subreddit"]
