@@ -5,12 +5,12 @@ import json
 import random
 import dbl
 import os
-from pathlib import Path
 
 # set if this is production or not
 production = False
 if os.path.isfile("production"):
     production = True
+
 
 with open("secrets.json") as json_file:
     secrets = json.load(json_file)
