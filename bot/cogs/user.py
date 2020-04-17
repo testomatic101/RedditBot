@@ -30,7 +30,7 @@ class user(commands.Cog):
 
     @commands.command(name="user")
     async def user(self, ctx, username=None):
-        """User command, ruser"""
+        """User command, r!user"""
 
         if username:
             loading = discord.Embed(title="", ncolor=red)
@@ -119,7 +119,7 @@ class user(commands.Cog):
                     inline=False,
                 )
                 user.add_field(
-                    name="*if you want the latest stats, use rresetuser "
+                    name="*if you want the latest stats, use r!resetuser "
                     + username
                     + "*",
                     value="keep in mind that you should only reset a user cache every so often",
@@ -155,7 +155,7 @@ class user(commands.Cog):
             await loadingMessage.edit(embed=user)
         else:
             error = discord.Embed(
-                title="You didn't give a username!\n\nYou should use this command like:\nruser ["
+                title="You didn't give a username!\n\nYou should use this command like:\nr!user ["
                 "username]",
                 color=red,
             )
@@ -179,18 +179,18 @@ class user(commands.Cog):
 
                 loading = discord.Embed(title="", color=red)
                 loading.add_field(
-                    name="Deleted!...", value="now say ruser " + user_name
+                    name="Deleted!...", value="now say r!user " + user_name
                 )
                 await loadingMessage.edit(embed=loading)
             else:
                 loading = discord.Embed(title="", color=red)
                 loading.add_field(
-                    name="No cache!...", value="try saying ruser " + user_name
+                    name="No cache!...", value="try saying r!user " + user_name
                 )
                 await loadingMessage.edit(embed=loading)
         else:
             error = discord.Embed(
-                title="You didn't give a user name!\n\nYou should use this command like:\nresetuser ["
+                title="You didn't give a user name!\n\nYou should use this command like:\nr!resetuser ["
                 "user name]",
                 color=red,
             )

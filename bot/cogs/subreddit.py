@@ -25,7 +25,7 @@ class subreddit(commands.Cog):
 
     @commands.command(name="subreddit")
     async def subreddit(self, ctx, subreddit_name=None):
-        """Subreddit command, rsubreddit"""
+        """Subreddit command, r!subreddit"""
 
         if subreddit_name:
             if ctx.guild:
@@ -144,7 +144,7 @@ class subreddit(commands.Cog):
                             inline=False,
                         )
                         sub.add_field(
-                            name="*if you want the latest stats, use rresetsub "
+                            name="*if you want the latest stats, use r!resetsub "
                             + subreddit_name
                             + "*",
                             value="keep in mind that you should only reset a subreddit cache every so often",
@@ -153,9 +153,9 @@ class subreddit(commands.Cog):
 
                     sub.add_field(
                         name="maybe try:",
-                        value="try rhot "
+                        value="try r!hot "
                         + subreddit_name
-                        + " and rtop "
+                        + " and r!top "
                         + subreddit_name
                         + " to show the top 10 top and hot posts",
                         inline=False,
@@ -184,7 +184,7 @@ class subreddit(commands.Cog):
                 await ctx.send("Please do this in a server")
         else:
             error = discord.Embed(
-                title="You didn't give a subreddit!\n\nYou should use this command like:\nrsubreddit ["
+                title="You didn't give a subreddit!\n\nYou should use this command like:\nr!subreddit ["
                 "subreddit name]",
                 color=red,
             )
@@ -253,7 +253,7 @@ class subreddit(commands.Cog):
                 await loadingMessage.edit(embed=error)
         else:
             error = discord.Embed(
-                title="You didn't give a subreddit!\n\nYou should use this command like:\nrtop ["
+                title="You didn't give a subreddit!\n\nYou should use this command like:\nr!top ["
                 "subreddit name]",
                 color=red,
             )
@@ -262,7 +262,7 @@ class subreddit(commands.Cog):
 
     @commands.command(name="hot")
     async def hot(self, ctx, subreddit_name=None):
-        """get the current hot posts of a subreddit, rhot"""
+        """get the current hot posts of a subreddit, r!hot"""
 
         loading = discord.Embed(title="", color=red)
         loading.add_field(
@@ -321,7 +321,7 @@ class subreddit(commands.Cog):
                 await loadingMessage.edit(embed=error)
         else:
             error = discord.Embed(
-                title="You didn't give a subreddit!\n\nYou should use this command like:\nrhot ["
+                title="You didn't give a subreddit!\n\nYou should use this command like:\nr!hot ["
                 "subreddit name]",
                 color=red,
             )
@@ -347,18 +347,19 @@ class subreddit(commands.Cog):
 
                 loading = discord.Embed(title="", color=red)
                 loading.add_field(
-                    name="Deleted!...", value="now say rr " + subreddit_name
+                    name="Deleted!...", value="now say r!subreddit " + subreddit_name
                 )
                 await loadingMessage.edit(embed=loading)
             else:
                 loading = discord.Embed(title="", color=red)
                 loading.add_field(
-                    name="No cache!...", value="try saying rsubreddit " + subreddit_name
+                    name="No cache!...",
+                    value="try saying r!subreddit " + subreddit_name,
                 )
                 await loadingMessage.edit(embed=loading)
         else:
             error = discord.Embed(
-                title="You didn't give a subreddit!\n\nYou should use this command like:\nresetsub ["
+                title="You didn't give a subreddit!\n\nYou should use this command like:\nr!resetsub ["
                 "subreddit name]",
                 color=red,
             )
