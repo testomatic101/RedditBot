@@ -1,9 +1,6 @@
-import discord
 from discord.ext import commands
-import praw
-import datetime
-import json
-import os
+import discord, praw, datetime, json, os
+
 
 version_number = "1.4"
 version = version_number + " Created by bwac#2517"

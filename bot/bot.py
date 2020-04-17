@@ -1,10 +1,5 @@
 from discord.ext import commands
-import discord
-import praw
-import json
-import random
-import dbl
-import os
+import discord, praw, json, random, dbl, os, uuid
 
 # set if this is production or not
 production = False
