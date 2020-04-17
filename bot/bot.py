@@ -149,6 +149,11 @@ async def on_ready():
     """When the bot is ready."""
     print("ready>")
 
+    await bot.change_presence(
+        status=discord.Status.do_not_disturb,
+        activity=discord.Game(name="r!help | In " + str(len(bot.guilds)) + " servers"),
+    )
+
 
 if __name__ == "__main__":
     # load the cogs
