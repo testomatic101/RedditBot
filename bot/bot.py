@@ -129,7 +129,7 @@ async def on_command_error(ctx, error):
             + str(ctx.author)
             + "\nText: "
             + ctx.message.content
-            + "Command doesnt exist"
+            + "\nCommand doesnt exist"
         )
     elif (
         str(error)
