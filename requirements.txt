@@ -1,5 +1,5 @@
-dblpy==0.3.4
-discord.py==1.3.2
-praw==6.5.1
-prawcore==1.0.1
-black==19.10b0
+dblpy
+discord.py
+praw
+prawcore
+black
