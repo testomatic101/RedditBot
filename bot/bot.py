@@ -118,16 +118,50 @@ bot.add_command(update)
 @bot.event
 async def on_command_error(ctx, error):
     """Sends error to user and channel"""
-    await ctx.send(
-        str(ctx.author)
-        + ", something went wrong. \n`"
-        + str(error)
-        + "`\nIf it keeps happening report it here https://rbdis.xyz/bugreport or https://rbdis.xyz/server\nThank you!"
-    )
 
-    await bot.get_channel(700277796148215838).send(
-        "Author: " + str(ctx.author) + "\nError:\n```" + str(error) + "```"
-    )
+    if str(error).__contains__("Command ") and str(error).__contains__("is not found"):
+        await ctx.send(
+            str(ctx.author)
+            + " I can't find that command..\nIf you think it should exist https://rbdis.xyz/bugreport"
+        )
+        await bot.get_channel(700277796148215838).send(
+            "Author: "
+            + str(ctx.author)
+            + "\nText: "
+            + ctx.message.content
+            + "Command doesnt exist"
+        )
+    elif (
+        str(error)
+        == "Command raised an exception: Redirect: Redirect to /subreddits/search"
+    ):
+        await ctx.send(
+            str(ctx.author)
+            + " Something went wrong, its probably a nonexistent or unreachable subreddit..\nIf you think something is broken https://rbdis.xyz/bugreport"
+        )
+        await bot.get_channel(700277796148215838).send(
+            "Author: "
+            + str(ctx.author)
+            + "\nText: "
+            + ctx.message.content
+            + "Command doesnt exist"
+        )
+    else:
+        await ctx.send(
+            str(ctx.author)
+            + ", something went wrong. \n`"
+            + str(error)
+            + "`\nIf it keeps happening report it here https://rbdis.xyz/bugreport or https://rbdis.xyz/server"
+        )
+        await bot.get_channel(700277796148215838).send(
+            "Author: "
+            + str(ctx.author)
+            + "\nText: "
+            + ctx.message.content
+            + "\nError:\n```"
+            + str(error)
+            + "```"
+        )
 
 
 @bot.event
