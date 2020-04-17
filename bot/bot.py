@@ -114,17 +114,26 @@ bot.add_command(update)
 async def on_command_error(ctx, error):
     """Sends error to user and channel"""
 
+    id = ""
+    if production:
+        id = "P"
+    else:
+        id = "B"
+    id = id + str(uuid.uuid4().hex)
+
     if str(error).__contains__("Command ") and str(error).__contains__("is not found"):
         await ctx.send(
             str(ctx.author)
-            + " I can't find that command..\nIf you think it should exist https://rbdis.xyz/bugreport"
+            + " I can't find that command..\nIf you think it should exist https://rbdis.xyz/bugreport\nID: "
+            + id
         )
         await bot.get_channel(700277796148215838).send(
             "Author: "
             + str(ctx.author)
             + "\nText: "
             + ctx.message.content
-            + "\nCommand doesnt exist"
+            + "\nCommand doesnt exist\nID: "
+            + id
         )
     elif (
         str(error)
@@ -132,21 +141,24 @@ async def on_command_error(ctx, error):
     ):
         await ctx.send(
             str(ctx.author)
-            + " Something went wrong, its probably a nonexistent or unreachable subreddit..\nIf you think something is broken https://rbdis.xyz/bugreport"
+            + " Something went wrong, its probably because of a nonexistent or unreachable subreddit..\nIf you think something is broken https://rbdis.xyz/bugreport\nID: "
+            + id
         )
         await bot.get_channel(700277796148215838).send(
             "Author: "
             + str(ctx.author)
             + "\nText: "
             + ctx.message.content
-            + "Command doesnt exist"
+            + "\nCommand doesnt exist\nID: "
+            + id
         )
     else:
         await ctx.send(
             str(ctx.author)
             + ", something went wrong. \n`"
             + str(error)
-            + "`\nIf it keeps happening report it here https://rbdis.xyz/bugreport or https://rbdis.xyz/server"
+            + "`\nIf it keeps happening report it here https://rbdis.xyz/bugreport or https://rbdis.xyz/server\nID: "
+            + id
         )
         await bot.get_channel(700277796148215838).send(
             "Author: "
@@ -155,7 +167,8 @@ async def on_command_error(ctx, error):
             + ctx.message.content
             + "\nError:\n```"
             + str(error)
-            + "```"
+            + "```\bID: "
+            + id
         )
 
 
