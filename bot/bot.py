@@ -131,7 +131,7 @@ async def on_command_error(ctx, error):
 
 
 @bot.event
-async def on_command_completion(ctx):
+async def on_guild_join(guild):
     await bot.change_presence(
         status=discord.Status.do_not_disturb,
         activity=discord.Game(name="r!help | In " + str(len(bot.guilds)) + " servers"),
