@@ -1,6 +1,7 @@
 from discord.ext import commands
-import discord, praw, datetime, json, os
-
+import discord, praw, datetime, json, os, math, wget
+from PIL import Image, ImageDraw, ImageFont
+from textwrap import wrap
 
 version_number = "1.4"
 version = version_number + " Created by bwac#2517"
@@ -127,52 +128,82 @@ class subreddit(commands.Cog):
                     time_created = datetime.datetime.fromtimestamp(
                         time_created
                     ).strftime("%m/%d/%Y")
-                    sub = discord.Embed(
-                        title="r/" + subreddit_name + " info:", color=red
+
+                    millnames = ["", "K", "M", "B", "T"]
+
+                    n = float(subcount)
+                    millidx = max(
+                        0,
+                        min(
+                            len(millnames) - 1,
+                            int(math.floor(0 if n == 0 else math.log10(abs(n)) / 3)),
+                        ),
                     )
-                    if smalldes:
-                        sub.add_field(
-                            name="\nSmall Description:", value=smalldes, inline=False
+
+                    new_subcount = "{:.0f}{}".format(
+                        n / 10 ** (3 * millidx), millnames[millidx]
+                    )
+
+                    """Imaging"""
+                    im = Image.open("subreddit.png")
+                    draw = ImageDraw.Draw(im)
+                    normal_font = ImageFont.truetype("OpenSans-Regular.ttf", size=14)
+
+                    draw.text(
+                        (12, 120),
+                        text="\n".join(wrap(smalldes, 40)),
+                        fill=(255, 255, 255),
+                        font=normal_font,
+                    )
+                    draw.text(
+                        (12, 225),
+                        text=new_subcount,
+                        fill=(255, 255, 255),
+                        font=normal_font,
+                    )
+                    draw.text(
+                        (90, 290),
+                        text=time_created,
+                        fill=(255, 255, 255),
+                        font=normal_font,
+                    )
+                    if nsfw:
+                        draw.text(
+                            (140, 225),
+                            text="Yes",
+                            fill=(255, 255, 255),
+                            font=normal_font,
                         )
                     else:
-                        sub.add_field(
-                            name="\There is no small description for this subreddit",
-                            value="*nothing*",
-                            inline=False,
+                        draw.text(
+                            (140, 225),
+                            text="No",
+                            fill=(255, 255, 255),
+                            font=normal_font,
                         )
-                    sub.add_field(name="\nSubscriber Count:", value=subcount)
-                    sub.add_field(name="NSFW:", value=nsfw)
-                    if time_cached:
-                        sub.add_field(
-                            name="*these results are from a cache made at*:",
-                            value=time_cached,
-                            inline=False,
-                        )
-                        sub.add_field(
-                            name="*if you want the latest stats, use r!resetsub "
-                            + subreddit_name
-                            + "*",
-                            value="keep in mind that you should only reset a subreddit cache every so often",
-                            inline=False,
-                        )
-
-                    sub.add_field(
-                        name="maybe try:",
-                        value="try r!hot "
-                        + subreddit_name
-                        + " and r!top "
-                        + subreddit_name
-                        + " to show the top 10 top and hot posts",
-                        inline=False,
+                    draw.text(
+                        (135, 35),
+                        text=display_name,
+                        fill=(255, 255, 255),
+                        font=normal_font,
+                    )
+                    draw.text(
+                        (135, 53),
+                        text="r/" + subreddit_name,
+                        fill=(47, 47, 48),
+                        font=normal_font,
                     )
 
-                    sub.set_author(
-                        name="RedditBot",
-                        icon_url="https://images.discordapp.net/avatars/437439562386505730/2874f76dd780cb0af624e3049a6bfad0.png",
-                    )
-                    sub.set_thumbnail(url=thumbnail)
-                    sub.set_footer(text="RedditBot " + version)
-                    await loadingMessage.edit(embed=sub)
+                    local_image_filename = wget.download(thumbnail)
+                    im_thumb = Image.open(local_image_filename)
+                    im_thumb = im_thumb.resize((60, 60))
+
+                    im.paste(im_thumb, (70, 25))
+
+                    im.save("re.png")
+                    await ctx.send(file=discord.File("re.png"))
+                    os.remove("re.png")
+                    os.remove(local_image_filename)
                 else:
                     error = discord.Embed(title="Error", color=red)
                     error.add_field(
