@@ -56,6 +56,9 @@ class subreddit(commands.Cog):
                     await loadingMessage.edit(embed=loading)
 
                     time_cached = None
+                    time_created = None
+                    display_name = None
+                    name = None
                     smalldes = None
                     subcount = None
                     nsfw = None
@@ -79,6 +82,8 @@ class subreddit(commands.Cog):
                             cache = json.load(json_file)
 
                             time_cached = cache["time_cached"]
+                            time_created = cache["time_created"]
+                            display_name = cache["display_name"]
                             smalldes = cache["smalldes"]
                             subcount = cache["subcount"]
                             nsfw = cache["nsfw"]
@@ -99,12 +104,16 @@ class subreddit(commands.Cog):
                             smalldes = subreddit.public_description
                         except:
                             smalldes = None
+                        time_created = subreddit.created_utc
+                        display_name = subreddit.display_name
                         subcount = subreddit.subscribers
                         nsfw = subreddit.over18
                         thumbnail = subreddit.icon_img
 
                         cache = {
                             "time_cached": str(datetime.datetime.now()),
+                            "time_created": time_created,
+                            "display_name": display_name,
                             "smalldes": smalldes,
                             "subcount": subcount,
                             "nsfw": nsfw,
@@ -115,8 +124,8 @@ class subreddit(commands.Cog):
                         ) as outfile:
                             json.dump(cache, outfile)
 
-                    datetime.datetime.fromtimestamp(
-                        int(subreddit.created_utc)
+                    time_created = datetime.datetime.fromtimestamp(
+                        time_created
                     ).strftime("%m/%d/%Y")
                     sub = discord.Embed(
                         title="r/" + subreddit_name + " info:", color=red
