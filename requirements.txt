@@ -4,3 +4,4 @@ praw
 prawcore
 black
 uuid
+wget
