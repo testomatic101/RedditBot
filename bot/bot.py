@@ -35,9 +35,7 @@ if production:
 async def newhelp(ctx):
     # custom help command
     # make the embeds
-    helpembed = discord.Embed(
-        title="**http://rbdis.xyz**", description="help", color=red
-    )
+    helpembed = discord.Embed(title="**http://rbdis.xyz**", description="", color=red)
     if production:
         botinfo = await topggclient.get_bot_info()
         getto = botinfo.get("monthlyPoints") + 10
@@ -59,26 +57,42 @@ async def newhelp(ctx):
     commandsembed = discord.Embed(title="Help:", description="**Commands**", color=red)
     commandsembed.add_field(name="r!help", value="Shows this page", inline=False)
     commandsembed.add_field(
-        name="r!subreddit `sub name here`",
+        name="r!about", value="About this bot\n*aliases: about, info*", inline=False
+    )
+    commandsembed.add_field(
+        name="r!subreddit `sub name here (no spaces)`\n*aliases: s, sub*",
         value="Gives you some info on a subreddit",
         inline=False,
     )
     commandsembed.add_field(
-        name="r!user `username here`",
+        name="r!user `username here (no spaces)`\n*aliases: u*",
         value="Gives you some info on a user",
         inline=False,
     )
     commandsembed.add_field(
-        name="r!resetsub `sub name here`", value="Removes subreddit cache", inline=False
+        name="r!resetsub `sub name here (no spaces)`",
+        value="Removes subreddit cache",
+        inline=False,
     )
     commandsembed.add_field(
-        name="r!resetuser `user name here`", value="Removes user cache", inline=False
+        name="r!resetuser `user name here (no spaces)`",
+        value="Removes user cache",
+        inline=False,
     )
     commandsembed.add_field(
-        name="r!hot `sub name here`", value="Shows the top 10 hot posts", inline=False
+        name="r!hot `**subreddit** name here (no spaces)`\n*aliases: h*",
+        value="Shows the top 10 hot posts",
+        inline=False,
     )
     commandsembed.add_field(
-        name="r!top `sub name here`", value="Shows the top 10 top posts", inline=False
+        name="r!top `**subreddit** name here (no spaces)`\n*aliases: t*",
+        value="Shows the top 10 top posts",
+        inline=False,
+    )
+    commandsembed.add_field(
+        name="r!new `**subreddit** name here (no spaces)`\n*aliases: n*",
+        value="Shows the top 10 new posts",
+        inline=False,
     )
 
     await ctx.send(embed=helpembed)
