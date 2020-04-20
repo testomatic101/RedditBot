@@ -170,6 +170,22 @@ async def on_command_error(ctx, error):
             + "```\bID: "
             + id
         )
+# clear cache/temp files (only for bwac)
+@commands.command()
+async def clear(ctx, what_to_clear=None):
+    if ctx.author.id == 408355239108935681:
+        dir = ""
+        if what_to_clear == "temp":
+            dir = "temp"
+        elif what_to_clear == "subreddits":
+            dir = "cache/subreddits"
+        elif what_to_clear == "users":
+            dir = "cache/users"
+        filelist = [f for f in os.listdir(dir)]
+        for f in filelist:
+            os.remove(os.path.join(dir, f))
+            await ctx.send("deleted " + f)
+        await ctx.send("tried my best")
 
 
 @bot.event
