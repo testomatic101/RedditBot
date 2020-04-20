@@ -48,6 +48,7 @@ class subreddit(commands.Cog):
                     nsfw = None
                     thumbnail = None
 
+                    """fill those vars"""
                     if os.path.isfile("cache/subreddits/" + subreddit_name + ".json"):
                         # If cache exists, read from it
                         with open(
@@ -88,6 +89,7 @@ class subreddit(commands.Cog):
                         ) as outfile:
                             json.dump(cache, outfile)
 
+                    """create the image"""
                     time_created = datetime.datetime.fromtimestamp(
                         time_created
                     ).strftime("%m/%d/%Y")
@@ -107,7 +109,6 @@ class subreddit(commands.Cog):
                         n / 10 ** (3 * millidx), millnames[millidx]
                     )
 
-                    """Imaging"""
                     im = Image.open("images/subreddit.png")
                     draw = ImageDraw.Draw(im)
                     normal_font = ImageFont.truetype("OpenSans-Regular.ttf", size=14)
@@ -180,7 +181,7 @@ class subreddit(commands.Cog):
 
                     if time_cached:
                         await ctx.send(
-                            "this was chached at "
+                            "this was cached at "
                             + time_cached
                             + " (r!resetsub "
                             + subreddit_name
@@ -188,7 +189,7 @@ class subreddit(commands.Cog):
                             file=discord.File("temp/re" + id + ".png"),
                         )
                         await bot.get_channel(700277796148215838).send(
-                            "this was chached at "
+                            "this was cached at "
                             + time_cached
                             + " (r!resetsub "
                             + subreddit_name
