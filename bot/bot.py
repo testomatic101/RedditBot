@@ -99,12 +99,27 @@ async def newhelp(ctx):
     await ctx.send(embed=commandsembed)
 
 
-# add the new help command
+# add the about command
 bot.add_command(newhelp)
 
 
+@commands.command(aliases=["info"])
+async def about(ctx):
+    about = discord.Embed(
+        title="About",
+        description="Hey, im RedditBot!\nIm made by bwac#2517\nIm currently running version "
+        + version_number
+        + "\nIm in "
+        + str(len(bot.guilds))
+        + " servers"
+        + "\nMy site is https://rbdis.xyz\nIm made using discord.py\nMy github is https://github.com/BWACpro/RedditBot",
+        color=red,
     )
+    await ctx.send(embed=about)
 
+
+# add the new help command
+bot.add_command(about)
 
 
 
