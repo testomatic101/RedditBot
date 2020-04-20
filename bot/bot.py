@@ -188,6 +188,8 @@ async def clear(ctx, what_to_clear=None):
         await ctx.send("tried my best")
 
 
+# add the clear command
+bot.add_command(clear)
 @bot.event
 async def on_guild_join(guild):
     await bot.change_presence(
