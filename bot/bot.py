@@ -51,15 +51,7 @@ async def newhelp(ctx):
             inline=False,
         )
     helpembed.add_field(
-        name="Join the server!", value="http://rbdis.xyz/server/", inline=False
-    )
-    helpembed.add_field(
-        name="Found a bug?",
-        value="Report it here http://rbdis.xyz/bugreport/",
-        inline=False,
-    )
-    helpembed.add_field(
-        name="Please give your feedback!",
+        name="Want to give your feedback? Or have you found a bug that needs fixing?",
         value="http://rbdis.xyz/feedback",
         inline=False,
     )
