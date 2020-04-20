@@ -151,8 +151,8 @@ class user(commands.Cog):
             await loadingMessage.edit(embed=user)
         else:
             error = discord.Embed(
-                title="You didn't give a username!\n\nYou should use this command like:\nr!user ["
-                "username]",
+                title="You didn't give a username!\n\nYou should use this command like:\nr!user `"
+                "username`",
                 color=red,
             )
             error.set_footer(text=version)
@@ -186,8 +186,8 @@ class user(commands.Cog):
                 await loadingMessage.edit(embed=loading)
         else:
             error = discord.Embed(
-                title="You didn't give a user name!\n\nYou should use this command like:\nr!resetuser ["
-                "user name]",
+                title="You didn't give a user name!\n\nYou should use this command like:\nr!resetuser `"
+                "user name`",
                 color=red,
             )
             error.set_footer(text=version)

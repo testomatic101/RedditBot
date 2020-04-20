@@ -180,8 +180,8 @@ class subreddit(commands.Cog):
                 await ctx.send("Please do this in a server")
         else:
             error = discord.Embed(
-                title="You didn't give a subreddit!\n\nYou should use this command like:\nr!subreddit ["
-                "subreddit name]",
+                title="You didn't give a subreddit!\n\nYou should use this command like:\nr!subreddit `"
+                "subreddit name`",
                 color=red,
             )
             error.set_footer(text=version)
@@ -249,8 +249,8 @@ class subreddit(commands.Cog):
                 await loadingMessage.edit(embed=error)
         else:
             error = discord.Embed(
-                title="You didn't give a subreddit!\n\nYou should use this command like:\nr!top ["
-                "subreddit name]",
+                title="You didn't give a subreddit!\n\nYou should use this command like:\nr!top `"
+                "subreddit name`",
                 color=red,
             )
             error.set_footer(text=version)
@@ -317,8 +317,16 @@ class subreddit(commands.Cog):
                 await loadingMessage.edit(embed=error)
         else:
             error = discord.Embed(
-                title="You didn't give a subreddit!\n\nYou should use this command like:\nr!hot ["
-                "subreddit name]",
+                title="You didn't give a subreddit!\n\nYou should use this command like:\nr!hot `"
+                "subreddit name`",
+                color=red,
+            )
+            error.set_footer(text=version)
+            await ctx.send(embed=error)
+
+            error = discord.Embed(
+                title="You didn't give a subreddit!\n\nYou should use this command like:\nr!new ``"
+                "subreddit name`",
                 color=red,
             )
             error.set_footer(text=version)
