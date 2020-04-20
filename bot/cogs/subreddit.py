@@ -1,6 +1,6 @@
 from discord.ext import commands
-import discord, praw, datetime, json, os, math, wget
-from PIL import Image, ImageDraw, ImageFont
+import discord, praw, datetime, json, os, math, wget, uuid
+from PIL import Image, ImageDraw, ImageFont, ImageOps
 from textwrap import wrap
 
 version_number = "1.4"
@@ -27,34 +27,17 @@ class subreddit(commands.Cog):
 
         if subreddit_name:
             if ctx.guild:
-                loading = discord.Embed(title="", color=red)
-                loading.add_field(
-                    name="Loading...",
-                    value="<a:loading:650579775433474088> Contacting reddit "
-                    "servers...",
-                )
-                loading.set_footer(
-                    text="if it never loads, RedditBot can't find the subreddit"
-                )
-                loadingMessage = await ctx.send(embed=loading)
-
                 reddit = praw.Reddit(
                     client_id=secrets["reddit_id"],
                     client_secret=secrets["reddit_secret"],
                     user_agent="discord:n/a:" + version_number + " (by /u/-_-BWAC-_-)",
                 )
 
+                id = str(uuid.uuid4().hex)
+
                 subreddit = reddit.subreddit(subreddit_name)
                 if ctx.channel.is_nsfw():
-                    loading = discord.Embed(title="", color=red)
-                    loading.add_field(
-                        name="Cache...",
-                        value="<a:loading:650579775433474088> checking if this has been cached",
-                    )
-                    loading.set_footer(
-                        text="if it never loads, something went wrong in the backround, or the subreddit cant be found"
-                    )
-                    await loadingMessage.edit(embed=loading)
+                    loadingMessage = await ctx.send("<a:loading:650579775433474088>")
 
                     time_cached = None
                     time_created = None
@@ -67,16 +50,6 @@ class subreddit(commands.Cog):
 
                     if os.path.isfile("cache/subreddits/" + subreddit_name + ".json"):
                         # If cache exists, read from it
-                        loading = discord.Embed(title="", color=red)
-                        loading.add_field(
-                            name="Cache...",
-                            value="<a:loading:650579775433474088> cache found! now loading from",
-                        )
-                        loading.set_footer(
-                            text="if it never loads, something went wrong in the backround, or the subreddit cant be found"
-                        )
-                        await loadingMessage.edit(embed=loading)
-
                         with open(
                             "cache/subreddits/" + subreddit_name + ".json"
                         ) as json_file:
@@ -91,16 +64,6 @@ class subreddit(commands.Cog):
                             thumbnail = cache["thumbnail"]
                     else:
                         # If cache doesnt exit, make it
-                        loading = discord.Embed(title="", color=red)
-                        loading.add_field(
-                            name="Cache...",
-                            value="<a:loading:650579775433474088> cache not found.. creating",
-                        )
-                        loading.set_footer(
-                            text="if it never loads, something went wrong in the backround, or the subreddit cant be found"
-                        )
-                        await loadingMessage.edit(embed=loading)
-
                         try:
                             smalldes = subreddit.public_description
                         except:
@@ -145,13 +108,22 @@ class subreddit(commands.Cog):
                     )
 
                     """Imaging"""
-                    im = Image.open("subreddit.png")
+                    im = Image.open("images/subreddit.png")
                     draw = ImageDraw.Draw(im)
                     normal_font = ImageFont.truetype("OpenSans-Regular.ttf", size=14)
+                    small_font = ImageFont.truetype("OpenSans-Regular.ttf", size=7)
+
+                    wrapped_text = wrap(smalldes, 40)
+                    if len(wrapped_text) > 5:
+                        wrapped_text = wrapped_text[:5]
+                        wrapped_text[len(wrapped_text) - 1] = (
+                            wrapped_text[len(wrapped_text) - 1] + "(...)"
+                        )
+                    wrapped_text = "\n".join(wrapped_text)
 
                     draw.text(
                         (12, 120),
-                        text="\n".join(wrap(smalldes, 40)),
+                        text=wrapped_text,
                         fill=(255, 255, 255),
                         font=normal_font,
                     )
@@ -190,19 +162,47 @@ class subreddit(commands.Cog):
                     draw.text(
                         (135, 53),
                         text="r/" + subreddit_name,
-                        fill=(47, 47, 48),
+                        fill=(214, 214, 214),
                         font=normal_font,
                     )
 
-                    local_image_filename = wget.download(thumbnail)
-                    im_thumb = Image.open(local_image_filename)
-                    im_thumb = im_thumb.resize((60, 60))
+                    # make thumbnail a circle
+                    if not subreddit.icon_img == "":
+                        local_image_filename = wget.download(
+                            subreddit.icon_img, "temp/thumb" + id + ".png"
+                        )
+                        im_thumb = Image.open(local_image_filename)
+                        im_thumb = im_thumb.resize((60, 60))
+                        mask = Image.open("images/mask.png")
+                        im_thumb.paste(mask, (0, 0), mask)
+                        im.paste(im_thumb, (70, 25))
+                    im.save("temp/re" + id + ".png")
 
-                    im.paste(im_thumb, (70, 25))
+                    if time_cached:
+                        await ctx.send(
+                            "this was chached at "
+                            + time_cached
+                            + " (r!resetsub "
+                            + subreddit_name
+                            + " to get latest stats)",
+                            file=discord.File("temp/re" + id + ".png"),
+                        )
+                        await bot.get_channel(700277796148215838).send(
+                            "this was chached at "
+                            + time_cached
+                            + " (r!resetsub "
+                            + subreddit_name
+                            + " to get latest stats)",
+                            file=discord.File("temp/re" + id + ".png"),
+                        )
+                    else:
+                        await ctx.send(file=discord.File("temp/re" + id + ".png"))
+                        await bot.get_channel(700277796148215838).send(
+                            file=discord.File("temp/re" + id + ".png")
+                        )
+                    await loadingMessage.delete()
 
-                    im.save("re.png")
-                    await ctx.send(file=discord.File("re.png"))
-                    os.remove("re.png")
+                    os.remove("temp/re" + id + ".png")
                     os.remove(local_image_filename)
                 else:
                     error = discord.Embed(title="Error", color=red)
