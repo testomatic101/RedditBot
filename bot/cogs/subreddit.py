@@ -20,9 +20,9 @@ class subreddit(commands.Cog):
         self.bot = bot
         type(self).__name__ = ""
 
-    @commands.command(name="subreddit")
+    @commands.command(aliases=["s", "sub"])
     async def subreddit(self, ctx, subreddit_name=None):
-        """Subreddit command, r!subreddit"""
+        """Subreddit command, r!subreddit, s, sub"""
 
         if subreddit_name:
             if ctx.guild:
@@ -187,7 +187,7 @@ class subreddit(commands.Cog):
             error.set_footer(text=version)
             await ctx.send(embed=error)
 
-    @commands.command(name="top")
+    @commands.command(aliases=["t"])
     async def top(self, ctx, subreddit_name=None):
         """get the top posts of a subreddit, rtop"""
 
@@ -256,7 +256,7 @@ class subreddit(commands.Cog):
             error.set_footer(text=version)
             await ctx.send(embed=error)
 
-    @commands.command(name="hot")
+    @commands.command(aliases=["h"])
     async def hot(self, ctx, subreddit_name=None):
         """get the current hot posts of a subreddit, r!hot"""
 
@@ -324,6 +324,9 @@ class subreddit(commands.Cog):
             error.set_footer(text=version)
             await ctx.send(embed=error)
 
+    @commands.command(aliases=["n"])
+    async def new(self, ctx, subreddit_name=None):
+        """get the current new posts of a subreddit, r!new"""
             error = discord.Embed(
                 title="You didn't give a subreddit!\n\nYou should use this command like:\nr!new ``"
                 "subreddit name`",
