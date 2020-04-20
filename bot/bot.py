@@ -89,17 +89,9 @@ async def newhelp(ctx):
 bot.add_command(newhelp)
 
 
-# update status
-@commands.command()
-async def update(ctx):
-    await bot.change_presence(
-        status=discord.Status.do_not_disturb,
-        activity=discord.Game(name="r!help | In " + str(len(bot.guilds)) + " servers"),
     )
 
 
-# add the update command
-bot.add_command(update)
 
 
 @bot.event
