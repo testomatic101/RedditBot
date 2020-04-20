@@ -59,26 +59,26 @@ async def newhelp(ctx):
     commandsembed = discord.Embed(title="Help:", description="**Commands**", color=red)
     commandsembed.add_field(name="r!help", value="Shows this page", inline=False)
     commandsembed.add_field(
-        name="r!subreddit [sub name here]",
+        name="r!subreddit `sub name here`",
         value="Gives you some info on a subreddit",
         inline=False,
     )
     commandsembed.add_field(
-        name="r!user [username here]",
+        name="r!user `username here`",
         value="Gives you some info on a user",
         inline=False,
     )
     commandsembed.add_field(
-        name="r!resetsub [sub name here]", value="Removes subreddit cache", inline=False
+        name="r!resetsub `sub name here`", value="Removes subreddit cache", inline=False
     )
     commandsembed.add_field(
-        name="r!resetuser [user name here]", value="Removes user cache", inline=False
+        name="r!resetuser `user name here`", value="Removes user cache", inline=False
     )
     commandsembed.add_field(
-        name="r!hot [sub name here]", value="Shows the top 10 hot posts", inline=False
+        name="r!hot `sub name here`", value="Shows the top 10 hot posts", inline=False
     )
     commandsembed.add_field(
-        name="r!top [sub name here]", value="Shows the top 10 top posts", inline=False
+        name="r!top `sub name here`", value="Shows the top 10 top posts", inline=False
     )
 
     await ctx.send(embed=helpembed)
