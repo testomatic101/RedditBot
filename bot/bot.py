@@ -11,7 +11,7 @@ with open("secrets.json") as json_file:
     secrets = json.load(json_file)
 
 # this is used for the footer of embeds
-version_number = "1.4.1"
+version_number = "1.4.2"
 version = version_number + "https://rbdis.xyz/ redditbot created by bwac#2517"
 # red for embeds
 red = 0xFF0000
