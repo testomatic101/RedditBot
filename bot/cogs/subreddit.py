@@ -271,25 +271,25 @@ class subreddit(commands.Cog):
                         )
                     await loadingMessage.edit(embed=embed)
             else:
-                error = discord.Embed(title="Error", color=red)
-                error.add_field(
-                    name="Sorry",
-                    value="The channel **"
-                    + ctx.channel.name
-                    + "** is not nsfw, to be safe "
-                    "with the discord tos and "
-                    "such, you will have to "
-                    "change the channel to nsfw.",
+                errorEmbed = discord.Embed(
+                    title=str(ctx.author) + " Use this in a nsfw channel",
+                    description="This is to be safe with discord tos",
+                    color=red,
                 )
-                await loadingMessage.edit(embed=error)
+                errorEmbed.set_footer(version_number)
+                await ctx.send(embed=errorEmbed)
+                await bot.get_channel(error_channel_id).send(embed=errorEmbed)
+                await bot.get_channel(error_channel_id).send(id)
         else:
-            error = discord.Embed(
-                title="You didn't give a subreddit!\n\nYou should use this command like:\nr!hot `"
-                "subreddit name`",
+            errorEmbed = discord.Embed(
+                title=str(ctx.author) + " You didn't give a subreddit",
+                description="You should use this command like:\nr!subreddit `hot name`",
                 color=red,
             )
-            error.set_footer(text=version)
-            await ctx.send(embed=error)
+            errorEmbed.set_footer(version_number)
+            await ctx.send(embed=errorEmbed)
+            await bot.get_channel(error_channel_id).send(embed=errorEmbed)
+            await bot.get_channel(error_channel_id).send(id)
 
     @commands.command(aliases=["n"])
     @commands.cooldown(1, 30, commands.BucketType.user)
@@ -341,25 +341,21 @@ class subreddit(commands.Cog):
                         )
                     await loadingMessage.edit(embed=embed)
             else:
-                error = discord.Embed(title="Error", color=red)
-                error.add_field(
-                    name="Sorry",
-                    value="The channel **"
-                    + ctx.channel.name
-                    + "** is not nsfw, to be safe "
-                    "with the discord tos and "
-                    "such, you will have to "
-                    "change the channel to nsfw.",
+                errorEmbed = discord.Embed(
+                    title=str(ctx.author) + " Use this in a nsfw channel",
+                    description="This is to be safe with discord tos",
+                    color=red,
                 )
-                await loadingMessage.edit(embed=error)
+                errorEmbed.set_footer(text=id + " " + version_number)
+                await ctx.send(embed=errorEmbed)
         else:
-            error = discord.Embed(
-                title="You didn't give a subreddit!\n\nYou should use this command like:\nr!new ``"
-                "subreddit name`",
+            errorEmbed = discord.Embed(
+                title=str(ctx.author) + " You didn't give a subreddit",
+                description="You should use this command like:\nr!new `subreddit name`",
                 color=red,
             )
-            error.set_footer(text=version)
-            await ctx.send(embed=error)
+            errorEmbed.set_footer(version_number)
+            await ctx.send(embed=errorEmbed)
 
     @commands.command(name="resetsub")
     async def resetsub(self, ctx, subreddit_name=None):
@@ -391,13 +387,13 @@ class subreddit(commands.Cog):
                 )
                 await loadingMessage.edit(embed=loading)
         else:
-            error = discord.Embed(
-                title="You didn't give a subreddit!\n\nYou should use this command like:\nr!resetsub ["
-                "subreddit name]",
+            errorEmbed = discord.Embed(
+                title=str(ctx.author) + " You didn't give a subreddit",
+                description="You should use this command like:\nr!resetsub `subreddit name`",
                 color=red,
             )
-            error.set_footer(text=version)
-            await ctx.send(embed=error)
+            errorEmbed.set_footer(version_number)
+            await ctx.send(embed=errorEmbed)
 
 
 def setup(bot):
