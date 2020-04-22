@@ -25,6 +25,8 @@ class user(commands.Cog):
         type(self).__name__ = ""
 
     @commands.command(aliases=["u"])
+    @commands.cooldown(1, 30, commands.BucketType.user)
+    @commands.guild_only()
     async def user(self, ctx, username=None):
         """User command, r!user"""
 
