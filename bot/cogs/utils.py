@@ -36,6 +36,15 @@ class utils(commands.Cog):
         )
         await ctx.send(embed=about)
 
+    @commands.command()
+    async def invite(self, ctx):
+        about = discord.Embed(
+            title="Join the support server",
+            description="https://rbdis.xyz/server",
+            color=red,
+        )
+        await ctx.send(embed=about)
+
     # clear cache/temp files (only for bwac)
     @commands.command()
     @commands.is_owner()

@@ -29,7 +29,7 @@ async def newhelp(ctx):
 
     # custom help command
     # make the embeds
-    helpembed = discord.Embed(title="**http://rbdis.xyz**", description="", color=red)
+    helpembed = discord.Embed(title="**http://rbdis.xyz**", color=red,)
     if production:
         botinfo = await topggclient.get_bot_info()
         getto = botinfo.get("monthlyPoints") + 10
@@ -50,9 +50,10 @@ async def newhelp(ctx):
     commandsembed = discord.Embed(title="Help:", color=red)
     commandsembed.add_field(name="r!help", value="Shows this page", inline=False)
     commandsembed.add_field(
-        name="r!about \n*aliases: r!info*",
-        value="\nFields: None\nAbout this bot",
-        inline=False,
+        name="r!about \n*aliases: r!info*", value="\nAbout this bot", inline=False,
+    )
+    commandsembed.add_field(
+        name="r!invite", value="\nGet a invite to the bots server", inline=False,
     )
     commandsembed.add_field(
         name="r!subreddit \n*aliases: r!s, r!sub*",
