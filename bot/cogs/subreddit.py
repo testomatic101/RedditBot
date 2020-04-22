@@ -5,6 +5,8 @@ import discord, praw, datetime, json, os
 version_number = "1.4.2"
 version = version_number + " Created by bwac#2517"
 red = 0xFF0000
+error_channel_id = 702452451231531029
+
 
 # set if this is production or not
 production = False
