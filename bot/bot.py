@@ -2,6 +2,9 @@ from discord.ext import commands
 import discord, random, os, json, dbl
 
 
+version_number = "1.4.2"
+version = version_number + " Created by bwac#2517"
+red = 0xFF0000
 
 # set if this is production or not
 production = False
@@ -11,19 +14,6 @@ if os.path.isfile("production"):
 
 with open("secrets.json") as json_file:
     secrets = json.load(json_file)
-
-# this is used for the footer of embeds
-version_number = "1.4.2"
-version = version_number + "https://rbdis.xyz/ redditbot created by bwac#2517"
-# red for embeds
-red = 0xFF0000
-
-# login to reddit
-reddit = praw.Reddit(
-    client_id=secrets["reddit_id"],
-    client_secret=secrets["reddit_secret"],
-    user_agent="discord:n/a:" + version_number + " (by /u/-_-BWAC-_-)",
-)
 
 # make the bot client
 bot = commands.Bot(command_prefix="r!", help_command=None)
