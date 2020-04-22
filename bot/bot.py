@@ -33,6 +33,8 @@ if production:
 
 @commands.command(name="help")
 async def newhelp(ctx):
+    """Shows all commands"""
+
     # custom help command
     # make the embeds
     helpembed = discord.Embed(title="**http://rbdis.xyz**", description="", color=red)
@@ -53,53 +55,54 @@ async def newhelp(ctx):
         value="http://rbdis.xyz/feedback",
         inline=False,
     )
-
-    commandsembed = discord.Embed(title="Help:", description="**Commands**", color=red)
+    commandsembed = discord.Embed(title="Help:", color=red)
     commandsembed.add_field(name="r!help", value="Shows this page", inline=False)
     commandsembed.add_field(
-        name="r!about", value="About this bot\n*aliases: about, info*", inline=False
-    )
-    commandsembed.add_field(
-        name="r!subreddit `sub name here (no spaces)`\n*aliases: s, sub*",
-        value="Gives you some info on a subreddit",
+        name="r!about \n*aliases: r!info*",
+        value="\nFields: None\nAbout this bot",
         inline=False,
     )
     commandsembed.add_field(
-        name="r!user `username here (no spaces)`\n*aliases: u*",
-        value="Gives you some info on a user",
+        name="r!subreddit \n*aliases: r!s, r!sub*",
+        value="Fields: `sub name`\nGives you some info on a subreddit",
         inline=False,
     )
     commandsembed.add_field(
-        name="r!resetsub `sub name here (no spaces)`",
-        value="Removes subreddit cache",
+        name="r!user \n*aliases: r!u*",
+        value="Fields: `username`\nGives you some info on a user",
         inline=False,
     )
     commandsembed.add_field(
-        name="r!resetuser `user name here (no spaces)`",
-        value="Removes user cache",
+        name="r!resetsub",
+        value="Fields: `subreddit`\nRemoves subreddit cache",
         inline=False,
     )
     commandsembed.add_field(
-        name="r!hot `**subreddit** name here (no spaces)`\n*aliases: h*",
-        value="Shows the top 10 hot posts",
+        name="r!resetuser",
+        value="Fields: `username`\nRemoves user cache",
         inline=False,
     )
     commandsembed.add_field(
-        name="r!top `**subreddit** name here (no spaces)`\n*aliases: t*",
-        value="Shows the top 10 top posts",
+        name="r!hot \n*aliases: r!h*",
+        value="Fields: `subreddit`\nShows the top 10 hot posts",
         inline=False,
     )
     commandsembed.add_field(
-        name="r!new `**subreddit** name here (no spaces)`\n*aliases: n*",
-        value="Shows the top 10 new posts",
+        name="r!top \n*aliases: r!t*",
+        value="Fields: `subreddit`\nShows the top 10 top posts",
         inline=False,
     )
+    commandsembed.add_field(
+        name="r!new \n*aliases: r!n*",
+        value="Fields: `subreddit`\nShows the top 10 new posts",
+        inline=False,
+    )
+    await ctx.message.add_reaction(emoji="📬")
 
-    await ctx.send(embed=helpembed)
-    await ctx.send(embed=commandsembed)
+    await ctx.author.send(embed=helpembed)
+    await ctx.author.send(embed=commandsembed)
 
 
-# add the about command
 bot.add_command(newhelp)
 
 # all the cogs
