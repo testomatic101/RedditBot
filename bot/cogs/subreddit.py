@@ -159,18 +159,19 @@ class subreddit(commands.Cog):
     async def top(self, ctx, subreddit_name=None):
         """get the top posts of a subreddit, rtop"""
 
-        loading = discord.Embed(title="", color=red)
-        loading.add_field(
-            name="Loading...",
-            value="<a:loading:650579775433474088> Contacting reddit " "servers...",
-        )
-        loading.set_footer(
-            text="if it never loads, RedditBot can't find the subreddit, or something broke"
-        )
-        loadingMessage = await ctx.send(embed=loading)
-
         if subreddit_name:
             if ctx.channel.is_nsfw():
+                loading = discord.Embed(title="", color=red)
+                loading.add_field(
+                    name="Loading...",
+                    value="<a:loading:650579775433474088> Contacting reddit "
+                    "servers...",
+                )
+                loading.set_footer(
+                    text="if it never loads, RedditBot can't find the subreddit, or something broke"
+                )
+                loadingMessage = await ctx.send(embed=loading)
+
                 reddit = praw.Reddit(
                     client_id=secrets["reddit_id"],
                     client_secret=secrets["reddit_secret"],
@@ -204,25 +205,21 @@ class subreddit(commands.Cog):
                         )
                         await loadingMessage.edit(embed=embed)
             else:
-                error = discord.Embed(title="Error", color=red)
-                error.add_field(
-                    name="Sorry",
-                    value="The channel **"
-                    + ctx.channel.name
-                    + "** is not nsfw, to be safe "
-                    "with the discord tos and "
-                    "such, you will have to "
-                    "change the channel to nsfw.",
+                errorEmbed = discord.Embed(
+                    title=str(ctx.author) + " Use this in a nsfw channel",
+                    description="This is to be safe with discord tos",
+                    color=red,
                 )
-                await loadingMessage.edit(embed=error)
+                errorEmbed.set_footer(version_number)
+                await ctx.send(embed=errorEmbed)
         else:
-            error = discord.Embed(
-                title="You didn't give a subreddit!\n\nYou should use this command like:\nr!top `"
-                "subreddit name`",
+            errorEmbed = discord.Embed(
+                title=str(ctx.author) + " You didn't give a subreddit",
+                description="You should use this command like:\nr!top `subreddit name`",
                 color=red,
             )
-            error.set_footer(text=version)
-            await ctx.send(embed=error)
+            errorEmbed.set_footer(version_number)
+            await ctx.send(embed=errorEmbed)
 
     @commands.command(aliases=["h"])
     @commands.cooldown(1, 30, commands.BucketType.user)
