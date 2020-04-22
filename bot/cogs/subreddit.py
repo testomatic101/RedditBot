@@ -23,6 +23,8 @@ class subreddit(commands.Cog):
         type(self).__name__ = ""
 
     @commands.command(aliases=["s", "sub"])
+    @commands.cooldown(1, 30, commands.BucketType.user)
+    @commands.guild_only()
     async def subreddit(self, ctx, subreddit_name=None):
         """Subreddit command, r!subreddit, s, sub"""
 
@@ -152,6 +154,8 @@ class subreddit(commands.Cog):
             await ctx.send(embed=errorEmbed)
 
     @commands.command(aliases=["t"])
+    @commands.cooldown(1, 30, commands.BucketType.user)
+    @commands.guild_only()
     async def top(self, ctx, subreddit_name=None):
         """get the top posts of a subreddit, rtop"""
 
@@ -221,6 +225,8 @@ class subreddit(commands.Cog):
             await ctx.send(embed=error)
 
     @commands.command(aliases=["h"])
+    @commands.cooldown(1, 30, commands.BucketType.user)
+    @commands.guild_only()
     async def hot(self, ctx, subreddit_name=None):
         """get the current hot posts of a subreddit, r!hot"""
 
@@ -289,6 +295,8 @@ class subreddit(commands.Cog):
             await ctx.send(embed=error)
 
     @commands.command(aliases=["n"])
+    @commands.cooldown(1, 30, commands.BucketType.user)
+    @commands.guild_only()
     async def new(self, ctx, subreddit_name=None):
         """get the current new posts of a subreddit, r!new"""
 
