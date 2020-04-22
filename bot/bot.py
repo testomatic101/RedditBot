@@ -11,7 +11,7 @@ production = False
 if os.path.isfile("production"):
     production = True
 
-
+# shh
 with open("secrets.json") as json_file:
     secrets = json.load(json_file)
 
