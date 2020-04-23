@@ -16,8 +16,7 @@ with open("secrets.json") as json_file:
     secrets = json.load(json_file)
 
 # make the bot client
-bot = commands.Bot(command_prefix="r!", help_command=None)
-
+bot = commands.AutoShardedBot(command_prefix="r!", help_command=None)
 if production:
     # make the top.gg api client
     topggclient = dbl.DBLClient(bot, secrets["topgg_key"])
