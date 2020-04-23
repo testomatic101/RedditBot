@@ -66,7 +66,6 @@ class events(commands.Cog):
                 name="error:", value=str(error) + "\n" + str(type(error)), inline=False,
             )
             await self.bot.get_channel(error_channel_id).send(embed=errorEmbed)
-            await self.bot.get_channel(error_channel_id).send(id)
         # guild only
         elif isinstance(error, commands.NoPrivateMessage):
             errorEmbed = discord.Embed(
