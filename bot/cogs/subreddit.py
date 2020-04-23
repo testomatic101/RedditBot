@@ -210,7 +210,7 @@ class subreddit(commands.Cog):
                     description="This is to be safe with discord tos",
                     color=red,
                 )
-                errorEmbed.set_footer(version_number)
+                errorEmbed.set_footer(text=version_number)
                 await ctx.send(embed=errorEmbed)
         else:
             errorEmbed = discord.Embed(
@@ -218,7 +218,7 @@ class subreddit(commands.Cog):
                 description="You should use this command like:\nr!top `subreddit name`",
                 color=red,
             )
-            errorEmbed.set_footer(version_number)
+            errorEmbed.set_footer(text=version_number)
             await ctx.send(embed=errorEmbed)
 
     @commands.command(aliases=["h"])
@@ -276,7 +276,7 @@ class subreddit(commands.Cog):
                     description="This is to be safe with discord tos",
                     color=red,
                 )
-                errorEmbed.set_footer(version_number)
+                errorEmbed.set_footer(text=version_number)
                 await ctx.send(embed=errorEmbed)
                 await bot.get_channel(error_channel_id).send(embed=errorEmbed)
                 await bot.get_channel(error_channel_id).send(id)
@@ -286,7 +286,7 @@ class subreddit(commands.Cog):
                 description="You should use this command like:\nr!subreddit `hot name`",
                 color=red,
             )
-            errorEmbed.set_footer(version_number)
+            errorEmbed.set_footer(text=version_number)
             await ctx.send(embed=errorEmbed)
             await bot.get_channel(error_channel_id).send(embed=errorEmbed)
             await bot.get_channel(error_channel_id).send(id)
@@ -354,7 +354,7 @@ class subreddit(commands.Cog):
                 description="You should use this command like:\nr!new `subreddit name`",
                 color=red,
             )
-            errorEmbed.set_footer(version_number)
+            errorEmbed.set_footer(text=version_number)
             await ctx.send(embed=errorEmbed)
 
     @commands.command(name="resetsub")
@@ -392,7 +392,7 @@ class subreddit(commands.Cog):
                 description="You should use this command like:\nr!resetsub `subreddit name`",
                 color=red,
             )
-            errorEmbed.set_footer(version_number)
+            errorEmbed.set_footer(text=version_number)
             await ctx.send(embed=errorEmbed)
 
 
