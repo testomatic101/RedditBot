@@ -53,42 +53,27 @@ async def newhelp(ctx):
         name="r!about \n*aliases: r!info*", value="\nAbout this bot", inline=False,
     )
     commandsembed.add_field(
-        name="r!invite", value="\nGet a invite to the bots server", inline=False,
     )
     commandsembed.add_field(
         name="r!subreddit \n*aliases: r!s, r!sub*",
-        value="Fields: `sub name`\nGives you some info on a subreddit",
-        inline=False,
     )
     commandsembed.add_field(
         name="r!user \n*aliases: r!u*",
-        value="Fields: `username`\nGives you some info on a user",
-        inline=False,
     )
     commandsembed.add_field(
         name="r!resetsub",
-        value="Fields: `subreddit`\nRemoves subreddit cache",
-        inline=False,
     )
     commandsembed.add_field(
         name="r!resetuser",
-        value="Fields: `username`\nRemoves user cache",
-        inline=False,
     )
     commandsembed.add_field(
         name="r!hot \n*aliases: r!h*",
-        value="Fields: `subreddit`\nShows the top 10 hot posts",
-        inline=False,
     )
     commandsembed.add_field(
         name="r!top \n*aliases: r!t*",
-        value="Fields: `subreddit`\nShows the top 10 top posts",
-        inline=False,
     )
     commandsembed.add_field(
         name="r!new \n*aliases: r!n*",
-        value="Fields: `subreddit`\nShows the top 10 new posts",
-        inline=False,
     )
     if ctx.guild:
         await ctx.message.add_reaction(emoji="📬")
