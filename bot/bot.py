@@ -48,32 +48,42 @@ async def newhelp(ctx):
         inline=False,
     )
     commandsembed = discord.Embed(title="Help:", color=red)
-    commandsembed.add_field(name="r!help", value="Shows this page", inline=False)
     commandsembed.add_field(
-        name="r!about \n*aliases: r!info*", value="\nAbout this bot", inline=False,
+        name="r!help", value="Shows this page",
     )
     commandsembed.add_field(
+        name="r!about \n*aliases: r!info*", value="\nAbout this bot",
+    )
+    commandsembed.add_field(
+        name="r!invite", value="\nGet a invite to the bots server",
     )
     commandsembed.add_field(
         name="r!subreddit \n*aliases: r!s, r!sub*",
+        value="Fields: `subreddit`\nGives you some info on a subreddit\ne.g: r!subreddit discordapp",
     )
     commandsembed.add_field(
         name="r!user \n*aliases: r!u*",
+        value="Fields: `username`\nGives you some info on a user\ne.g: r!user spez",
     )
     commandsembed.add_field(
         name="r!resetsub",
+        value="Fields: `subreddit`\nRemoves subreddit cache\ne.g: r!resetsub discordapp",
     )
     commandsembed.add_field(
         name="r!resetuser",
+        value="Fields: `username`\nRemoves user cache\ne.g: r!user spez",
     )
     commandsembed.add_field(
         name="r!hot \n*aliases: r!h*",
+        value="Fields: `subreddit`\nShows the top 10 hot posts\ne.g: r!hot wordnews",
     )
     commandsembed.add_field(
         name="r!top \n*aliases: r!t*",
+        value="Fields: `subreddit`\nShows the top 10 top posts\ne.g: r!top memes",
     )
     commandsembed.add_field(
         name="r!new \n*aliases: r!n*",
+        value="Fields: `subreddit`\nShows the top 10 new posts\ne.g: r!top discordapp",
     )
     if ctx.guild:
         await ctx.message.add_reaction(emoji="📬")
