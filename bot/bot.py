@@ -90,7 +90,8 @@ async def newhelp(ctx):
         value="Fields: `subreddit`\nShows the top 10 new posts",
         inline=False,
     )
-    await ctx.message.add_reaction(emoji="📬")
+    if ctx.guild:
+        await ctx.message.add_reaction(emoji="📬")
 
     await ctx.author.send(embed=helpembed)
     await ctx.author.send(embed=commandsembed)
