@@ -110,6 +110,20 @@ class events(commands.Cog):
                 name="error:", value=str(error) + "\n" + str(type(error)), inline=False,
             )
             await self.bot.get_channel(error_channel_id).send(embed=errorEmbed)
+        elif str(error).__contains__(
+            "In embed.description: Must be 2048 or fewer in length."
+        ):
+            errorEmbed = discord.Embed(
+                title=str(ctx.author) + " embed length capped out",
+                description="The embed is to long",
+                color=red,
+            )
+            errorEmbed.set_footer(text=id + " " + version_number)
+            await ctx.send(embed=errorEmbed)
+            errorEmbed.add_field(
+                name="error:", value=str(error) + "\n" + str(type(error)), inline=False,
+            )
+            await self.bot.get_channel(error_channel_id).send(embed=errorEmbed)
         else:
             errorEmbed = discord.Embed(
                 title=str(ctx.author) + " something went wrong",
